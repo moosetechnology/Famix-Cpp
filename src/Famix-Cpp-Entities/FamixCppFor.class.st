@@ -12,3 +12,10 @@ FamixCppFor class >> annotation [
 	<generated>
 	^self
 ]
+
+{ #category : #display }
+FamixCppFor class >> nameTranslations [
+	^ Dictionary
+		with: #english -> 'For'
+		with: #french -> 'For'
+]
