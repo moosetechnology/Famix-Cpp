@@ -12,3 +12,10 @@ FamixCppIf class >> annotation [
 	<generated>
 	^self
 ]
+
+{ #category : #display }
+FamixCppIf class >> nameTranslations [
+	^ Dictionary
+		with: #english -> 'If'
+		with: #french -> 'If'
+]

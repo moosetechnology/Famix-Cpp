@@ -12,3 +12,10 @@ FamixCppWhile class >> annotation [
 	<generated>
 	^self
 ]
+
+{ #category : #display }
+FamixCppWhile class >> nameTranslations [
+	^ Dictionary
+		with: #english -> 'While'
+		with: #french -> 'While'
+]

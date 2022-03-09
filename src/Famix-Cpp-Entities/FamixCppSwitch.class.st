@@ -12,3 +12,11 @@ FamixCppSwitch class >> annotation [
 	<generated>
 	^self
 ]
+
+{ #category : #display }
+FamixCppSwitch class >> nameTranslations [
+	^ Dictionary
+		with: #english -> 'Switch'
+		with: #french -> 'Switch'
+
+]

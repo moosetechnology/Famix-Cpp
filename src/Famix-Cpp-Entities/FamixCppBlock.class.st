@@ -16,6 +16,25 @@ FamixCppBlock class >> annotation [
 	^self
 ]
 
+{ #category : #display }
+FamixCppBlock class >> color [
+	^ MDLColor tint: #purple code: #'300'
+
+]
+
+{ #category : #display }
+FamixCppBlock class >> kindAbbreviation [
+	^ 'B'
+
+]
+
+{ #category : #display }
+FamixCppBlock class >> nameTranslations [
+	^ Dictionary
+		with: #english -> 'Block'
+		with: #french -> 'Bloc'
+]
+
 { #category : #accessing }
 FamixCppBlock >> accesses [
 	accesses ifNil: [ self localizeDefsAndRefs ].
