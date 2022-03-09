@@ -6,6 +6,6 @@ Small C++ model and tooling for Moose based on https://github.com/jecisc/CPPS
 ```Smalltalk
 Metacello new
     baseline: 'FamixCpp';
-    repository: 'github://moosetechnology/Famix-CPP';
+    repository: 'github://moosetechnology/Famix-CPP:main';
     load.
 ```
