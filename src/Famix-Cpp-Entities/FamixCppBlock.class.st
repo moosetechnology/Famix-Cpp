@@ -126,7 +126,7 @@ FamixCppBlock >> parentBehavioural: anObject [
 
 { #category : #accessing }
 FamixCppBlock >> parentBlock [
-	"Relation named: #parentBlock type: #CppBehaviouralEntity opposite: #innerBlocks"
+	"Relation named: #parentBlock type: #FamixCppBehaviouralEntity opposite: #innerBlocks"
 
 	<generated>
 	<FMComment: '"Block" containing this block. belongsTo implementation'>

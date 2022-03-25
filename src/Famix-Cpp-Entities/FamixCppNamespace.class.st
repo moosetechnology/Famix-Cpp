@@ -27,7 +27,7 @@ FamixCppNamespace >> addChildScope: anObject [
 
 { #category : #accessing }
 FamixCppNamespace >> childScopes [
-	"Relation named: #childScopes type: #CppNamespace opposite: #parentScope"
+	"Relation named: #childScopes type: #FamixCppNamespace opposite: #parentScope"
 
 	<generated>
 	<FMComment: 'Child scopes embedded in this scope, if any.'>
@@ -44,7 +44,7 @@ FamixCppNamespace >> childScopes: anObject [
 
 { #category : #accessing }
 FamixCppNamespace >> parentScope [
-	"Relation named: #parentScope type: #CppNamespace opposite: #childScopes"
+	"Relation named: #parentScope type: #FamixCppNamespace opposite: #childScopes"
 
 	<generated>
 	<FMComment: 'Parent scope embedding this scope, if any.'>
