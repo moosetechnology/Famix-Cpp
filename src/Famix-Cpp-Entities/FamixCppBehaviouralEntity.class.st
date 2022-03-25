@@ -26,7 +26,7 @@ FamixCppBehaviouralEntity >> addInnerBlock: anObject [
 
 { #category : #accessing }
 FamixCppBehaviouralEntity >> innerBlocks [
-	"Relation named: #innerBlocks type: #CppBlock opposite: #parentBlock"
+	"Relation named: #innerBlocks type: #FamixCppBlock opposite: #parentBlock"
 
 	<generated>
 	<FMComment: 'Blocks declared in this behavioural'>

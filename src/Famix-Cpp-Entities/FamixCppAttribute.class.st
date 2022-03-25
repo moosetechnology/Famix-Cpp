@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCppAttribute,
 	#superclass : #FamixCppNamedEntity,
-	#traits : 'FamixTAttribute',
-	#classTraits : 'FamixTAttribute classTrait',
+	#traits : 'FamixTAttribute + FamixTInvocationsReceiver',
+	#classTraits : 'FamixTAttribute classTrait + FamixTInvocationsReceiver classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
 }
 

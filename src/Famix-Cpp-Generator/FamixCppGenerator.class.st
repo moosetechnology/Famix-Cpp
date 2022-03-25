@@ -94,6 +94,7 @@ FamixCppGenerator >> defineHierarchy [
 
 	attribute --|> namedEntity.
 	attribute --|> #TAttribute.
+	attribute --|> #TInvocationsReceiver.
 	"attribute --|> #TWithClassScope."
 
 	behavioralEntity --|> containerEntity.
