@@ -1,6 +1,6 @@
 Class {
 	#name : #FamixCppConditionalsGrammarTest,
-	#superclass : #PPCompositeParserTest,
+	#superclass : #PP2CompositeNodeTest,
 	#category : #'Famix-Cpp-Parser-Tests'
 }
 
