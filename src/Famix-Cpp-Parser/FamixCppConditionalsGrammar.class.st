@@ -3,7 +3,7 @@ TODO
 "
 Class {
 	#name : #FamixCppConditionalsGrammar,
-	#superclass : #PPCompositeParser,
+	#superclass : #PP2CompositeNode,
 	#instVars : [
 		'while',
 		'block',
@@ -42,7 +42,8 @@ FamixCppConditionalsGrammar >> block [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> blockClosing [
-	^ $} asParser
+
+	^ $} asPParser
 ]
 
 { #category : #accessing }
@@ -52,7 +53,8 @@ FamixCppConditionalsGrammar >> blockContent [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> blockOpening [
-	^ ${ asParser
+
+	^ ${ asPParser
 ]
 
 { #category : #accessing }
@@ -67,7 +69,7 @@ FamixCppConditionalsGrammar >> case [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> caseDeclaration [
-	^ ('case ' asParser , $: asParser negate plus) / 'default' asParser , $: asParser
+	^ ('case ' asPParser , $: asPParser negate plus) / 'default' asPParser , $: asPParser
 ]
 
 { #category : #switchs }
@@ -77,7 +79,8 @@ FamixCppConditionalsGrammar >> cases [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> comment [
-	^ '//' asParser, #newline asParser negate star
+
+	^ '//' asPParser , #newline asPParser negate star
 ]
 
 { #category : #accessing }
@@ -87,7 +90,7 @@ FamixCppConditionalsGrammar >> condition [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> conditionClosing [
-	^ $) asParser
+	^ $) asPParser
 ]
 
 { #category : #accessing }
@@ -97,37 +100,38 @@ FamixCppConditionalsGrammar >> conditionContent [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> conditionOpening [
-	^ $( asParser
+	^ $( asPParser
 ]
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> controlStructure [
-	^ (for / while / ifElse / doWhile / switchCases) memoized
+	^ for / while / ifElse / doWhile / switchCases
 ]
 
 { #category : #loops }
 FamixCppConditionalsGrammar >> doWhile [
-	^ 'do' asParser trim, block, 'while' asParser trim, condition
+	^ 'do' asPParser trim, block, 'while' asPParser trim, condition
 ]
 
 { #category : #ifs }
 FamixCppConditionalsGrammar >> else [
-	^ 'else' asParser trim , blockOrStatement
+	^ 'else' asPParser trim , blockOrStatement
 ]
 
 { #category : #ifs }
 FamixCppConditionalsGrammar >> elseIf [
-	^ ('else if' asParser trim , condition trim , blockOrStatement)
+	^ ('else if' asPParser trim , condition trim , blockOrStatement)
 ]
 
 { #category : #loops }
 FamixCppConditionalsGrammar >> for [
-	^ 'for' asParser, condition trim, blockOrStatement
+
+	^ 'for' asPParser , condition trim , blockOrStatement
 ]
 
 { #category : #ifs }
 FamixCppConditionalsGrammar >> ifElse [
-	^ 'if' asParser , condition trim , blockOrStatement , elseIf star , else optional
+	^ 'if' asPParser , condition trim , blockOrStatement , elseIf star , else optional
 ]
 
 { #category : #accessing }
@@ -137,8 +141,8 @@ FamixCppConditionalsGrammar >> oneLineStatement [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> start [
-	^ ((controlStructure / comment / water) plus preProcessor: comment ==> [ :p | '' ])
-		preProcessor: (#newline asParser , $# asParser , #newline asParser negate plus) ==> [ :p | '' ]
+
+	^ (controlStructure / comment / water) plus end
 ]
 
 { #category : #accessing }
@@ -148,25 +152,30 @@ FamixCppConditionalsGrammar >> statement [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> statementEnding [
-	^ $; asParser
+	^ $; asPParser
 ]
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> string [
-	^ $" asParser, ('\"' asParser / ($" asParser negate)) plus, $" asParser
+
+	^ $" asPParser , ('\"' asPParser / $" asPParser negate) plus
+	  , $" asPParser
 ]
 
 { #category : #switchs }
 FamixCppConditionalsGrammar >> switchCases [
-	^ 'switch' asParser trim, condition, blockOpening trim, cases , blockClosing trim
+
+	^ 'switch' asPParser trim , condition , blockOpening trim , cases
+	  , blockClosing trim
 ]
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> water [
-	^ #any asParser
+	^ #any asPParser
 ]
 
 { #category : #loops }
 FamixCppConditionalsGrammar >> while [
-	^ 'while' asParser, condition trim, blockOrStatement 
+
+	^ 'while' asPParser , condition trim , blockOrStatement
 ]
