@@ -105,7 +105,8 @@ FamixCppConditionalsGrammar >> conditionOpening [
 
 { #category : #accessing }
 FamixCppConditionalsGrammar >> controlStructure [
-	^ for / while / ifElse / doWhile / switchCases
+
+	^ (for / while / ifElse / doWhile / switchCases) memoize
 ]
 
 { #category : #loops }
