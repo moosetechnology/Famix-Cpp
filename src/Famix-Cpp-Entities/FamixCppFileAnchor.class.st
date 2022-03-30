@@ -1,7 +1,10 @@
+"
+stores one file anchor (i.e. location in one file) for a FamixCppEntity
+"
 Class {
 	#name : #FamixCppFileAnchor,
 	#superclass : #FamixCppSourceAnchor,
-	#traits : 'FamixTFileNavigation',
+	#traits : 'FamixTFileNavigation @ {#rawSourceText->#sourceText}',
 	#classTraits : 'FamixTFileNavigation classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
 }
@@ -22,4 +25,9 @@ FamixCppFileAnchor >> addFileAnchorWithPath: aPath [
 		addSourceAnchor: self;
 		addFileAnchorWithPath: aPath;
 		yourself
+]
+
+{ #category : #accessing }
+FamixCppFileAnchor >> sourceText [
+	^self cacheAt: #sourceText ifAbsentPut: [ self rawSourceText ]
 ]
