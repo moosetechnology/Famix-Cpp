@@ -124,7 +124,7 @@ FamixCppModel >> initialize [
 { #category : #accessing }
 FamixCppModel >> replicationDetectionConfiguration [
 	^ FamixRepConfiguration
-		sourcesCleaner: FamixRepCPPCleaner new
+		sourcesCleaner: FamixRepCLikeCleaner new
 		minimumNumberOfReplicas: 2
 		ofLines: 100
 		ofCharacters: 80
