@@ -2,32 +2,19 @@ Class {
 	#name : #FamixCppNewGenerator,
 	#superclass : #FamixMetamodelGenerator,
 	#instVars : [
-		'typeX',
-		'classX',
-		'behaviouralEntity',
-		'methodX',
-		'namespaceX',
-		'structuralEntity',
 		'implicitVar',
-		'associationX',
-		'inheritanceX',
-		'invocationX',
-		'ooinvocationX',
 		'type',
 		'class',
 		'method',
 		'namespace',
-		'association',
-		'inheritance',
-		'invocation',
-		'ooinvocation'
+		'inheritance'
 	],
 	#category : #'Famix-CppNew-Generator'
 }
 
 { #category : #accessing }
 FamixCppNewGenerator class >> packageName [
-    ^ #'CppNew-Entities'
+    ^ #'Famix-CppNew-Entities'
 ]
 
 { #category : #accessing }
@@ -47,18 +34,13 @@ FamixCppNewGenerator >> defineClasses [
 	type := self remoteEntity: #Type withPrefix: #C.
 	class := builder newClassNamed: #Class.
 
-	behaviouralEntity := self remoteEntity: #BehaviouralEntity withPrefix: #C.
 	method := builder newClassNamed: #Method.
 
 	namespace := builder newClassNamed: #Namespace.
-	
-	structuralEntity := self remoteEntity: #StructuralEntity withPrefix: #C. 
+
 	implicitVar := builder newClassNamed: #ImplicitVar.
 
-	association := self remoteEntity: #Association withPrefix: #C. 
 	inheritance := builder newClassNamed: #Inheritance.
-	invocation := self remoteEntity: #Invocation withPrefix: #C. 
-	ooinvocation := builder newClassNamed: #Ooinvocation.
 
 ]
 
@@ -66,16 +48,14 @@ FamixCppNewGenerator >> defineClasses [
 FamixCppNewGenerator >> defineHierarchy [
     super defineHierarchy.
     
-    class --|> type.
+	class --|> type.
+   class --|> #TClass.
 
-    method --|> behaviouralEntity.
+   method --|> #TMethod.
 
-    implicitVar --|> structuralEntity.
+   implicitVar --|> #TImplicitVariable.
 
-    inheritance --|> association.
-    invocation --|> association.
+   inheritance --|> #TInheritance.
 
-    ooinvocation --|> invocation.
-
-
+	namespace --|> #TNamespace.
 ]

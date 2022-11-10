@@ -2,19 +2,13 @@ Class {
 	#name : #FamixCPreprocGenerator,
 	#superclass : #FamixMetamodelGenerator,
 	#instVars : [
-		'cFileX',
-		'headerX',
-		'compilUnitX',
-		'associationX',
-		'includeX',
-		'preprocStruct',
 		'preprocIfdef',
 		'preprocDefine',
 		'cFile',
 		'header',
 		'compilUnit',
-		'association',
-		'include'
+		'include',
+		'preprocStatement'
 	],
 	#classInstVars : [
 		'builder',
@@ -32,7 +26,7 @@ Class {
 
 { #category : #accessing }
 FamixCPreprocGenerator class >> packageName [
-    ^ #'CPreproc-Entities'
+    ^ #'Famix-CPreproc-Entities'
 ]
 
 { #category : #accessing }
@@ -42,7 +36,7 @@ FamixCPreprocGenerator class >> prefix [
 
 { #category : #accessing }
 FamixCPreprocGenerator class >> submetamodels [
-    ^ { FamixCGenerator }
+    ^ { FamixGenerator }
 ]
 
 { #category : #definition }
@@ -53,24 +47,46 @@ FamixCPreprocGenerator >> defineClasses [
 	header := builder newClassNamed: #Header.
 	compilUnit := builder newClassNamed: #CompilUnit.
 	
-	preprocStruct := builder newClassNamed: #PreprocStruct.
+	preprocStatement := builder newClassNamed: #PreprocStatement.
 	preprocIfdef := builder newClassNamed: #PreprocIfdef.
 	preprocDefine := builder newClassNamed: #PreprocDefine.
 
-	association := self remoteEntity: #Association withPrefix: #C. 
 	include := builder newClassNamed: #Include.
 
 ]
 
 { #category : #definition }
 FamixCPreprocGenerator >> defineHierarchy [
-    super defineHierarchy.
+	super defineHierarchy.
     
-    header --|> cFile.
-    compilUnit --|> cFile.
+	cFile --|> #TNamedEntity.
 
-    preprocIfdef --|> preprocStruct.
-    preprocDefine --|> preprocStruct.
+	header --|> cFile.
+   compilUnit --|> cFile.
 
-    include --|> association.
+   preprocIfdef --|> preprocStatement.
+
+   preprocDefine --|> preprocStatement.
+	preprocDefine --|> #TNamedEntity.
+
+   include --|> #TAssociation.
+]
+
+{ #category : #definition }
+FamixCPreprocGenerator >> defineRelations [
+
+	((include property: #included)
+			comment: 'C-File included';
+			target)
+		*-
+	((cFile property: #inclusion)
+			comment: 'All inclusions of this C-file').
+
+	((include property: #includedBy)
+			comment: 'C-File including the receiver';
+			source)
+		*-
+	((cFile property: #includes)
+			comment: 'All inclusions made by this C-File').
+
 ]
