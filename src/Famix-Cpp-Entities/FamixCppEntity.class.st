@@ -70,6 +70,13 @@ FamixCppEntity >> isFunction [
 ]
 
 { #category : #testing }
+FamixCppEntity >> isGlobalVariable [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
 FamixCppEntity >> isInheritance [
 
 	<generated>
