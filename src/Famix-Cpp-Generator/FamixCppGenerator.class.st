@@ -54,7 +54,6 @@ FamixCppGenerator >> defineClasses [
 	super defineClasses.
 	
 	association := builder newClassNamed: #Association.
-	"entity := builder newClassNamed: #Entity."
 
 	fileAnchor := builder newClassNamed: #FileAnchor.
 	multipleFileAnchor := builder newClassNamed: #MultipleFileAnchor.
@@ -72,13 +71,14 @@ FamixCppGenerator >> defineClasses [
 	package := builder newClassNamed: #Package.
 	type := builder newClassNamed: #Type.
 
-	block := builder newClassNamed: #Block.
+	"block := builder newClassNamed: #Block.
 	condition := builder newClassNamed: #Condition.
 	conditional  := builder newClassNamed: #Conditional.
 	for := builder newClassNamed: #For.
 	if := builder newClassNamed: #If.
 	switch := builder newClassNamed: #Switch.
-	while := builder newClassNamed: #While.
+	while := builder newClassNamed: #While."
+
 	relativeSourceAnchor := builder newClassNamed: #RelativeSourceAnchor
 ]
 

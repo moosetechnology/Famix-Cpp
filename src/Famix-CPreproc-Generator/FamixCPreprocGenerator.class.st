@@ -8,7 +8,8 @@ Class {
 		'header',
 		'compilUnit',
 		'include',
-		'preprocStatement'
+		'preprocStatement',
+		'folder'
 	],
 	#classInstVars : [
 		'builder',
@@ -46,6 +47,7 @@ FamixCPreprocGenerator >> defineClasses [
 	cFile := builder newClassNamed: #CFile.
 	header := builder newClassNamed: #Header.
 	compilUnit := builder newClassNamed: #CompilUnit.
+	folder := builder newClassNamed: #Folder.
 	
 	preprocStatement := builder newClassNamed: #PreprocStatement.
 	preprocIfdef := builder newClassNamed: #PreprocIfdef.
@@ -60,6 +62,7 @@ FamixCPreprocGenerator >> defineHierarchy [
 	super defineHierarchy.
     
 	cFile --|> #TNamedEntity.
+	folder --|> cFile.
 
 	header --|> cFile.
    compilUnit --|> cFile.
@@ -70,6 +73,12 @@ FamixCPreprocGenerator >> defineHierarchy [
 	preprocDefine --|> #TNamedEntity.
 
    include --|> #TAssociation.
+]
+
+{ #category : #definition }
+FamixCPreprocGenerator >> defineProperties [
+
+	include property: #isLocal type: #Boolean
 ]
 
 { #category : #definition }
@@ -88,5 +97,10 @@ FamixCPreprocGenerator >> defineRelations [
 		*-
 	((cFile property: #includes)
 			comment: 'All inclusions made by this C-File').
+
+	((cFile property: #parentFolder)
+		container)
+		*-
+	(folder property: #files).
 
 ]

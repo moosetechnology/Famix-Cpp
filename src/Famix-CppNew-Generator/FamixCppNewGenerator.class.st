@@ -2,12 +2,13 @@ Class {
 	#name : #FamixCppNewGenerator,
 	#superclass : #FamixMetamodelGenerator,
 	#instVars : [
-		'implicitVar',
 		'type',
 		'class',
 		'method',
 		'namespace',
-		'inheritance'
+		'inheritance',
+		'containerEntity',
+		'implicitVariable'
 	],
 	#category : #'Famix-CppNew-Generator'
 }
@@ -30,17 +31,17 @@ FamixCppNewGenerator class >> submetamodels [
 { #category : #definition }
 FamixCppNewGenerator >> defineClasses [
 	super defineClasses.
-	
-	type := self remoteEntity: #Type withPrefix: #C.
+
 	class := builder newClassNamed: #Class.
 
-	method := builder newClassNamed: #Method.
+	containerEntity := self remoteEntity: #ContainerEntity withPrefix: #C.
 
+	implicitVariable := builder newClassNamed: #ImplicitVariable.
+	inheritance := builder newClassNamed: #Inheritance.
+	method := builder newClassNamed: #Method.
 	namespace := builder newClassNamed: #Namespace.
 
-	implicitVar := builder newClassNamed: #ImplicitVar.
-
-	inheritance := builder newClassNamed: #Inheritance.
+	type := self remoteEntity: #Type withPrefix: #C.
 
 ]
 
@@ -51,11 +52,13 @@ FamixCppNewGenerator >> defineHierarchy [
 	class --|> type.
    class --|> #TClass.
 
-   method --|> #TMethod.
-
-   implicitVar --|> #TImplicitVariable.
+   implicitVariable --|> #TImplicitVariable.
 
    inheritance --|> #TInheritance.
 
+   method --|> containerEntity.
+   method --|> #TMethod.
+
+   namespace --|> containerEntity.
 	namespace --|> #TNamespace.
 ]

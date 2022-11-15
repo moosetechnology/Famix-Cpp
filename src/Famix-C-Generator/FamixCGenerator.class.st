@@ -4,9 +4,6 @@ Class {
 	#instVars : [
 		'primitiveType',
 		'unknownBehaviour',
-		'localVar',
-		'globalVar',
-		'derefInvocation',
 		'behaviouralReference',
 		'type',
 		'struct',
@@ -19,7 +16,11 @@ Class {
 		'invocation',
 		'aliasType',
 		'parameter',
-		'enumValue'
+		'enumValue',
+		'containerEntity',
+		'globalVariable',
+		'localVariable',
+		'dereferencedInvocation'
 	],
 	#category : #'Famix-C-Generator'
 }
@@ -42,29 +43,26 @@ FamixCGenerator class >> submetamodels [
 { #category : #definition }
 FamixCGenerator >> defineClasses [
 	super defineClasses.
-	
-	type := builder newClassNamed: #Type.
-	primitiveType := builder newClassNamed: #PrimitiveType.
-	struct := builder newClassNamed: #Struct.
-	enum := builder newClassNamed: #Enum.
-	union := builder newClassNamed: #Union.
-	aliasType := builder newClassNamed: #AliasType.
 
-	behaviouralReference := builder newClassNamed: #BehaviouralReference.
-
-	function := builder newClassNamed: #Function.
-	unknownBehaviour := builder newClassNamed: #UnknownBehaviour.
-
-	attribute := builder newClassNamed: #Attribute.
-	localVar := builder newClassNamed: #LocalVar.
-	globalVar := builder newClassNamed: #GlobalVar.
-	parameter := builder newClassNamed: #Parameter.
-	enumValue := builder newClassNamed: #EnumValue.
-
-	reference := builder newClassNamed: #Reference.
 	access := builder newClassNamed: #Access.
+	aliasType := builder newClassNamed: #AliasType.
+	attribute := builder newClassNamed: #Attribute.
+	behaviouralReference := builder newClassNamed: #BehaviouralReference.
+	containerEntity := builder newClassNamed: #ContainerEntity.
+	dereferencedInvocation := builder newClassNamed: #DereferencedInvocation.
+	enum := builder newClassNamed: #Enum.
+	enumValue := builder newClassNamed: #EnumValue.
+	function := builder newClassNamed: #Function.
+	globalVariable := builder newClassNamed: #GlobalVariable.
 	invocation := builder newClassNamed: #Invocation.
-	derefInvocation := builder newClassNamed: #DerefInvocation.
+	localVariable := builder newClassNamed: #LocalVariable.
+	parameter := builder newClassNamed: #Parameter.
+	primitiveType := builder newClassNamed: #PrimitiveType.
+	reference := builder newClassNamed: #Reference.
+	struct := builder newClassNamed: #Struct.
+	type := builder newClassNamed: #Type.
+	union := builder newClassNamed: #Union.
+	unknownBehaviour := builder newClassNamed: #UnknownBehaviour.
 
 ]
 
@@ -81,7 +79,7 @@ FamixCGenerator >> defineHierarchy [
  
    "behaviouralReference --|> association."
 
-   derefInvocation --|> invocation.
+   dereferencedInvocation --|> invocation.
 
  	enum --|> type.
 	enum --|> #TEnum.
@@ -91,15 +89,16 @@ FamixCGenerator >> defineHierarchy [
 	enumValue --|> #TWithComments.
 	enumValue --|> #TEnumValue.
 
+	function --|> containerEntity.
    function --|> #TFunction.
 
-   globalVar --|> #TGlobalVariable.
+   globalVariable --|> #TGlobalVariable.
 
    invocation --|> #TInvocation.
 
-	localVar --|> #TLocalVariable.
+	localVariable --|> #TLocalVariable.
 
-   parameter --|> #TStructuralEntity.
+   parameter --|> #TParameter.
 
    primitiveType --|> type.
 
@@ -109,6 +108,7 @@ FamixCGenerator >> defineHierarchy [
 	struct --|> #TWithAttributes.
 	struct --|> #TWithComments.
 
+	type --|> containerEntity.
 	type --|> #TType.
 	type --|> #TWithTypeAliases.
 
