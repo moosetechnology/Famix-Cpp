@@ -1,6 +1,6 @@
 Class {
 	#name : #FamixCppInheritance,
-	#superclass : #FamixCppAssociation,
+	#superclass : #FamixCAssociation,
 	#traits : 'FamixTInheritance',
 	#classTraits : 'FamixTInheritance classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : #meta }
 FamixCppInheritance class >> annotation [
 
-	<FMClass: #Inheritance super: #FamixCppAssociation>
+	<FMClass: #Inheritance super: #FamixCAssociation>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^self

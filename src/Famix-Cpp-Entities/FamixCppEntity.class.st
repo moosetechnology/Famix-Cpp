@@ -21,21 +21,7 @@ FamixCppEntity class >> metamodel [
 ]
 
 { #category : #testing }
-FamixCppEntity >> isAccess [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
 FamixCppEntity >> isAssociation [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCppEntity >> isAttribute [
 
 	<generated>
 	^ false
@@ -49,13 +35,6 @@ FamixCppEntity >> isBehavioural [
 ]
 
 { #category : #testing }
-FamixCppEntity >> isCPPSBlock [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
 FamixCppEntity >> isClass [
 
 	<generated>
@@ -63,7 +42,7 @@ FamixCppEntity >> isClass [
 ]
 
 { #category : #testing }
-FamixCppEntity >> isFunction [
+FamixCppEntity >> isImplicitVariable [
 
 	<generated>
 	^ false
@@ -71,13 +50,6 @@ FamixCppEntity >> isFunction [
 
 { #category : #testing }
 FamixCppEntity >> isInheritance [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCppEntity >> isInvocation [
 
 	<generated>
 	^ false
@@ -92,13 +64,6 @@ FamixCppEntity >> isMethod [
 
 { #category : #testing }
 FamixCppEntity >> isNamespace [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCppEntity >> isPackage [
 
 	<generated>
 	^ false
