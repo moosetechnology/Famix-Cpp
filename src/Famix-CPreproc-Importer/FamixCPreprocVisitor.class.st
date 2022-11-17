@@ -13,14 +13,14 @@ FamixCPreprocVisitor >> createFile: aName [
 	| folder filePath |
 	filePath := self pathOfFile: aName.
 	folder := self folderFromPath: filePath parent.
-	^self detectCFile: filePath basename in: folder ofClass: CPreprocHeader
+	^self detectCFile: filePath basename in: folder ofClass: FamixCPreprocHeader
 ]
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> createInclude: aName localTo: folder [
 	| included |
 	included := self createFile: (folder fullName , '/' , aName).
-	CPreprocInclude new
+	FamixCPreprocInclude new
 		mooseModel: self model ;
 		included: included ;
 		includedBy: file.
@@ -52,14 +52,14 @@ FamixCPreprocVisitor >> folderFromPath: aPath [
 
 	name := aPath basename.
 	parent := self folderFromPath: aPath parent.
-	^self detectCFile: name in: parent ofClass: CPreprocFolder
+	^self detectCFile: name in: parent ofClass: FamixCPreprocFolder
 
 ]
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> hardcodedRootFolder: aName [
 	^(self model entityNamed: aName)
-		ifNil:  [ CPreprocFolder new
+		ifNil:  [ FamixCPreprocFolder new
 			name: aName ;
 			mooseModel: self model ;
 			yourself ]

@@ -1,18 +1,18 @@
 Class {
-	#name : #CPreprocModel,
+	#name : #FamixCPreprocModel,
 	#superclass : #MooseModel,
 	#category : #'Famix-CPreproc-Entities-Model'
 }
 
 { #category : #accessing }
-CPreprocModel class >> allSubmetamodelsPackagesNames [
+FamixCPreprocModel class >> allSubmetamodelsPackagesNames [
 	<generated>
 	^ #(#'Moose-Query' #'Famix-Traits')
 ]
 
 { #category : #meta }
-CPreprocModel class >> annotation [
-	<FMClass: #CPreprocModel super: #MooseModel>
+FamixCPreprocModel class >> annotation [
+	<FMClass: #FamixCPreprocModel super: #MooseModel>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
 ]

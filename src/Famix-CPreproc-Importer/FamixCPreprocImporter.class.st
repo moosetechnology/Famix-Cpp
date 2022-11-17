@@ -11,7 +11,7 @@ Class {
 
 { #category : #initialization }
 FamixCPreprocImporter >> initialize [ 
-	model := CPreprocModel new.
+	model := FamixCPreprocModel new.
 	visitor := FamixCPreprocVisitor new importer: self ; yourself.
 	rootFolder := '.' asFileReference.
 ]

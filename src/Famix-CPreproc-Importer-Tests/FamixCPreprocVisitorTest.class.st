@@ -37,9 +37,9 @@ FamixCPreprocVisitorTest >> testCreateFileAbsolute [
 	self assert: model size equals: 3.
 
 	self assert: file name equals: 'file.test'.
-	self assert: file class equals: CPreprocHeader.
+	self assert: file class equals: FamixCPreprocHeader.
 	self assert: file parentFolder name equals: 'dir'.
-	self assert: file parentFolder class equals: CPreprocFolder 
+	self assert: file parentFolder class equals: FamixCPreprocFolder 
 ]
 
 { #category : #test }
@@ -53,18 +53,18 @@ FamixCPreprocVisitorTest >> testCreateFileRelative [
 	self assert: model size equals: 3.
 
 	self assert: file name equals: 'file.test'.
-	self assert: file class equals: CPreprocHeader.
+	self assert: file class equals: FamixCPreprocHeader.
 	self assert: file parentFolder name equals: 'dir'.
-	self assert: file parentFolder class equals: CPreprocFolder 
+	self assert: file parentFolder class equals: FamixCPreprocFolder 
 ]
 
 { #category : #test }
 FamixCPreprocVisitorTest >> testCreateIncludeExistingFile [
 	| includingFile includedFile dir |
-	dir := self newEntity: CPreprocFolder named: '.'.
-	includingFile := self newEntity: CPreprocHeader named: 'test.file'.
+	dir := self newEntity: FamixCPreprocFolder named: '.'.
+	includingFile := self newEntity: FamixCPreprocHeader named: 'test.file'.
 	visitor file: includingFile.
-	includedFile := (self newEntity: CPreprocHeader named: 'included.file') parentFolder: dir ; yourself.
+	includedFile := (self newEntity: FamixCPreprocHeader named: 'included.file') parentFolder: dir ; yourself.
 
 	self assert: includingFile includes isEmpty.
 	self assert: includingFile inclusion isEmpty.
@@ -87,13 +87,13 @@ FamixCPreprocVisitorTest >> testCreateIncludeExistingFile [
 { #category : #test }
 FamixCPreprocVisitorTest >> testCreateIncludeNewFile [
 	| includingFile includedFile |
-	includingFile := self newEntity: CPreprocHeader named: 'test.file'.
+	includingFile := self newEntity: FamixCPreprocHeader named: 'test.file'.
 	visitor file: includingFile.
 
 	self assert: includingFile includes isEmpty.
 	self assert: includingFile inclusion isEmpty.
 	
-	visitor createInclude: './included.file' localTo: (self newEntity: CPreprocFolder named: '.') .
+	visitor createInclude: './included.file' localTo: (self newEntity: FamixCPreprocFolder named: '.') .
 
 	includedFile := model entityNamed: 'included.file'.
 
@@ -111,9 +111,9 @@ FamixCPreprocVisitorTest >> testCreateIncludeNewFile [
 FamixCPreprocVisitorTest >> testCreateInclusionLocalToCurrentFile [
 	| includingFile includedFile dir |
 
-	dir := self newEntity: CPreprocFolder named: '.'.
-	dir := (self newEntity: CPreprocFolder named: 'dir') parentFolder: dir ; yourself.
-	includingFile := (self newEntity: CPreprocHeader named: 'test.file') parentFolder: dir ; yourself.
+	dir := self newEntity: FamixCPreprocFolder named: '.'.
+	dir := (self newEntity: FamixCPreprocFolder named: 'dir') parentFolder: dir ; yourself.
+	includingFile := (self newEntity: FamixCPreprocHeader named: 'test.file') parentFolder: dir ; yourself.
 
 	visitor file: includingFile.
 

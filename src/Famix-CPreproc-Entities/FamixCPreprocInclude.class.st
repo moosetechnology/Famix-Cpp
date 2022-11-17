@@ -1,28 +1,28 @@
 Class {
-	#name : #CPreprocInclude,
-	#superclass : #CPreprocEntity,
+	#name : #FamixCPreprocInclude,
+	#superclass : #FamixCPreprocEntity,
 	#traits : 'FamixTAssociation',
 	#classTraits : 'FamixTAssociation classTrait',
 	#instVars : [
-		'#included => FMOne type: #CPreprocCFile opposite: #inclusion',
-		'#includedBy => FMOne type: #CPreprocCFile opposite: #includes',
-		'#isLocal => FMProperty'
+		'#isLocal => FMProperty',
+		'#included => FMOne type: #FamixCPreprocCFile opposite: #inclusion',
+		'#includedBy => FMOne type: #FamixCPreprocCFile opposite: #includes'
 	],
 	#category : #'Famix-CPreproc-Entities-Entities'
 }
 
 { #category : #meta }
-CPreprocInclude class >> annotation [
+FamixCPreprocInclude class >> annotation [
 
-	<FMClass: #Include super: #CPreprocEntity>
+	<FMClass: #Include super: #FamixCPreprocEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
 	^self
 ]
 
 { #category : #accessing }
-CPreprocInclude >> included [
-	"Relation named: #included type: #CPreprocCFile opposite: #inclusion"
+FamixCPreprocInclude >> included [
+	"Relation named: #included type: #FamixCPreprocCFile opposite: #inclusion"
 
 	<generated>
 	<FMComment: 'C-File included'>
@@ -31,15 +31,15 @@ CPreprocInclude >> included [
 ]
 
 { #category : #accessing }
-CPreprocInclude >> included: anObject [
+FamixCPreprocInclude >> included: anObject [
 
 	<generated>
 	included := anObject
 ]
 
 { #category : #accessing }
-CPreprocInclude >> includedBy [
-	"Relation named: #includedBy type: #CPreprocCFile opposite: #includes"
+FamixCPreprocInclude >> includedBy [
+	"Relation named: #includedBy type: #FamixCPreprocCFile opposite: #includes"
 
 	<generated>
 	<FMComment: 'C-File including the receiver'>
@@ -48,14 +48,14 @@ CPreprocInclude >> includedBy [
 ]
 
 { #category : #accessing }
-CPreprocInclude >> includedBy: anObject [
+FamixCPreprocInclude >> includedBy: anObject [
 
 	<generated>
 	includedBy := anObject
 ]
 
 { #category : #accessing }
-CPreprocInclude >> isLocal [
+FamixCPreprocInclude >> isLocal [
 
 	<FMProperty: #isLocal type: #Boolean>
 	<generated>
@@ -63,7 +63,7 @@ CPreprocInclude >> isLocal [
 ]
 
 { #category : #accessing }
-CPreprocInclude >> isLocal: anObject [
+FamixCPreprocInclude >> isLocal: anObject [
 	<generated>
 	isLocal := anObject
 ]

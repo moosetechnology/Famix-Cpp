@@ -1,11 +1,11 @@
 Class {
-	#name : #CPreprocEntity,
+	#name : #FamixCPreprocEntity,
 	#superclass : #MooseEntity,
 	#category : #'Famix-CPreproc-Entities-Entities'
 }
 
 { #category : #meta }
-CPreprocEntity class >> annotation [
+FamixCPreprocEntity class >> annotation [
 
 	<FMClass: #Entity super: #MooseEntity>
 	<package: #'Famix-CPreproc-Entities'>
@@ -14,14 +14,14 @@ CPreprocEntity class >> annotation [
 ]
 
 { #category : #meta }
-CPreprocEntity class >> metamodel [
+FamixCPreprocEntity class >> metamodel [
 
 	<generated>
-	^ CPreprocModel metamodel
+	^ FamixCPreprocModel metamodel
 ]
 
 { #category : #testing }
-CPreprocEntity >> isAssociation [
+FamixCPreprocEntity >> isAssociation [
 
 	<generated>
 	^ false
