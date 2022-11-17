@@ -12,6 +12,6 @@ The latest stable version as an UML diagram is [available](https://raw.githubuse
 ```Smalltalk
 Metacello new
     baseline: 'FamixCpp';
-    repository: 'github://moosetechnology/Famix-CPP:main';
+    repository: 'github://moosetechnology/Famix-Cpp:main';
     load.
 ```
