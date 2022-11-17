@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # Use Moose 9 that includes our visualization tool
-        smalltalk: [ Moose64-9.0]
+        smalltalk: [ Moose64-10]
     name: $
     steps:
         # checkout the project
