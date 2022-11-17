@@ -2,12 +2,13 @@ Class {
 	#name : #FamixCppNewGenerator,
 	#superclass : #FamixMetamodelGenerator,
 	#instVars : [
-		'implicitVar',
 		'type',
 		'class',
 		'method',
 		'namespace',
-		'inheritance'
+		'inheritance',
+		'containerEntity',
+		'implicitVariable'
 	],
 	#category : #'Famix-CppNew-Generator'
 }

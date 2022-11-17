@@ -68,6 +68,12 @@ FamixCPreprocGenerator >> defineHierarchy [
 ]
 
 { #category : #definition }
+FamixCPreprocGenerator >> defineProperties [
+
+	include property: #isLocal type: #Boolean
+]
+
+{ #category : #definition }
 FamixCPreprocGenerator >> defineRelations [
 
 	((include property: #included)
@@ -83,5 +89,10 @@ FamixCPreprocGenerator >> defineRelations [
 		*-
 	((cFile property: #includes)
 			comment: 'All inclusions made by this C-File').
+
+	((cFile property: #parentFolder)
+		container)
+		*-
+	(folder property: #files).
 
 ]
