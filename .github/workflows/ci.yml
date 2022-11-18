@@ -18,35 +18,34 @@ jobs:
         smalltalk: [ Moose64-10]
     name: $
     steps:
-        # checkout the project
       - uses: actions/checkout@v2
-      
-        # Prepare the CI - download the correct VM
       - uses: hpi-swa/setup-smalltalkCI@v1
         with:
           smalltalk-image: ${{ matrix.smalltalk }}
-      
-        # Use the CI
       - run: smalltalkci -s ${{ matrix.smalltalk }}
         shell: bash
         timeout-minutes: 15
         
-
       - name: Build meta-model uml image
         #run: |
         #  $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'cppFullModel.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: FamixCppModel andColor: Color white ; withModel: CModel andColor: Color lightBlue ; withModel: CPreprocModel andColor: Color lightGreen ; beWithStub; generatePlantUMLModel)]."
         run: |
           $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'cppFullModel.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: FamixCppModel andColor: Color white; beWithStub; generatePlantUMLModel)]."
-      - name: Generate SVG Diagrams
+      - name: Generate SVG Diagram
         uses: cloudbees/plantuml-github-action@master
         with:
             args: -v -tsvg cppFullModel.puml
+      - name: Generate PNG Diagram
+        uses: cloudbees/plantuml-github-action@master
+        with:
+          args: -v -tpng cppFullModel.puml
 
       - name: Move artifact
         run: |
           mkdir doc-uml
           mv *.svg doc-uml/cppFullModel.svg
-   
+          mv *.png doc-uml/cppFullModel.png
+
       - name: Init new repo in dist folder and commit generated files
         run: |
           cd doc-uml/
@@ -54,7 +53,7 @@ jobs:
           git add -A
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m 'update uml diagram'
+          git commit -m 'update uml diagrams'
       
       # Careful, this can kill your project
       - name: Force push to destination branch
