@@ -46,6 +46,8 @@ FamixCPreprocVisitor >> file: aFile [
 FamixCPreprocVisitor >> folderFromPath: aPath [
 	| name parent |
 	aPath isRoot ifTrue: [ ^self hardcodedRootFolder: '/' ].
+	(aPath basename = '..')
+		ifTrue: [ ^self hardcodedRootFolder: '' ].
 
 	(aPath fullName = self rootFolder fullName)
 		ifTrue: [ ^self hardcodedRootFolder: '.' ].
@@ -80,7 +82,7 @@ FamixCPreprocVisitor >> model [
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> pathOfFile: aName [
 	| path |
-	path := aName asPath.
+	path := (aName) asPath.
 	^path isRelative
 	ifTrue: [ path relativeToPath: self rootFolder ]
 	ifFalse: [ path ]

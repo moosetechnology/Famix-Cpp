@@ -2,13 +2,14 @@ Class {
 	#name : #FamixCPreprocGenerator,
 	#superclass : #FamixMetamodelGenerator,
 	#instVars : [
+		'preprocIfdef',
+		'preprocDefine',
 		'cFile',
 		'header',
 		'compilUnit',
 		'include',
-		'preprocStmt',
-		'ifdef',
-		'define'
+		'preprocStatement',
+		'folder'
 	],
 	#classInstVars : [
 		'builder',
@@ -41,10 +42,11 @@ FamixCPreprocGenerator >> defineClasses [
 	cFile := builder newClassNamed: #CFile.
 	header := builder newClassNamed: #Header.
 	compilUnit := builder newClassNamed: #CompilUnit.
+	folder := builder newClassNamed: #Folder.
 	
-	preprocStmt := builder newClassNamed: #PreprocStmt.
-	ifdef := builder newClassNamed: #Ifdef.
-	define := builder newClassNamed: #Define.
+	preprocStatement := builder newClassNamed: #PreprocStatement.
+	preprocIfdef := builder newClassNamed: #PreprocIfdef.
+	preprocDefine := builder newClassNamed: #PreprocDefine.
 
 	include := builder newClassNamed: #Include.
 
@@ -54,15 +56,17 @@ FamixCPreprocGenerator >> defineClasses [
 FamixCPreprocGenerator >> defineHierarchy [
 	super defineHierarchy.
     
+   cFile --|> #TEntityMetaLevelDependency.
 	cFile --|> #TNamedEntity.
+	folder --|> cFile.
 
 	header --|> cFile.
    compilUnit --|> cFile.
 
-   ifdef --|> preprocStmt.
+   preprocIfdef --|> preprocStatement.
 
-   define --|> preprocStmt.
-	define --|> #TNamedEntity.
+   preprocDefine --|> preprocStatement.
+	preprocDefine --|> #TNamedEntity.
 
    include --|> #TAssociation.
 ]

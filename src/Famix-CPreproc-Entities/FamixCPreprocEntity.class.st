@@ -20,6 +20,11 @@ FamixCPreprocEntity class >> metamodel [
 	^ FamixCPreprocModel metamodel
 ]
 
+{ #category : #'as yet unclassified' }
+FamixCPreprocEntity >> clearReplicationCache [
+	
+]
+
 { #category : #testing }
 FamixCPreprocEntity >> isAssociation [
 
