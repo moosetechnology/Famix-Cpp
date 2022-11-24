@@ -11,8 +11,9 @@ Class {
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> createFile: aName [
 	| folder filePath |
+
 	filePath := self pathOfFile: aName.
-	folder := self folderFromPath: filePath parent.
+	folder := self famixFolderFromPath: filePath parent canonicalize.
 	^self detectCFile: filePath basename in: folder ofClass: FamixCPreprocHeader
 ]
 
@@ -28,13 +29,33 @@ FamixCPreprocVisitor >> createInclude: aName localTo: folder [
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> detectCFile: aName in: folder ofClass: concreteClass [
-	^folder files
+   ^folder files
 		detect: [ :f | f name = aName ]
-		ifNone:  [concreteClass new
+		ifFound: [ :element | element ]
+		ifNone:  [
+			concreteClass new
 			name: aName ;
 			parentFolder: folder ;
 			mooseModel: self model ;
-			yourself ]
+			yourself ].
+]
+
+{ #category : #'private-entity-creation' }
+FamixCPreprocVisitor >> famixFolderFromPath: aFileReference [
+	| name parent |
+
+	"aFileReference isRoot ifTrue: [ ^self hardcodedFolder: '/' ]."
+	"(aFileReference basename = '..')
+		ifTrue: [ ^self hardcodedFolder: '' ]."
+
+	(aFileReference fullName = self rootFolder fullName)
+		ifTrue: [ ^self hardcodedFolder: '.' ].
+
+	name := aFileReference basename.
+
+	parent := self famixFolderFromPath: aFileReference parent.
+	^self detectCFile: name in: parent ofClass: FamixCPreprocFolder
+
 ]
 
 { #category : #'accessing - testing' }
@@ -43,23 +64,7 @@ FamixCPreprocVisitor >> file: aFile [
 ]
 
 { #category : #'private-entity-creation' }
-FamixCPreprocVisitor >> folderFromPath: aPath [
-	| name parent |
-	aPath isRoot ifTrue: [ ^self hardcodedRootFolder: '/' ].
-	(aPath basename = '..')
-		ifTrue: [ ^self hardcodedRootFolder: '' ].
-
-	(aPath fullName = self rootFolder fullName)
-		ifTrue: [ ^self hardcodedRootFolder: '.' ].
-
-	name := aPath basename.
-	parent := self folderFromPath: aPath parent.
-	^self detectCFile: name in: parent ofClass: FamixCPreprocFolder
-
-]
-
-{ #category : #'private-entity-creation' }
-FamixCPreprocVisitor >> hardcodedRootFolder: aName [
+FamixCPreprocVisitor >> hardcodedFolder: aName [
 	^(self model entityNamed: aName)
 		ifNil:  [ FamixCPreprocFolder new
 			name: aName ;
@@ -81,11 +86,9 @@ FamixCPreprocVisitor >> model [
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> pathOfFile: aName [
-	| path |
-	path := (aName) asPath.
-	^path isRelative
-	ifTrue: [ path relativeToPath: self rootFolder ]
-	ifFalse: [ path ]
+	^(aName beginsWith: '/')
+	ifFalse: [ self rootFolder / aName ]
+	ifTrue: [ aName asFileReference ]
 
 ]
 

@@ -131,7 +131,7 @@ FamixCPreprocVisitorTest >> testFolderFromPathAbsolute [
 	| folder |
 	self assert: importer model isEmpty.
 	
-	folder := visitor folderFromPath: '/dir' asPath.
+	folder := visitor famixFolderFromPath: '/dir' asPath.
 	
 	self assert: importer model size equals: 2.
 	self assert: folder name equals: 'dir'.
@@ -144,7 +144,7 @@ FamixCPreprocVisitorTest >> testFolderFromPathRelative [
 	| folder |
 	self assert: importer model isEmpty.
 	
-	folder := visitor folderFromPath: './dir' asPath.
+	folder := visitor famixFolderFromPath: './dir' asPath.
 	
 	self assert: importer model size equals: 2.
 	self assert: folder name equals: 'dir'.
