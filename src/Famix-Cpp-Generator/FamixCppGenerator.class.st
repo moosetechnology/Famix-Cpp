@@ -80,4 +80,5 @@ FamixCppGenerator >> defineHierarchy [
 	inheritance --|> #TInheritance.
 	
 	ooInvocation --|> invocation.
+	ooInvocation --|> #TInvocation.
 ]

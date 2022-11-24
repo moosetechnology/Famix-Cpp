@@ -137,11 +137,11 @@ FamixCGenerator >> defineHierarchy [
 	access --|> association.
    access --|> #TAccess.
    invocation --|> association.
-   invocation --|> #TInvocation.
    reference --|> association.
    reference --|> #TReference.
    behaviouralReference --|> association.
    derefInvocation --|> invocation.
+   derefInvocation --|> #TDereferencedInvocation.
 
    "SourcedEntity: Comment"
    comment --|> sourcedEntity.

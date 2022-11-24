@@ -1,6 +1,8 @@
 Class {
 	#name : #FamixCppOOInvocation,
 	#superclass : #FamixCInvocation,
+	#traits : 'FamixTInvocation',
+	#classTraits : 'FamixTInvocation classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
 }
 

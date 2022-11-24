@@ -56,6 +56,13 @@ FamixCppEntity >> isInheritance [
 ]
 
 { #category : #testing }
+FamixCppEntity >> isInvocation [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
 FamixCppEntity >> isMethod [
 
 	<generated>
