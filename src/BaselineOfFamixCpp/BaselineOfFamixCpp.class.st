@@ -13,7 +13,6 @@ BaselineOfFamixCpp >> baseline: spec [
 	<baseline>
 	spec for: #common do: [ 
 		self petitParser2: spec.
-		self xmlParser: spec.
 
 		spec
 			package: 'Famix-CPreproc-Generator';
@@ -44,13 +43,4 @@ BaselineOfFamixCpp >> petitParser2: spec [
 	spec
 		baseline: 'PetitParser2Core'
 		with: [ spec repository: 'github://kursjan/petitparser2' ]
-]
-
-{ #category : #dependencies }
-BaselineOfFamixCpp >> xmlParser: spec [
-
-	spec
-		baseline: 'XMLParser'
-		with: [ 
-		spec repository: 'github://pharo-contributions/XML-XMLParser/src' ]
 ]
