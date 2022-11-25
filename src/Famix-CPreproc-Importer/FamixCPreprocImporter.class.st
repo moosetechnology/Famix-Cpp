@@ -40,9 +40,9 @@ FamixCPreprocImporter >> rootFolder: anObject [
 
 { #category : #running }
 FamixCPreprocImporter >> runOn: anXMLFilename [
-	(anXMLFilename asFileReference readStreamDo: [ :stream |
-		XMLDOMParser parse: stream
-	]) acceptNodeVisitor: visitor.
+
+	(anXMLFilename asFileReference readStreamDo: [ :stream | 
+		 XMLDOMParser parse: stream ]) acceptNodeVisitor: visitor.
 	model install
 ]
 
