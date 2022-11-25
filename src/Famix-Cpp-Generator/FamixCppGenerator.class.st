@@ -71,7 +71,8 @@ FamixCppGenerator >> defineHierarchy [
 	method --|> #TMethod.
 	
 	namespace --|> containerEntity.
-	method --|> #TNamespace.
+	method --|> #TNamespace. 
+	method --|> #THasKind.
 	
 	implicitVar --|> namedEntity.
 	implicitVar --|> #TImplicitVariable.
