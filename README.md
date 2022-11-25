@@ -14,5 +14,5 @@ Latest stable version as an UML diagram:
 Metacello new
     baseline: 'FamixCpp';
     repository: 'github://moosetechnology/Famix-Cpp:main';
-    load.
+    load
 ```
