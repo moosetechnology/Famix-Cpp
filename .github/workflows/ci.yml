@@ -30,10 +30,8 @@ jobs:
         timeout-minutes: 15
         
       - name: Build meta-model uml image
-        #run: |
-        #  $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'cppFullModel.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: FamixCppModel andColor: Color white ; withModel: CModel andColor: Color lightBlue ; withModel: CPreprocModel andColor: Color lightGreen ; beWithStub; generatePlantUMLModel)]."
         run: |
-          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'cppFullModel.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: FamixCppModel andColor: Color white; beWithStub; generatePlantUMLModel)]."
+          $SMALLTALK_CI_VM  $SMALLTALK_CI_IMAGE eval "'cppFullModel.puml' asFileReference writeStreamDo: [ :stream | stream nextPutAll:  (FamixMMUMLDocumentor new withModel: FamixCppModel andColor: Color white ; withModel: FamixCModel andColor: Color lightBlue ; withModel: FamixCPreprocModel andColor: Color lightGreen ; beWithStub; generatePlantUMLModel)]."
       - name: Generate SVG Diagram
         uses: cloudbees/plantuml-github-action@master
         with:
