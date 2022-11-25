@@ -60,9 +60,10 @@ FamixCppCSVImporterTest >> testMissingDeclarationFile [
 
 { #category : #tests }
 FamixCppCSVImporterTest >> testOnlyDeclarations [
+
+	<expectedFailure>
 	FamixCppCSVImporter
 		runOn: nil
 		withRefFile: self onlyDeclarationFile
 		withModel: model
-	
 ]
