@@ -6,7 +6,7 @@ Famix C++ meta-model. It is divided into three meta-models included one into the
 - C++ meta-model
 
 Latest stable version as an UML diagram:
-![Cpp meta-model png](https://raw.githubusercontent.com/moosetechnology/Famix-Cpp/v1/doc/cppFullModel.svg)
+![Cpp meta-model](https://raw.githubusercontent.com/moosetechnology/Famix-Cpp/v1/doc/cppFullModel.svg)
 
 ### Stable version
 
