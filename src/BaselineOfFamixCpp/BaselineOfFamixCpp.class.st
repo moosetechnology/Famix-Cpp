@@ -32,7 +32,7 @@ BaselineOfFamixCpp >> baseline: spec [
 			package: 'Famix-Cpp-Parser-Tests'
 			with: [ spec requires: #( 'Famix-Cpp-Parser' ) ];
 			package: 'Famix-CPreproc-Importer'
-			with: [ spec requires: #( 'Famix-CPreproc-Entities' 'XMLParser' ) ];
+			with: [ spec requires: #( 'Famix-CPreproc-Entities' ) ];
 			package: 'Famix-CPreproc-Importer-Tests'
 			with: [ spec requires: #( 'Famix-CPreproc-Importer' ) ] ]
 ]
