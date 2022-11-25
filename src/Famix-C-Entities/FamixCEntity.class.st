@@ -1,97 +1,104 @@
 Class {
-	#name : #FamixCppEntity,
+	#name : #FamixCEntity,
 	#superclass : #MooseEntity,
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : #'Famix-C-Entities-Entities'
 }
 
 { #category : #meta }
-FamixCppEntity class >> annotation [
+FamixCEntity class >> annotation [
 
 	<FMClass: #Entity super: #MooseEntity>
-	<package: #'Famix-Cpp-Entities'>
+	<package: #'Famix-C-Entities'>
 	<generated>
 	^self
 ]
 
 { #category : #meta }
-FamixCppEntity class >> metamodel [
+FamixCEntity class >> metamodel [
 
 	<generated>
-	^ FamixCppModel metamodel
+	^ FamixCModel metamodel
 ]
 
 { #category : #testing }
-FamixCppEntity >> isAssociation [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCppEntity >> isBehavioural [
+FamixCEntity >> isAccess [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isClass [
+FamixCEntity >> isAssociation [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isImplicitVariable [
+FamixCEntity >> isAttribute [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isGlobalVariable [
+FamixCEntity >> isBehavioural [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isInheritance [
+FamixCEntity >> isFunction [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isInvocation [
+FamixCEntity >> isGlobalVariable [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isMethod [
+FamixCEntity >> isInvocation [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isNamespace [
+FamixCEntity >> isLocalVariable [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isStructuralEntity [
+FamixCEntity >> isPrimitiveType [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isType [
+FamixCEntity >> isReference [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
+FamixCEntity >> isStructuralEntity [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
+FamixCEntity >> isType [
 
 	<generated>
 	^ false

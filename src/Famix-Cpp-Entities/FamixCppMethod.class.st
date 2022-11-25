@@ -1,56 +1,42 @@
 Class {
 	#name : #FamixCppMethod,
-	#superclass : #FamixCppBehaviouralEntity,
-	#traits : '(FamixTHasModifiers + FamixTMethod + FamixTHasKind + FamixTWithTypes withPrecedenceOf: FamixTHasModifiers)',
-	#classTraits : '(FamixTHasModifiers classTrait + FamixTMethod classTrait + FamixTHasKind classTrait + FamixTWithTypes classTrait withPrecedenceOf: FamixTHasModifiers classTrait)',
+	#superclass : #FamixCBehaviouralEntity,
+	#traits : 'FamixTHasKind + FamixTMethod + FamixTNamespace',
+	#classTraits : 'FamixTHasKind classTrait + FamixTMethod classTrait + FamixTNamespace classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
 }
 
 { #category : #meta }
 FamixCppMethod class >> annotation [
 
-	<FMClass: #Method super: #FamixCppBehaviouralEntity>
+	<FMClass: #Method super: #FamixCBehaviouralEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^self
 ]
 
-{ #category : #accessing }
-FamixCppMethod >> clientTypes [
-	<FMProperty: #clientTypes type: #FamixTType>
-	<multivalued>
-	<derived>
-	<FMComment: 'All types that depend on the receiver'>
-	^ (self queryAllIncoming atScope: FamixTType) withoutSelfLoops
-
-]
-
 { #category : #testing }
 FamixCppMethod >> isConstructor [
-	^ #constructor = self kind or: [ self parentType ifNotNil: [ :type | self name = type name ] ]
-]
 
-{ #category : #testing }
-FamixCppMethod >> isDead [
-	<FMProperty: #isDead type: #Boolean>
+	<FMProperty: #isConstructor type: #Boolean>
 	<derived>
-	<FMComment: 'Is the entity dead (not invoked in the system)'>
-	(self isConstructor or: [ self isDestructor ]) ifTrue: [ ^ false ].
-
-	^ self isContainerEntity
-		ifTrue: [ self lookUpPropertyNamed: #isDead computedAs: [ self hasIncoming not or: [ self queryAllIncoming withoutSelfLoops isEmpty ] ] ]
-		ifFalse: [ false ]
+	<FMComment: 'True if the method is a constructor of the class'>
+	^ #constructor = self kind or: [ 
+		  (self parentType
+			   ifNotNil: [ :type | type name = self name ]
+			   ifNil: [ false ]) or: [ 
+			  self cacheAt: #isConstructor ifAbsent: [ false ] ] ]
 ]
 
 { #category : #testing }
 FamixCppMethod >> isDestructor [
-	^ #destructor = self kind or: [ self parentType ifNotNil: [ :type | self name = ('~' , type name) ] ]
-]
 
-{ #category : #accessing }
-FamixCppMethod >> isDestructor: aBoolean [
-	aBoolean
-		ifTrue: [ self kind: #destructor ]
-		ifFalse: [ self isDestructor
-				ifTrue: [ self kind: nil ] ]
+	<FMProperty: #isDestructor type: #Boolean>
+	<derived>
+	<FMComment: 'True if the method is a destructor of the class'>
+	^ #destructor = self kind or: [ 
+		  (self parentType
+			   ifNotNil: [ :type | '~' , type name = self name ]
+			   ifNil: [ false ]) or: [ 
+			  self cacheAt: #isDestructor ifAbsent: [ false ] ] ]
 ]
