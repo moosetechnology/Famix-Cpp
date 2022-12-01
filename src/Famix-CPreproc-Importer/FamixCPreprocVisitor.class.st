@@ -20,11 +20,21 @@ FamixCPreprocVisitor >> createFile: aName [
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> createInclude: aName localTo: folder [
 	| included |
-	included := self createFile: (folder fullName , '/' , aName).
-	FamixCPreprocInclude new
-		mooseModel: self model ;
-		included: included ;
-		includedBy: file.
+	^(aName beginsWith: './') 
+		ifFalse: [ 
+			included := self createFile: (folder fullName , '/' , aName).
+			FamixCPreprocInclude new
+				mooseModel: self model ;
+				included: included ;
+				includedBy: file.
+		]
+		ifTrue: [ 
+			included := self createFile: aName.
+			FamixCPreprocInclude new
+				mooseModel: self model ;
+				included: included ;
+				includedBy: file.
+		].
 ]
 
 { #category : #'private-entity-creation' }
@@ -86,7 +96,7 @@ FamixCPreprocVisitor >> model [
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> pathOfFile: aName [
-	^(aName beginsWith: '/')
+	^(aName beginsWith: '/') 
 	ifFalse: [ self rootFolder / aName ]
 	ifTrue: [ aName asFileReference ]
 
