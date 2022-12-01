@@ -4,12 +4,9 @@ Class {
 	#traits : 'FamixTNamedEntity + TEntityMetaLevelDependency',
 	#classTraits : 'FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
 	#instVars : [
-		'#includes => FMMany type: #FamixCPreprocInclude opposite: #includedBy',
 		'#inclusion => FMMany type: #FamixCPreprocInclude opposite: #included',
+		'#includes => FMMany type: #FamixCPreprocInclude opposite: #includedBy',
 		'#parentFolder => FMOne type: #FamixCPreprocFolder opposite: #files'
-	],
-	#classInstVars : [
-		'#parentFolder'
 	],
 	#category : #'Famix-CPreproc-Entities-Entities'
 }

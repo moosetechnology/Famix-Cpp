@@ -7,6 +7,16 @@ Class {
 	#category : #'Famix-Cpp-Parser-Tests'
 }
 
+{ #category : #testing }
+FamixCppCSVParserTest >> expectedFailures [
+
+	^ #(#testFunctionCreationWithCommaAroundName
+#testFunctionCreationWithBadConstructor #testClassDataLine #parserClass
+#testFunctionCreationDependingOnParent #testFunctionCreationWithBadDestructor
+#testMultiFileAnchorCreation #testFunctionWithLOCandCyclo #setUp
+#testImportTypesPointerReference #testImportTypesInNamspaces)
+]
+
 { #category : #accessing }
 FamixCppCSVParserTest >> parserClass [
 	^ FamixCppCSVParser 

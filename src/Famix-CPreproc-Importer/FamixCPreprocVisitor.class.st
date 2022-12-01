@@ -52,11 +52,8 @@ FamixCPreprocVisitor >> detectCFile: aName in: folder ofClass: concreteClass [
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> famixFolderFromPath: aFileReference [
+	"A FileReference should start with a dot (.), if it doesn't you will have a loop"
 	| name parent |
-
-	"aFileReference isRoot ifTrue: [ ^self hardcodedFolder: '/' ]."
-	"(aFileReference basename = '..')
-		ifTrue: [ ^self hardcodedFolder: '' ]."
 
 	(aFileReference fullName = self rootFolder fullName)
 		ifTrue: [ ^self hardcodedFolder: '.' ].

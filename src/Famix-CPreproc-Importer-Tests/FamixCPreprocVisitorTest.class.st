@@ -128,15 +128,15 @@ FamixCPreprocVisitorTest >> testCreateInclusionLocalToCurrentFile [
 
 { #category : #test }
 FamixCPreprocVisitorTest >> testFolderFromPathAbsolute [
+
 	| folder |
 	self assert: importer model isEmpty.
-	
-	folder := visitor famixFolderFromPath: '/dir' asPath.
+	folder := visitor famixFolderFromPath: './dir' asPath.
 	
 	self assert: importer model size equals: 2.
 	self assert: folder name equals: 'dir'.
-	self assert: folder parentFolder name equals: '/'.
-	self assert: folder parentFolder parentFolder isNil.
+	self assert: folder parentFolder name equals: '.'.
+	self assert: folder parentFolder parentFolder isNil
 ]
 
 { #category : #test }
@@ -157,7 +157,7 @@ FamixCPreprocVisitorTest >> testPathOfFileAbsolute [
 
 	self assert: (visitor pathOfFile: '/dir/file.test') basename equals: 'file.test'.
 	self assert: (visitor pathOfFile: '/dir/file.test') parent basename equals: 'dir'.
-	self assert: (visitor pathOfFile: '/dir/file.test') parent parent isEmpty
+	self assert: (visitor pathOfFile: '/dir/file.test') parent parent isRoot
 ]
 
 { #category : #test }

@@ -11,9 +11,9 @@ Class {
 FamixCppMethodTest >> testIsConstructor [
 	| meth1 meth2 |
 	meth1 := FamixCppMethod named: 'TestConstructor'.
-	meth1 parentType: (FamixCppType named: 'TestConstructor').
+	meth1 parentType: (FamixCppClass named: 'TestConstructor').
 	meth2 := FamixCppMethod named: 'testNotConstructor'.
-	meth2 parentType: (FamixCppType named: 'aClass').
+	meth2 parentType: (FamixCppClass named: 'aClass').
 
 	self assert: meth1 isConstructor.
 	self deny: meth2 isConstructor
@@ -21,11 +21,12 @@ FamixCppMethodTest >> testIsConstructor [
 
 { #category : #tests }
 FamixCppMethodTest >> testIsDestructor [
+
 	| meth1 meth2 |
 	meth1 := FamixCppMethod named: '~TestDestructor'.
-	meth1 parentType: (FamixCppType named: 'TestDestructor').
+	meth1 parentType: (FamixCppClass named: 'TestDestructor').
 	meth2 := FamixCppMethod named: 'testNotDestructor'.
-	meth2 parentType: (FamixCppType named: 'aClass').
+	meth2 parentType: (FamixCppClass named: 'aClass').
 
 	self assert: meth1 isDestructor.
 	self deny: meth2 isDestructor
