@@ -42,14 +42,14 @@ FamixCppEntity >> isClass [
 ]
 
 { #category : #testing }
-FamixCppEntity >> isImplicitVariable [
+FamixCppEntity >> isGlobalVariable [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCppEntity >> isGlobalVariable [
+FamixCppEntity >> isImplicitVariable [
 
 	<generated>
 	^ false

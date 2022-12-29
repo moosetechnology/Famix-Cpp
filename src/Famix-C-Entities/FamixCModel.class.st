@@ -16,3 +16,9 @@ FamixCModel class >> annotation [
 	<package: #'Famix-C-Entities'>
 	<generated>
 ]
+
+{ #category : #testing }
+FamixCModel class >> canBeImportedFromFile [
+	<generated>
+	^true
+]
