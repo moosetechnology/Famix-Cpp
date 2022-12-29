@@ -16,3 +16,9 @@ FamixCppModel class >> annotation [
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
 ]
+
+{ #category : #testing }
+FamixCppModel class >> canBeImportedFromFile [
+	<generated>
+	^true
+]
