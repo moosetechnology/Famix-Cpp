@@ -1,0 +1,47 @@
+Class {
+	#name : #FamixCPreprocDiskEntity,
+	#superclass : #FamixCPreprocEntity,
+	#traits : 'FamixTNamedEntity',
+	#classTraits : 'FamixTNamedEntity classTrait',
+	#instVars : [
+		'#parentFolder => FMOne type: #FamixCPreprocFolder opposite: #children'
+	],
+	#category : #'Famix-CPreproc-Entities-Entities'
+}
+
+{ #category : #meta }
+FamixCPreprocDiskEntity class >> annotation [
+
+	<FMClass: #DiskEntity super: #FamixCPreprocEntity>
+	<package: #'Famix-CPreproc-Entities'>
+	<generated>
+	^self
+]
+
+{ #category : #accessing }
+FamixCPreprocDiskEntity >> fullName [
+    ^(parentFolder ifNotNil: [ parentFolder fullName , '/' ] ifNil: [ '' ]) , name
+]
+
+{ #category : #accessing }
+FamixCPreprocDiskEntity >> parentFolder [
+	"Relation named: #parentFolder type: #FamixCPreprocFolder opposite: #children"
+
+	<generated>
+	<container>
+	^ parentFolder
+]
+
+{ #category : #accessing }
+FamixCPreprocDiskEntity >> parentFolder: anObject [
+
+	<generated>
+	parentFolder := anObject
+]
+
+{ #category : #navigation }
+FamixCPreprocDiskEntity >> parentFolderGroup [
+	<generated>
+	<navigation: 'ParentFolder'>
+	^ MooseSpecializedGroup with: self parentFolder
+]

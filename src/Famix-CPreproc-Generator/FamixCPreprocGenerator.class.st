@@ -1,3 +1,6 @@
+"
+Generator for CPreprocessor meta model (note: used in the C meta model)
+"
 Class {
 	#name : #FamixCPreprocGenerator,
 	#superclass : #FamixMetamodelGenerator,
@@ -9,7 +12,8 @@ Class {
 		'compilUnit',
 		'include',
 		'preprocStatement',
-		'folder'
+		'folder',
+		'diskEntity'
 	],
 	#classInstVars : [
 		'builder',
@@ -40,6 +44,7 @@ FamixCPreprocGenerator >> defineClasses [
 	super defineClasses.
 	
 	cFile := builder newClassNamed: #CFile.
+	diskEntity := builder newClassNamed: #DiskEntity.
 	header := builder newClassNamed: #Header.
 	compilUnit := builder newClassNamed: #CompilUnit.
 	folder := builder newClassNamed: #Folder.
@@ -56,9 +61,10 @@ FamixCPreprocGenerator >> defineClasses [
 FamixCPreprocGenerator >> defineHierarchy [
 	super defineHierarchy.
     
+	diskEntity --|> #TNamedEntity. 	
    cFile --|> #TEntityMetaLevelDependency.
-	cFile --|> #TNamedEntity.
-	folder --|> cFile.
+	cFile --|> diskEntity. 
+	folder --|> diskEntity .
 
 	header --|> cFile.
    compilUnit --|> cFile.
@@ -94,9 +100,9 @@ FamixCPreprocGenerator >> defineRelations [
 	((cFile property: #includes)
 			comment: 'All inclusions made by this C-File').
 
-	((cFile property: #parentFolder)
+	((diskEntity property: #parentFolder)
 		container)
 		*-
-	(folder property: #files).
+	(folder property: #children).
 
 ]
