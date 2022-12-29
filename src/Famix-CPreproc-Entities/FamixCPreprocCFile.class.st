@@ -1,12 +1,14 @@
+"
+Generator for C language meta model (does not include C++ entities which are in an other meta model)
+"
 Class {
 	#name : #FamixCPreprocCFile,
-	#superclass : #FamixCPreprocEntity,
-	#traits : 'FamixTNamedEntity + TEntityMetaLevelDependency',
-	#classTraits : 'FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
+	#superclass : #FamixCPreprocDiskEntity,
+	#traits : 'TEntityMetaLevelDependency',
+	#classTraits : 'TEntityMetaLevelDependency classTrait',
 	#instVars : [
 		'#inclusion => FMMany type: #FamixCPreprocInclude opposite: #included',
-		'#includes => FMMany type: #FamixCPreprocInclude opposite: #includedBy',
-		'#parentFolder => FMOne type: #FamixCPreprocFolder opposite: #files'
+		'#includes => FMMany type: #FamixCPreprocInclude opposite: #includedBy'
 	],
 	#category : #'Famix-CPreproc-Entities-Entities'
 }
@@ -14,7 +16,7 @@ Class {
 { #category : #meta }
 FamixCPreprocCFile class >> annotation [
 
-	<FMClass: #CFile super: #FamixCPreprocEntity>
+	<FMClass: #CFile super: #FamixCPreprocDiskEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
 	^self
@@ -30,11 +32,6 @@ FamixCPreprocCFile >> addInclude: anObject [
 FamixCPreprocCFile >> addInclusion: anObject [
 	<generated>
 	^ self inclusion add: anObject
-]
-
-{ #category : #accessing }
-FamixCPreprocCFile >> fullName [
-    ^(parentFolder ifNotNil: [ parentFolder fullName , '/' ] ifNil: [ '' ]) , name
 ]
 
 { #category : #accessing }
@@ -69,27 +66,4 @@ FamixCPreprocCFile >> inclusion: anObject [
 
 	<generated>
 	inclusion value: anObject
-]
-
-{ #category : #accessing }
-FamixCPreprocCFile >> parentFolder [
-	"Relation named: #parentFolder type: #FamixCPreprocFolder opposite: #files"
-
-	<generated>
-	<container>
-	^ parentFolder
-]
-
-{ #category : #accessing }
-FamixCPreprocCFile >> parentFolder: anObject [
-
-	<generated>
-	parentFolder := anObject
-]
-
-{ #category : #navigation }
-FamixCPreprocCFile >> parentFolderGroup [
-	<generated>
-	<navigation: 'ParentFolder'>
-	^ MooseSpecializedGroup with: self parentFolder
 ]

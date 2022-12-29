@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCPreprocFolder,
-	#superclass : #FamixCPreprocCFile,
+	#superclass : #FamixCPreprocDiskEntity,
 	#instVars : [
-		'#files => FMMany type: #FamixCPreprocCFile opposite: #parentFolder'
+		'#children => FMMany type: #FamixCPreprocDiskEntity opposite: #parentFolder'
 	],
 	#category : #'Famix-CPreproc-Entities-Entities'
 }
@@ -10,30 +10,30 @@ Class {
 { #category : #meta }
 FamixCPreprocFolder class >> annotation [
 
-	<FMClass: #Folder super: #FamixCPreprocCFile>
+	<FMClass: #Folder super: #FamixCPreprocDiskEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
 	^self
 ]
 
 { #category : #adding }
-FamixCPreprocFolder >> addFile: anObject [
+FamixCPreprocFolder >> addChildren: anObject [
 	<generated>
-	^ self files add: anObject
+	^ self children add: anObject
 ]
 
 { #category : #accessing }
-FamixCPreprocFolder >> files [
-	"Relation named: #files type: #FamixCPreprocCFile opposite: #parentFolder"
+FamixCPreprocFolder >> children [
+	"Relation named: #children type: #FamixCPreprocDiskEntity opposite: #parentFolder"
 
 	<generated>
 	<derived>
-	^ files
+	^ children
 ]
 
 { #category : #accessing }
-FamixCPreprocFolder >> files: anObject [
+FamixCPreprocFolder >> children: anObject [
 
 	<generated>
-	files value: anObject
+	children value: anObject
 ]

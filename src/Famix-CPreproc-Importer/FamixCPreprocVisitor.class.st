@@ -29,7 +29,7 @@ FamixCPreprocVisitor >> createInclude: aName localTo: folder [
 
 { #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> detectCFile: aName in: folder ofClass: concreteClass [
-   ^folder files
+   ^folder children
 		detect: [ :f | f name = aName ]
 		ifFound: [ :element | element ]
 		ifNone:  [
