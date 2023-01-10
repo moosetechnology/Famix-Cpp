@@ -4,7 +4,7 @@ Class {
 	#traits : 'FamixTParameterType',
 	#classTraits : 'FamixTParameterType classTrait',
 	#instVars : [
-		'#parameterizableClass => FMOne type: #FamixCppParameterizableClass opposite: #parameterTypes'
+		'#parentParameterizableClass => FMOne type: #FamixCppParameterizableClass opposite: #parameterTypes'
 	],
 	#category : #'Famix-Cpp-Entities-Entities'
 }
@@ -19,24 +19,24 @@ FamixCppParameterType class >> annotation [
 ]
 
 { #category : #accessing }
-FamixCppParameterType >> parameterizableClass [
-	"Relation named: #parameterizableClass type: #FamixCppParameterizableClass opposite: #parameterTypes"
+FamixCppParameterType >> parentParameterizableClass [
+	"Relation named: #parentParameterizableClass type: #FamixCppParameterizableClass opposite: #parameterTypes"
 
 	<generated>
 	<container>
-	^ parameterizableClass
+	^ parentParameterizableClass
 ]
 
 { #category : #accessing }
-FamixCppParameterType >> parameterizableClass: anObject [
+FamixCppParameterType >> parentParameterizableClass: anObject [
 
 	<generated>
-	parameterizableClass := anObject
+	parentParameterizableClass := anObject
 ]
 
 { #category : #navigation }
-FamixCppParameterType >> parameterizableClassGroup [
+FamixCppParameterType >> parentParameterizableClassGroup [
 	<generated>
-	<navigation: 'ParameterizableClass'>
-	^ MooseSpecializedGroup with: self parameterizableClass
+	<navigation: 'ParentParameterizableClass'>
+	^ MooseSpecializedGroup with: self parentParameterizableClass
 ]

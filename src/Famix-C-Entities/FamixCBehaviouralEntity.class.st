@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCBehaviouralEntity,
 	#superclass : #FamixCContainerEntity,
-	#traits : 'FamixTHasSignature + FamixTInvocable + FamixTTypedEntity + FamixTWithAccesses + FamixTWithInvocations + FamixTWithStatements',
-	#classTraits : 'FamixTHasSignature classTrait + FamixTInvocable classTrait + FamixTTypedEntity classTrait + FamixTWithAccesses classTrait + FamixTWithInvocations classTrait + FamixTWithStatements classTrait',
+	#traits : 'FamixTHasSignature + FamixTInvocable + FamixTTypedEntity + FamixTWithAccesses + FamixTWithComments + FamixTWithInvocations + FamixTWithStatements',
+	#classTraits : 'FamixTHasSignature classTrait + FamixTInvocable classTrait + FamixTTypedEntity classTrait + FamixTWithAccesses classTrait + FamixTWithComments classTrait + FamixTWithInvocations classTrait + FamixTWithStatements classTrait',
 	#instVars : [
 		'#behaviouralAddressers => FMMany type: #FamixCBehaviouralPointer opposite: #behaviouralPointed',
 		'#behaviouralPointers => FMMany type: #FamixCBehaviouralPointer opposite: #referer',

@@ -4,7 +4,7 @@ Class {
 	#traits : 'FamixTWithParameterizedTypes',
 	#classTraits : 'FamixTWithParameterizedTypes classTrait',
 	#instVars : [
-		'#parameterTypes => FMMany type: #FamixCppParameterType opposite: #parameterizableClass'
+		'#parameterTypes => FMMany type: #FamixCppParameterType opposite: #parentParameterizableClass'
 	],
 	#category : #'Famix-Cpp-Entities-Entities'
 }
@@ -26,7 +26,7 @@ FamixCppParameterizableClass >> addParameterType: anObject [
 
 { #category : #accessing }
 FamixCppParameterizableClass >> parameterTypes [
-	"Relation named: #parameterTypes type: #FamixCppParameterType opposite: #parameterizableClass"
+	"Relation named: #parameterTypes type: #FamixCppParameterType opposite: #parentParameterizableClass"
 
 	<generated>
 	<derived>

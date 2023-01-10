@@ -13,7 +13,6 @@ Class {
 		'enum',
 		'enumValue',
 		'function',
-		'globalVar',
 		'headerFile',
 		'indexedFileAnchor',
 		'invocation',
@@ -30,7 +29,8 @@ Class {
 		'unknownContainerEntity',
 		'unknownVar',
 		'behaviouralPointer',
-		'namespace'
+		'namespace',
+		'structuredType'
 	],
 	#category : #'Famix-C-Generator'
 }
@@ -71,23 +71,20 @@ FamixCGenerator >> defineClasses [
 	compilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc. 
 	headerFile := self remoteEntity: #HeaderFile withPrefix: #FamixCPreproc. 
 
+	"STRCTURAL ENTITIES"
 	attribute := builder newClassNamed: #Attribute.
-	globalVar := builder newClassNamed: #GlobalVariable.
 	localVar := builder newClassNamed: #LocalVariable.
-	"Namespace are actually for C++, but functions and globalVariables need to be
-	contained in them, so it is introduced here"
-	namespace := builder newClassNamed: #Namespace.
 	unknownVar := builder newClassNamed: #UnknownVariable.
 	parameter := builder newClassNamed: #Parameter.
 	enumValue := builder newClassNamed: #EnumValue.
-	
-	"NamedEntity: ContainerEntity"
+
 	containerEntity := builder newClassNamed: #ContainerEntity.
 	unknownContainerEntity := builder newClassNamed: #UnknownContainerEntity.
-	
-	"ContainerEntity: Type"
+
+	"TYPES"	
 	type := builder newClassNamed: #Type.
 	primitiveType := builder newClassNamed: #PrimitiveType.
+	structuredType := builder newClassNamed: #StructuredType.
 	struct := builder newClassNamed: #Struct.
 	enum := builder newClassNamed: #Enum.
 	union := builder newClassNamed: #Union.
@@ -136,6 +133,7 @@ FamixCGenerator >> defineHierarchy [
 	behaviouralEntity --|> #TWithStatements.
 	behaviouralEntity --|> #TWithAccesses.
 	behaviouralEntity --|> #TWithInvocations.
+	behaviouralEntity --|> #TWithComments.
    behaviouralEntity --|> #THasSignature.
    behaviouralEntity --|> #TTypedEntity.
 
@@ -145,7 +143,10 @@ FamixCGenerator >> defineHierarchy [
    comment --|> #TComment.
 
 	containerEntity --|> namedEntity.
-
+	containerEntity --|> #TWithTypes.
+	containerEntity --|> #TWithFunctions.
+	containerEntity --|> #TWithLocalVariables.
+	
    derefInvocation --|> invocation.
    derefInvocation --|> #TDereferencedInvocation.
 
@@ -159,12 +160,7 @@ FamixCGenerator >> defineHierarchy [
 
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
-	function --|> #TPackageable.
 
-	globalVar --|> namedEntity.
-	globalVar --|> #TGlobalVariable.
-	globalVar --|> #TPackageable.
-	
    invocation --|> association.
 	invocation --|> #THasSignature.
 	
@@ -175,10 +171,6 @@ FamixCGenerator >> defineHierarchy [
 	namedEntity --|> #TEntityMetaLevelDependency.
 	namedEntity --|> #THasModifiers.
 
-	namespace --|> containerEntity.
-	namespace --|> #TPackage.  "namespace in C++ are considered as Packages"
-	namespace --|> #TPackageable.
-
 	parameter --|> namedEntity.
 	parameter --|> #TParameter.
 	
@@ -188,19 +180,18 @@ FamixCGenerator >> defineHierarchy [
    reference --|> association.
    reference --|> #TReference.
 
-	struct --|> type.
-	struct --|> #TWithAttributes.
-	struct --|> #TWithComments.
+	structuredType --|> type.
+	structuredType --|> #TWithAttributes.
+	structuredType --|> #TWithComments.
+
+	struct --|> structuredType.
 
 	type --|> containerEntity.
 	type --|> #TType.
 	type --|> #TWithTypeAliases.
-	type --|> #TPackageable.
 
 	
-   union --|> type.
-	union --|> #TWithAttributes.
-	union --|> #TWithComments.
+   union --|> structuredType.
 
 	unknownBehaviour --|> behaviouralEntity.
 
@@ -208,7 +199,7 @@ FamixCGenerator >> defineHierarchy [
 	
 	unknownVar --|> namedEntity.
 	unknownVar --|> #TUnknownVariable.
-  
+ 
 ]
 
 { #category : #definition }

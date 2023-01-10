@@ -1,15 +1,13 @@
 Class {
 	#name : #FamixCStruct,
-	#superclass : #FamixCType,
-	#traits : 'FamixTWithAttributes + FamixTWithComments',
-	#classTraits : 'FamixTWithAttributes classTrait + FamixTWithComments classTrait',
+	#superclass : #FamixCStructuredType,
 	#category : #'Famix-C-Entities-Entities'
 }
 
 { #category : #meta }
 FamixCStruct class >> annotation [
 
-	<FMClass: #Struct super: #FamixCType>
+	<FMClass: #Struct super: #FamixCStructuredType>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^self

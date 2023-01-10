@@ -56,13 +56,6 @@ FamixCEntity >> isFunction [
 ]
 
 { #category : #testing }
-FamixCEntity >> isGlobalVariable [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
 FamixCEntity >> isInvocation [
 
 	<generated>
@@ -71,13 +64,6 @@ FamixCEntity >> isInvocation [
 
 { #category : #testing }
 FamixCEntity >> isLocalVariable [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCEntity >> isPackage [
 
 	<generated>
 	^ false

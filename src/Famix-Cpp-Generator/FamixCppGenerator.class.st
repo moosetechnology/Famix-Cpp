@@ -17,7 +17,9 @@ Class {
 		'invocation',
 		'parameterizableClass',
 		'parameterizedType',
-		'parameterType'
+		'parameterType',
+		'namespace',
+		'structuredType'
 	],
 	#category : #'Famix-Cpp-Generator'
 }
@@ -51,11 +53,13 @@ FamixCppGenerator >> defineClasses [
 	inheritance := builder newClassNamed: #Inheritance.
 	invocation := self remoteEntity: #Invocation withPrefix: #FamixC. 
 	method := builder newClassNamed: #Method.
+	namespace := builder newClassNamed: #Namespace.
 	namedEntity := self remoteEntity: #NamedEntity withPrefix: #FamixC. 
 	ooInvocation := builder newClassNamed: #OOInvocation.
 	parameterizableClass := builder newClassNamed: #ParameterizableClass.
 	parameterizedType := builder newClassNamed: #ParameterizedType.
 	parameterType := builder newClassNamed: #ParameterType.
+	structuredType := self remoteEntity: #StructuredType withPrefix: #FamixC. 
 	type := self remoteEntity: #Type withPrefix: #FamixC. 
 
 ]
@@ -64,7 +68,7 @@ FamixCppGenerator >> defineClasses [
 FamixCppGenerator >> defineHierarchy [
 	super defineHierarchy.
 
-	class --|> type.
+	class --|> structuredType.
 	class --|> #TClass.
 	class --|> #TWithTypes.
 
@@ -77,6 +81,8 @@ FamixCppGenerator >> defineHierarchy [
 	method --|> behaviouralEntity.
 	method --|> #TMethod.
 	method --|> #THasKind.
+
+	namespace --|> containerEntity.
 
 	ooInvocation --|> invocation.
 	ooInvocation --|> #TInvocation.
@@ -94,5 +100,11 @@ FamixCppGenerator >> defineHierarchy [
 FamixCppGenerator >> defineRelations [ 
 	super defineRelations.
 
-	parameterizableClass <>-* parameterType
+	(parameterizableClass property: #parameterTypes)
+	<>-*
+	(parameterType property: #parentParameterizableClass).
+	
+	(namespace property: #childrenNamespaces)
+	<>-*
+	(namespace property: #parentNamespace).
 ]
