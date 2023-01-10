@@ -42,13 +42,6 @@ FamixCppEntity >> isClass [
 ]
 
 { #category : #testing }
-FamixCppEntity >> isGlobalVariable [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
 FamixCppEntity >> isImplicitVariable [
 
 	<generated>
@@ -71,13 +64,6 @@ FamixCppEntity >> isInvocation [
 
 { #category : #testing }
 FamixCppEntity >> isMethod [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCppEntity >> isNamespace [
 
 	<generated>
 	^ false

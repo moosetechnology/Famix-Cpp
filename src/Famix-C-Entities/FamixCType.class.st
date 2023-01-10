@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCType,
 	#superclass : #FamixCContainerEntity,
-	#traits : 'FamixTType + FamixTWithTypeAliases',
-	#classTraits : 'FamixTType classTrait + FamixTWithTypeAliases classTrait',
+	#traits : 'FamixTPackageable + FamixTType + FamixTWithTypeAliases',
+	#classTraits : 'FamixTPackageable classTrait + FamixTType classTrait + FamixTWithTypeAliases classTrait',
 	#category : #'Famix-C-Entities-Entities'
 }
 

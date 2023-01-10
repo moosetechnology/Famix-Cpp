@@ -77,6 +77,13 @@ FamixCEntity >> isLocalVariable [
 ]
 
 { #category : #testing }
+FamixCEntity >> isPackage [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
 FamixCEntity >> isPrimitiveType [
 
 	<generated>

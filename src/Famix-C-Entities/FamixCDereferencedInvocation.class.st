@@ -1,5 +1,5 @@
 Class {
-	#name : #FamixCDerefInvocation,
+	#name : #FamixCDereferencedInvocation,
 	#superclass : #FamixCInvocation,
 	#traits : 'FamixTDereferencedInvocation',
 	#classTraits : 'FamixTDereferencedInvocation classTrait',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : #meta }
-FamixCDerefInvocation class >> annotation [
+FamixCDereferencedInvocation class >> annotation [
 
-	<FMClass: #DerefInvocation super: #FamixCInvocation>
+	<FMClass: #DereferencedInvocation super: #FamixCInvocation>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^self

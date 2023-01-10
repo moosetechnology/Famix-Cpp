@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCFunction,
 	#superclass : #FamixCBehaviouralEntity,
-	#traits : 'FamixTFunction',
-	#classTraits : 'FamixTFunction classTrait',
+	#traits : 'FamixTFunction + FamixTPackageable',
+	#classTraits : 'FamixTFunction classTrait + FamixTPackageable classTrait',
 	#category : #'Famix-C-Entities-Entities'
 }
 

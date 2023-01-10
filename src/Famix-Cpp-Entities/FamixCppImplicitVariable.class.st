@@ -1,5 +1,5 @@
 Class {
-	#name : #FamixCppImplicitVar,
+	#name : #FamixCppImplicitVariable,
 	#superclass : #FamixCNamedEntity,
 	#traits : 'FamixTImplicitVariable',
 	#classTraits : 'FamixTImplicitVariable classTrait',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : #meta }
-FamixCppImplicitVar class >> annotation [
+FamixCppImplicitVariable class >> annotation [
 
-	<FMClass: #ImplicitVar super: #FamixCNamedEntity>
+	<FMClass: #ImplicitVariable super: #FamixCNamedEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^self
