@@ -1,6 +1,6 @@
 Class {
 	#name : #FamixCppSourceLanguage,
-	#superclass : #FamixCppEntity,
+	#superclass : #FamixCEntity,
 	#traits : 'FamixTSourceLanguage',
 	#classTraits : 'FamixTSourceLanguage classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
@@ -9,7 +9,7 @@ Class {
 { #category : #meta }
 FamixCppSourceLanguage class >> annotation [
 
-	<FMClass: #SourceLanguage super: #FamixCppEntity>
+	<FMClass: #SourceLanguage super: #FamixCEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^self

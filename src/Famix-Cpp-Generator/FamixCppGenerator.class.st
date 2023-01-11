@@ -24,8 +24,6 @@ Class {
 		'entity',
 		'sourceAnchor',
 		'sourceLanguage',
-		'sourcedEntity',
-		'comment',
 		'sourceTextAnchor'
 	],
 	#category : #'Famix-Cpp-Generator'
@@ -55,8 +53,6 @@ FamixCppGenerator >> defineClasses [
 	"classes from FamixBasicInfrastructureGenerator that we want to reuse from C-Meta-Model"
 	entity := self remoteEntity: #Entity withPrefix: #FamixC.
 	sourceAnchor := self remoteEntity: #SourceAnchor withPrefix: #FamixC.
-	sourcedEntity := self remoteEntity: #SourcedEntity withPrefix: #FamixC.
-	comment  := self remoteEntity: #Comment withPrefix: #FamixC.
 	namedEntity  := self remoteEntity: #SourceLanguage withPrefix: #FamixC.
 	sourceTextAnchor := self remoteEntity: #SourceTextAnchor withPrefix: #FamixC.
 
@@ -110,6 +106,7 @@ FamixCppGenerator >> defineHierarchy [
 	parameterType --|> type.
 	parameterType --|> #TParameterType.
 
+	sourceLanguage --|> entity.
 	sourceLanguage --|> #TSourceLanguage.
 
 ]
