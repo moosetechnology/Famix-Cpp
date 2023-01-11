@@ -14,7 +14,7 @@ FamixCPreprocVisitor >> createFile: aName [
 
 	filePath := self pathOfFile: aName.
 	folder := self famixFolderFromPath: filePath parent canonicalize.
-	^self detectCFile: filePath basename in: folder ofClass: FamixCPreprocHeader
+	^self detectCFile: filePath basename in: folder ofClass: FamixCPreprocHeaderFile
 ]
 
 { #category : #'private-entity-creation' }
