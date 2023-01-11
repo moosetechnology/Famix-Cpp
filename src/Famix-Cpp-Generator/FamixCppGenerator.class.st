@@ -3,7 +3,7 @@ TODO
 "
 Class {
 	#name : #FamixCppGenerator,
-	#superclass : #FamixBasicInfrastructureGenerator,
+	#superclass : #FamixMetamodelGenerator,
 	#instVars : [
 		'inheritance',
 		'method',
@@ -19,7 +19,14 @@ Class {
 		'parameterizedType',
 		'parameterType',
 		'namespace',
-		'structuredType'
+		'structuredType',
+		'namedEntity',
+		'entity',
+		'sourceAnchor',
+		'sourceLanguage',
+		'sourcedEntity',
+		'comment',
+		'sourceTextAnchor'
 	],
 	#category : #'Famix-Cpp-Generator'
 }
@@ -45,6 +52,14 @@ FamixCppGenerator class >> submetamodels [
 FamixCppGenerator >> defineClasses [
 	super defineClasses.
 	
+	"classes from FamixBasicInfrastructureGenerator that we want to reuse from C-Meta-Model"
+	entity := self remoteEntity: #Entity withPrefix: #FamixC.
+	sourceAnchor := self remoteEntity: #SourceAnchor withPrefix: #FamixC.
+	sourcedEntity := self remoteEntity: #SourcedEntity withPrefix: #FamixC.
+	comment  := self remoteEntity: #Comment withPrefix: #FamixC.
+	namedEntity  := self remoteEntity: #SourceLanguage withPrefix: #FamixC.
+	sourceTextAnchor := self remoteEntity: #SourceTextAnchor withPrefix: #FamixC.
+
 	association := self remoteEntity: #Association withPrefix: #FamixC. 
 	behaviouralEntity := self remoteEntity: #BehaviouralEntity withPrefix: #FamixC. 
 	class := builder newClassNamed: #Class.
@@ -59,6 +74,7 @@ FamixCppGenerator >> defineClasses [
 	parameterizableClass := builder newClassNamed: #ParameterizableClass.
 	parameterizedType := builder newClassNamed: #ParameterizedType.
 	parameterType := builder newClassNamed: #ParameterType.
+	sourceLanguage := builder newClassNamed: #SourceLanguage.
 	structuredType := self remoteEntity: #StructuredType withPrefix: #FamixC. 
 	type := self remoteEntity: #Type withPrefix: #FamixC. 
 
@@ -93,6 +109,8 @@ FamixCppGenerator >> defineHierarchy [
 	parameterizedType --|> #TParameterizedType.
 	parameterType --|> type.
 	parameterType --|> #TParameterType.
+
+	sourceLanguage --|> #TSourceLanguage.
 
 ]
 
