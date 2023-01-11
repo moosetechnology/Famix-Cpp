@@ -1,39 +1,36 @@
 Class {
 	#name : #FamixCGenerator,
-	#superclass : #FamixMetamodelGenerator,
+	#superclass : #FamixBasicInfrastructureGenerator,
 	#instVars : [
-		'primitiveType',
-		'unknownBehaviour',
-		'localVar',
-		'globalVar',
-		'derefInvocation',
-		'behaviouralReference',
-		'type',
-		'struct',
-		'enum',
-		'union',
-		'function',
-		'attribute',
-		'reference',
 		'access',
-		'invocation',
 		'aliasType',
-		'parameter',
-		'enumValue',
-		'sourceAnchor',
-		'fileAnchor',
-		'sourceTextAnchor',
-		'multipleFileanchor',
-		'relativeSourceAnchor',
-		'sourceLanguage',
-		'unknownSourceLanguage',
-		'sourcedEntity',
-		'comment',
-		'namedEntity',
-		'containerEntity',
 		'association',
+		'attribute',
+		'behaviouralEntity',
+		'compilationUnit',
+		'containerEntity',
+		'derefInvocation',
+		'enum',
+		'enumValue',
+		'function',
+		'headerFile',
+		'indexedFileAnchor',
+		'invocation',
+		'localVar',
 		'multipleFileAnchor',
-		'behaviouralEntity'
+		'parameter',
+		'primitiveType',
+		'reference',
+		'relativeSourceAnchor',
+		'struct',
+		'type',
+		'union',
+		'unknownBehaviour',
+		'unknownContainerEntity',
+		'unknownVar',
+		'behaviouralPointer',
+		'namespace',
+		'structuredType'
 	],
 	#category : #'Famix-C-Generator'
 }
@@ -58,44 +55,36 @@ FamixCGenerator >> defineClasses [
 	super defineClasses.
 	
 	"Anchors"
-	sourceAnchor := builder newClassNamed: #SourceAnchor.
-	fileAnchor := builder newClassNamed: #FileAnchor.
-	sourceTextAnchor := builder newClassNamed: #SourceTextAnchor.
-	multipleFileAnchor := builder newClassNamed: #MultipleFileanchor.
+	indexedFileAnchor := builder newClassNamed: #IndexedFileAnchor.
+	multipleFileAnchor := builder newClassNamed: #MultipleFileAnchor.
 	relativeSourceAnchor := builder newClassNamed: #RelativeSourceAnchor.
-	sourceLanguage := builder newClassNamed: #SourceLanguage.
-	unknownSourceLanguage := builder newClassNamed: #UnknownSourceLanguage.
-	
-	"SourcedEntity"
-	sourcedEntity := builder newClassNamed: #SourcedEntity.
 	
 	"SourcedEntity: Association"
 	association := builder newClassNamed: #Association.
 	access := builder newClassNamed: #Access.
 	invocation := builder newClassNamed: #Invocation.
 	reference := builder newClassNamed: #Reference.
-	behaviouralReference := builder newClassNamed: #BehaviouralReference.
-	derefInvocation := builder newClassNamed: #DerefInvocation.
+	behaviouralPointer := builder newClassNamed: #BehaviouralPointer.
+	derefInvocation := builder newClassNamed: #DereferencedInvocation.
 
-	"SourcedEntity: Comment"
-	comment := builder newClassNamed: #Comment.
-	
-	"SourcedEntity: NamedEntity"
-	namedEntity := builder newClassNamed: #NamedEntity.
-	
-   "NamedEntity"
+	"CFiles"
+	compilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc. 
+	headerFile := self remoteEntity: #HeaderFile withPrefix: #FamixCPreproc. 
+
+	"STRCTURAL ENTITIES"
 	attribute := builder newClassNamed: #Attribute.
-	globalVar := builder newClassNamed: #GlobalVar.
-	localVar := builder newClassNamed: #LocalVar.
+	localVar := builder newClassNamed: #LocalVariable.
+	unknownVar := builder newClassNamed: #UnknownVariable.
 	parameter := builder newClassNamed: #Parameter.
 	enumValue := builder newClassNamed: #EnumValue.
-	
-	"NamedEntity: ContainerEntity"
+
 	containerEntity := builder newClassNamed: #ContainerEntity.
-	
-	"ContainerEntity: Type"
+	unknownContainerEntity := builder newClassNamed: #UnknownContainerEntity.
+
+	"TYPES"	
 	type := builder newClassNamed: #Type.
 	primitiveType := builder newClassNamed: #PrimitiveType.
+	structuredType := builder newClassNamed: #StructuredType.
 	struct := builder newClassNamed: #Struct.
 	enum := builder newClassNamed: #Enum.
 	union := builder newClassNamed: #Union.
@@ -104,11 +93,7 @@ FamixCGenerator >> defineClasses [
    "ContainerEntity: BehaviouralEntity"
 	behaviouralEntity := builder newClassNamed: #BehaviouralEntity.
 	function := builder newClassNamed: #Function.
-	unknownBehaviour := builder newClassNamed: #UnknownBehaviour.
-
-
-
-
+	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity.
 ]
 
 { #category : #definition }
@@ -117,8 +102,8 @@ FamixCGenerator >> defineHierarchy [
 
    "Anchors"
 	sourceAnchor --|> #TSourceAnchor.
-	fileAnchor --|> sourceAnchor.
-	fileAnchor --|> #TFileNavigation.
+	indexedFileAnchor --|> sourceAnchor.
+	indexedFileAnchor --|> #TIndexedFileNavigation.
 	sourceTextAnchor --|> sourceAnchor.
 	sourceTextAnchor --|> #THasImmediateSource.
 	multipleFileAnchor --|> sourceAnchor.
@@ -127,84 +112,114 @@ FamixCGenerator >> defineHierarchy [
 	sourceLanguage --|> #TSourceLanguage.
 	unknownSourceLanguage --|> sourceLanguage.
 	unknownSourceLanguage --|> #TUnknownSourceLanguage.
-	
-	"SourcedEntity"
-	sourcedEntity --|> #TSourceEntity.
-	
-	"SourcedEntity: Association"
-	association --|> sourcedEntity.
-	association --|> #TAssociation.
+
+	"entities"
+
 	access --|> association.
    access --|> #TAccess.
-   invocation --|> association.
-   reference --|> association.
-   reference --|> #TReference.
-   behaviouralReference --|> association.
-   derefInvocation --|> invocation.
-   derefInvocation --|> #TDereferencedInvocation.
-
-   "SourcedEntity: Comment"
-   comment --|> sourcedEntity.
-   comment --|> #TComment.
-
-   "SourcedEntity: NamedEntity"
-	namedEntity --|> sourcedEntity.
-	namedEntity --|> #TNamedEntity.
-	namedEntity --|> #TEntityMetaLevelDependency.
-	namedEntity --|> #THasModifiers.
-	
-	"NamedEntity"
-	attribute --|> namedEntity.
-	attribute --|> #TAttribute.
-	attribute --|> #TInvocationsReceiver.
-	
-	globalVar --|> namedEntity.
-	globalVar --|> #TGlobalVariable.
-	
-	localVar --|> namedEntity.
-	localVar --|> #TLocalVariable.
-	
-	parameter --|> namedEntity.
-	parameter --|> #TParameter.
-	
-	enumValue --|> namedEntity.
-	enumValue --|> #TEnumValue.
-
-	"NamedEntity: ContainerEntity"
-	containerEntity --|> namedEntity.
-	
-	"ContainerEntity: Type"
-	type --|> containerEntity.
-	type --|> #TType.
-	type --|> #TWithTypeAliases.
-	
-	enum --|> type.
-	enum --|> #TEnum.
-	
-	primitiveType --|> type.
-	primitiveType --|> #TPrimitiveType.
-	
-	struct --|> type.
-	struct --|> #TWithAttributes.
-	struct --|> #TWithComments.
-
-   union --|> type.
-	union --|> #TWithAttributes.
-	union --|> #TWithComments.
 
 	aliasType --|> type.
 	aliasType --|> 	#TTypeAlias.
 	
- 	"ContainerEntity: BehaviouralEntity"
+	association --|> sourcedEntity.
+	association --|> #TAssociation.
+
+	attribute --|> namedEntity.
+	attribute --|> #TAttribute.
+	attribute --|> #TInvocationsReceiver.
+	
 	behaviouralEntity --|> containerEntity.
 	behaviouralEntity --|> #TInvocable.
 	behaviouralEntity --|> #TWithStatements.
 	behaviouralEntity --|> #TWithAccesses.
 	behaviouralEntity --|> #TWithInvocations.
+	behaviouralEntity --|> #TWithComments.
+   behaviouralEntity --|> #THasSignature.
+   behaviouralEntity --|> #TTypedEntity.
+
+   behaviouralPointer --|> association.
+
+   comment --|> sourcedEntity.
+   comment --|> #TComment.
+
+	containerEntity --|> namedEntity.
+	containerEntity --|> #TWithTypes.
+	containerEntity --|> #TWithFunctions.
+	containerEntity --|> #TWithLocalVariables.
 	
-	"BehaviouralEntity"
+   derefInvocation --|> invocation.
+   derefInvocation --|> #TDereferencedInvocation.
+
+	enum --|> type.
+	enum --|> #TEnum.
+	
+	enumValue --|> namedEntity.
+	enumValue --|> #TEnumValue.
+	enumValue --|> #TAccessible.
+	enumValue --|> #TSourceEntity.
+
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
+
+   invocation --|> association.
+	invocation --|> #THasSignature.
+	
+	localVar --|> namedEntity.
+	localVar --|> #TLocalVariable.
+	
+	namedEntity --|> sourcedEntity.
+	namedEntity --|> #TEntityMetaLevelDependency.
+	namedEntity --|> #THasModifiers.
+
+	parameter --|> namedEntity.
+	parameter --|> #TParameter.
+	
+	primitiveType --|> type.
+	primitiveType --|> #TPrimitiveType.
+	
+   reference --|> association.
+   reference --|> #TReference.
+
+	structuredType --|> type.
+	structuredType --|> #TWithAttributes.
+	structuredType --|> #TWithComments.
+
+	struct --|> structuredType.
+
+	type --|> containerEntity.
+	type --|> #TType.
+	type --|> #TWithTypeAliases.
+
+	
+   union --|> structuredType.
+
 	unknownBehaviour --|> behaviouralEntity.
-   
+
+	unknownContainerEntity --|> containerEntity.
+	
+	unknownVar --|> namedEntity.
+	unknownVar --|> #TUnknownVariable.
+ 
+]
+
+{ #category : #definition }
+FamixCGenerator >> defineProperties [
+
+	behaviouralEntity property: #numberOfStatements type: #Number.
+	behaviouralEntity property: #cyclomaticComplexity type: #Number.
+
+	((behaviouralPointer property: #behaviouralPointed)
+			comment: 'Function which is pointed to';
+			target)
+		*-
+	((behaviouralEntity property: #behaviouralAddressers)
+			comment: 'All functions which required this address').
+
+	((behaviouralPointer property: #referer)
+			comment: 'Function that required this behavioural address';
+			source)
+		*-
+	((behaviouralEntity property: #behaviouralPointers)
+			comment: 'All functions which addresses are used in this entity').
+
 ]

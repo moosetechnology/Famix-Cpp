@@ -1,5 +1,5 @@
 Class {
-	#name : #FamixCLocalVar,
+	#name : #FamixCLocalVariable,
 	#superclass : #FamixCNamedEntity,
 	#traits : 'FamixTLocalVariable',
 	#classTraits : 'FamixTLocalVariable classTrait',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : #meta }
-FamixCLocalVar class >> annotation [
+FamixCLocalVariable class >> annotation [
 
-	<FMClass: #LocalVar super: #FamixCNamedEntity>
+	<FMClass: #LocalVariable super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^self

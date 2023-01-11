@@ -42,16 +42,16 @@ FamixCPreprocGenerator class >> submetamodels [
 { #category : #definition }
 FamixCPreprocGenerator >> defineClasses [
 	super defineClasses.
-	
-	cFile := builder newClassNamed: #CFile.
+
 	diskEntity := builder newClassNamed: #DiskEntity.
-	header := builder newClassNamed: #Header.
-	compilUnit := builder newClassNamed: #CompilUnit.
+	cFile := builder newClassNamed: #CFile.
+	header := builder newClassNamed: #HeaderFile.
+	compilUnit := builder newClassNamed: #CompilationUnit.
 	folder := builder newClassNamed: #Folder.
-	
-	preprocStatement := builder newClassNamed: #PreprocStatement.
-	preprocIfdef := builder newClassNamed: #PreprocIfdef.
-	preprocDefine := builder newClassNamed: #PreprocDefine.
+
+	preprocStatement := builder newClassNamed: #PreprocessorStatement.
+	preprocIfdef := builder newClassNamed: #PreprocessorIfdef.
+	preprocDefine := builder newClassNamed: #PreprocessorDefine.
 
 	include := builder newClassNamed: #Include.
 
@@ -74,13 +74,22 @@ FamixCPreprocGenerator >> defineHierarchy [
    preprocDefine --|> preprocStatement.
 	preprocDefine --|> #TNamedEntity.
 
+	preprocStatement --|> #TSourceEntity.
+
    include --|> #TAssociation.
 ]
 
 { #category : #definition }
 FamixCPreprocGenerator >> defineProperties [
 
-	include property: #isLocal type: #Boolean
+	(include property: #isLocal type: #Boolean)
+		comment: 'Whether this is a local include (with "included.h") or a system one (with <included.h>)'.
+
+	(preprocStatement property: #preprocessorMacro type: #String)
+		comment: 'The macro used in the preprocessor statement: "#define <macro>" or "#ifdef <macro>"'.
+
+	(preprocIfdef property: #negated type: #Boolean)
+		comment: 'Whether this is a #ifdef (not negated) or #ifndef (negated)'.
 ]
 
 { #category : #definition }

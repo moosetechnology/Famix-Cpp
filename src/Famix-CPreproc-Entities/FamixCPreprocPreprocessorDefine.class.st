@@ -1,15 +1,15 @@
 Class {
-	#name : #FamixCPreprocPreprocDefine,
-	#superclass : #FamixCPreprocPreprocStatement,
+	#name : #FamixCPreprocPreprocessorDefine,
+	#superclass : #FamixCPreprocPreprocessorStatement,
 	#traits : 'FamixTNamedEntity',
 	#classTraits : 'FamixTNamedEntity classTrait',
 	#category : #'Famix-CPreproc-Entities-Entities'
 }
 
 { #category : #meta }
-FamixCPreprocPreprocDefine class >> annotation [
+FamixCPreprocPreprocessorDefine class >> annotation [
 
-	<FMClass: #PreprocDefine super: #FamixCPreprocPreprocStatement>
+	<FMClass: #PreprocessorDefine super: #FamixCPreprocPreprocessorStatement>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
 	^self

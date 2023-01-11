@@ -59,6 +59,7 @@ FamixCPreprocInclude >> isLocal [
 
 	<FMProperty: #isLocal type: #Boolean>
 	<generated>
+	<FMComment: 'Whether this is a local include (with "included.h") or a system one (with <included.h>)'>
 	^ isLocal
 ]
 

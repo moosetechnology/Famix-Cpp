@@ -1,15 +1,13 @@
 Class {
 	#name : #FamixCUnion,
-	#superclass : #FamixCType,
-	#traits : 'FamixTWithAttributes + FamixTWithComments',
-	#classTraits : 'FamixTWithAttributes classTrait + FamixTWithComments classTrait',
+	#superclass : #FamixCStructuredType,
 	#category : #'Famix-C-Entities-Entities'
 }
 
 { #category : #meta }
 FamixCUnion class >> annotation [
 
-	<FMClass: #Union super: #FamixCType>
+	<FMClass: #Union super: #FamixCStructuredType>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^self

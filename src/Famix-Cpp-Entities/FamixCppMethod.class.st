@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCppMethod,
 	#superclass : #FamixCBehaviouralEntity,
-	#traits : 'FamixTHasKind + FamixTMethod + FamixTNamespace',
-	#classTraits : 'FamixTHasKind classTrait + FamixTMethod classTrait + FamixTNamespace classTrait',
+	#traits : 'FamixTHasKind + FamixTMethod',
+	#classTraits : 'FamixTHasKind classTrait + FamixTMethod classTrait',
 	#category : #'Famix-Cpp-Entities-Entities'
 }
 

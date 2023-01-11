@@ -1,13 +1,13 @@
 Class {
-	#name : #FamixCUnknownBehaviour,
+	#name : #FamixCUnknownBehaviouralEntity,
 	#superclass : #FamixCBehaviouralEntity,
 	#category : #'Famix-C-Entities-Entities'
 }
 
 { #category : #meta }
-FamixCUnknownBehaviour class >> annotation [
+FamixCUnknownBehaviouralEntity class >> annotation [
 
-	<FMClass: #UnknownBehaviour super: #FamixCBehaviouralEntity>
+	<FMClass: #UnknownBehaviouralEntity super: #FamixCBehaviouralEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^self

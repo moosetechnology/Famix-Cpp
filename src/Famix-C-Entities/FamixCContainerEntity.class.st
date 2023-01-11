@@ -1,6 +1,8 @@
 Class {
 	#name : #FamixCContainerEntity,
 	#superclass : #FamixCNamedEntity,
+	#traits : 'FamixTWithFunctions + FamixTWithLocalVariables + FamixTWithTypes',
+	#classTraits : 'FamixTWithFunctions classTrait + FamixTWithLocalVariables classTrait + FamixTWithTypes classTrait',
 	#category : #'Famix-C-Entities-Entities'
 }
 

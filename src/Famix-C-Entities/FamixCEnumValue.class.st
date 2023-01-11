@@ -1,8 +1,8 @@
 Class {
 	#name : #FamixCEnumValue,
 	#superclass : #FamixCNamedEntity,
-	#traits : 'FamixTEnumValue',
-	#classTraits : 'FamixTEnumValue classTrait',
+	#traits : 'FamixTAccessible + FamixTEnumValue + FamixTSourceEntity',
+	#classTraits : 'FamixTAccessible classTrait + FamixTEnumValue classTrait + FamixTSourceEntity classTrait',
 	#category : #'Famix-C-Entities-Entities'
 }
 

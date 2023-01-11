@@ -1,13 +1,13 @@
 Class {
-	#name : #FamixCPreprocCompilUnit,
+	#name : #FamixCPreprocHeaderFile,
 	#superclass : #FamixCPreprocCFile,
 	#category : #'Famix-CPreproc-Entities-Entities'
 }
 
 { #category : #meta }
-FamixCPreprocCompilUnit class >> annotation [
+FamixCPreprocHeaderFile class >> annotation [
 
-	<FMClass: #CompilUnit super: #FamixCPreprocCFile>
+	<FMClass: #HeaderFile super: #FamixCPreprocCFile>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
 	^self

@@ -1,5 +1,5 @@
 Class {
-	#name : #FamixCMultipleFileanchor,
+	#name : #FamixCMultipleFileAnchor,
 	#superclass : #FamixCSourceAnchor,
 	#traits : 'FamixTMultipleFileAnchor',
 	#classTraits : 'FamixTMultipleFileAnchor classTrait',
@@ -7,9 +7,9 @@ Class {
 }
 
 { #category : #meta }
-FamixCMultipleFileanchor class >> annotation [
+FamixCMultipleFileAnchor class >> annotation [
 
-	<FMClass: #MultipleFileanchor super: #FamixCSourceAnchor>
+	<FMClass: #MultipleFileAnchor super: #FamixCSourceAnchor>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^self
