@@ -46,6 +46,15 @@ FamixCPreprocImporter >> runOn: anXMLFilename [
 	model install
 ]
 
+{ #category : #'as yet unclassified' }
+FamixCPreprocImporter >> runOn: anXMLFilename modelName: name [
+	(anXMLFilename asFileReference readStreamDo: [ :stream | 
+		 XMLDOMParser parse: stream ]) acceptNodeVisitor: visitor.
+	model name: name.
+	model installWithCache: false.
+	model install.
+]
+
 { #category : #'accessing - testing' }
 FamixCPreprocImporter >> visitor [
 	^visitor 
