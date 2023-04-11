@@ -39,11 +39,14 @@ FamixCPreprocImporter >> rootFolder: anObject [
 ]
 
 { #category : #running }
-FamixCPreprocImporter >> runOn: anXMLFilename [
-
-	(anXMLFilename asFileReference readStreamDo: [ :stream | 
+FamixCPreprocImporter >> runOn: anXMLFilepath [
+	|filename modelName|
+	(anXMLFilepath asFileReference readStreamDo: [ :stream | 
 		 XMLDOMParser parse: stream ]) acceptNodeVisitor: visitor.
-	model install
+   filename := (anXMLFilepath splitOn: '/') last.
+   modelName := filename copyReplaceAll: '.xml' with: ''.
+	model name: modelName.
+	model install.
 ]
 
 { #category : #'accessing - testing' }
