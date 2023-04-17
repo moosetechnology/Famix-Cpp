@@ -4,7 +4,6 @@ Generator for C language meta model (does not include C++ entities which are in 
 Class {
 	#name : #FamixCPreprocCFile,
 	#superclass : #FamixCPreprocDiskEntity,
-	#traits : 'TEntityMetaLevelDependency',
 	#classTraits : 'TEntityMetaLevelDependency classTrait',
 	#instVars : [
 		'#inclusion => FMMany type: #FamixCPreprocInclude opposite: #included',
