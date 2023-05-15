@@ -62,7 +62,7 @@ FamixCPreprocGenerator >> defineHierarchy [
 	super defineHierarchy.
     
 	diskEntity --|> #TNamedEntity. 	
-   cFile --|> #TEntityMetaLevelDependency.
+   diskEntity --|> #TEntityMetaLevelDependency.
 	cFile --|> diskEntity. 
 	folder --|> diskEntity .
 

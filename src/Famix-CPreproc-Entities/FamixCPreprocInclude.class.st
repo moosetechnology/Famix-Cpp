@@ -54,11 +54,6 @@ FamixCPreprocInclude >> includedBy: anObject [
 	includedBy := anObject
 ]
 
-{ #category : #testing }
-FamixCPreprocInclude >> isInvocation [
-	^false
-]
-
 { #category : #accessing }
 FamixCPreprocInclude >> isLocal [
 
