@@ -18,9 +18,9 @@ FamixCPreprocVisitor >> createFile: aName [
 ]
 
 { #category : #'private-entity-creation' }
-FamixCPreprocVisitor >> createInclude: aName localTo: folder [
+FamixCPreprocVisitor >> createInclude: aName [ 
 	| included |
-	included := self createFile: (folder fullName , '/' , aName).
+	included := self createFile: aName.
 	FamixCPreprocInclude new
 		mooseModel: self model ;
 		included: included ;
@@ -118,7 +118,7 @@ FamixCPreprocVisitor >> visitInclude: aNode [
 
 { #category : #visiting }
 FamixCPreprocVisitor >> visitIncludeLocal: aNode [
-	self createInclude: (aNode attributeAt: 'name') localTo: file parentFolder.
+	self createInclude: (aNode attributeAt: 'name').
 
 ]
 

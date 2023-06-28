@@ -72,7 +72,7 @@ FamixCPreprocVisitorTest >> testCreateIncludeExistingFile [
 	self assert: includedFile includes isEmpty.
 	self assert: includedFile inclusion isEmpty.
 	
-	visitor createInclude: './included.file' localTo: dir .
+	visitor createInclude: './included.file'.
 
 	self assert: includingFile includes size equals: 1.
 	self assert: includingFile inclusion isEmpty.
@@ -93,7 +93,7 @@ FamixCPreprocVisitorTest >> testCreateIncludeNewFile [
 	self assert: includingFile includes isEmpty.
 	self assert: includingFile inclusion isEmpty.
 	
-	visitor createInclude: './included.file' localTo: (self newEntity: FamixCPreprocFolder named: '.') .
+	visitor createInclude: './included.file'.
 
 	includedFile := model entityNamed: 'included.file'.
 
@@ -119,7 +119,7 @@ FamixCPreprocVisitorTest >> testCreateInclusionLocalToCurrentFile [
 
 	self assert: includingFile parentFolder name equals: 'dir'.
 	
-	visitor createInclude: './included.file' localTo: includingFile parentFolder.
+	visitor createInclude: './included.file'.
 
 	includedFile := model entityNamed: 'included.file'.
 
