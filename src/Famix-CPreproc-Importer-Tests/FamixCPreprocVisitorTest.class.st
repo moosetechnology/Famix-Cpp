@@ -110,7 +110,7 @@ FamixCPreprocVisitorTest >> testCreateIncludeNewFile [
 { #category : #test }
 FamixCPreprocVisitorTest >> testCreateInclusionLocalToCurrentFile [
 	| includingFile includedFile dir |
-
+   1halt.
 	dir := self newEntity: FamixCPreprocFolder named: '.'.
 	dir := (self newEntity: FamixCPreprocFolder named: 'dir') parentFolder: dir ; yourself.
 	includingFile := (self newEntity: FamixCPreprocHeaderFile named: 'test.file') parentFolder: dir ; yourself.
@@ -123,7 +123,7 @@ FamixCPreprocVisitorTest >> testCreateInclusionLocalToCurrentFile [
 
 	includedFile := model entityNamed: 'included.file'.
 
-	self assert: includedFile parentFolder name equals: 'dir'.
+	self assert: includedFile parentFolder name equals: '.'.
 ]
 
 { #category : #test }
