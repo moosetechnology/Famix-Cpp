@@ -18,22 +18,12 @@ FamixCPreprocVisitor >> createFile: aName [
 ]
 
 { #category : #'private-entity-creation' }
-FamixCPreprocVisitor >> createInclude: aName [ 
-	| included |
-	included := self createFile: aName.
-	FamixCPreprocInclude new
-		mooseModel: self model ;
-		included: included ;
-		includedBy: file.
-]
-
-{ #category : #'private-entity-creation' }
 FamixCPreprocVisitor >> createInclude: aName localTo: folder [
 	| included |
 	"if the include name itself is an absolute path, do not create file under relative path"
-	included := aName first == '.'
-		            ifTrue: [ self createFile: folder fullName , '/' , aName ]
-		            ifFalse: [ self createFile: aName ].
+	included := aName first == $.
+		            ifTrue: [ self createFile: aName ]
+		            ifFalse: [ self createFile: folder fullName , '/' , aName ].
 	FamixCPreprocInclude new
 		mooseModel: self model;
 		included: included;
