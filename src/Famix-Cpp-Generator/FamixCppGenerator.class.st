@@ -123,3 +123,11 @@ FamixCppGenerator >> defineRelations [
 	<>-*
 	(namespace property: #parentNamespace).
 ]
+
+{ #category : #definition }
+FamixCppGenerator >> newBuilder [
+
+	^ super newBuilder
+		  withFileImport;
+		  yourself
+]

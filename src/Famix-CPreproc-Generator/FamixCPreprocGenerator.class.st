@@ -115,9 +115,3 @@ FamixCPreprocGenerator >> defineRelations [
 	(folder property: #children).
 
 ]
-
-{ #category : #initialization }
-FamixCPreprocGenerator >> initialize [
-	super initialize.
-	self notImportedFromFile
-]
