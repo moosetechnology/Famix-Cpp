@@ -10,7 +10,15 @@ FamixCEntity class >> annotation [
 	<FMClass: #Entity super: #MooseEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	<abstract>
+	^ self
+]
+
+{ #category : #testing }
+FamixCEntity class >> isAbstract [
+
+	<generated>
+	^ self == FamixCEntity
 ]
 
 { #category : #meta }
@@ -43,6 +51,13 @@ FamixCEntity >> isAttribute [
 
 { #category : #testing }
 FamixCEntity >> isBehavioural [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
+FamixCEntity >> isEnumValue [
 
 	<generated>
 	^ false

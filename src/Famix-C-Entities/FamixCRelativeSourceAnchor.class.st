@@ -12,5 +12,5 @@ FamixCRelativeSourceAnchor class >> annotation [
 	<FMClass: #RelativeSourceAnchor super: #FamixCEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

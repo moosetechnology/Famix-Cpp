@@ -10,5 +10,5 @@ FamixCUnion class >> annotation [
 	<FMClass: #Union super: #FamixCStructuredType>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

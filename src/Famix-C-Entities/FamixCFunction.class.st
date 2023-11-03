@@ -12,5 +12,5 @@ FamixCFunction class >> annotation [
 	<FMClass: #Function super: #FamixCBehaviouralEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

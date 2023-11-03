@@ -12,5 +12,5 @@ FamixCPreprocPreprocessorDefine class >> annotation [
 	<FMClass: #PreprocessorDefine super: #FamixCPreprocPreprocessorStatement>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]

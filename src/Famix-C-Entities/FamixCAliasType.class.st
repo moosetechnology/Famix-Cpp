@@ -12,5 +12,5 @@ FamixCAliasType class >> annotation [
 	<FMClass: #AliasType super: #FamixCType>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

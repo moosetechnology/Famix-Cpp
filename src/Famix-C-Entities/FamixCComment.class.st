@@ -12,5 +12,5 @@ FamixCComment class >> annotation [
 	<FMClass: #Comment super: #FamixCSourcedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

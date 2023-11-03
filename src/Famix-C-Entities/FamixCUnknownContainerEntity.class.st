@@ -10,5 +10,5 @@ FamixCUnknownContainerEntity class >> annotation [
 	<FMClass: #UnknownContainerEntity super: #FamixCContainerEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

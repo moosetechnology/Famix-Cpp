@@ -15,7 +15,7 @@ FamixCppParameterType class >> annotation [
 	<FMClass: #ParameterType super: #FamixCType>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #accessing }

@@ -12,5 +12,5 @@ FamixCMultipleFileAnchor class >> annotation [
 	<FMClass: #MultipleFileAnchor super: #FamixCSourceAnchor>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

@@ -12,5 +12,13 @@ FamixCNamedEntity class >> annotation [
 	<FMClass: #NamedEntity super: #FamixCSourcedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	<abstract>
+	^ self
+]
+
+{ #category : #testing }
+FamixCNamedEntity class >> isAbstract [
+
+	<generated>
+	^ self == FamixCNamedEntity
 ]

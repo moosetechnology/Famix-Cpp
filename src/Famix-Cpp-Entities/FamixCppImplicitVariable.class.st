@@ -12,5 +12,5 @@ FamixCppImplicitVariable class >> annotation [
 	<FMClass: #ImplicitVariable super: #FamixCNamedEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]

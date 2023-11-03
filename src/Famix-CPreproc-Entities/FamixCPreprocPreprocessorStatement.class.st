@@ -15,7 +15,7 @@ FamixCPreprocPreprocessorStatement class >> annotation [
 	<FMClass: #PreprocessorStatement super: #FamixCPreprocEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #accessing }

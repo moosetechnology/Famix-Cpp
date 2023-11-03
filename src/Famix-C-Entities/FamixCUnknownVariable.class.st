@@ -12,5 +12,5 @@ FamixCUnknownVariable class >> annotation [
 	<FMClass: #UnknownVariable super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

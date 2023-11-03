@@ -12,5 +12,5 @@ FamixCppInheritance class >> annotation [
 	<FMClass: #Inheritance super: #FamixCAssociation>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]

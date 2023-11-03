@@ -12,5 +12,5 @@ FamixCAccess class >> annotation [
 	<FMClass: #Access super: #FamixCAssociation>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

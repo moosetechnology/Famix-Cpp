@@ -12,5 +12,5 @@ FamixCContainerEntity class >> annotation [
 	<FMClass: #ContainerEntity super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

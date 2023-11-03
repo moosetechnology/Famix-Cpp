@@ -12,5 +12,5 @@ FamixCStructuredType class >> annotation [
 	<FMClass: #StructuredType super: #FamixCType>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

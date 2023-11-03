@@ -12,5 +12,5 @@ FamixCPrimitiveType class >> annotation [
 	<FMClass: #PrimitiveType super: #FamixCType>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]
