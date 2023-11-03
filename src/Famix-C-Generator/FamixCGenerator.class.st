@@ -223,3 +223,11 @@ FamixCGenerator >> defineProperties [
 			comment: 'All functions which addresses are used in this entity').
 
 ]
+
+{ #category : #definition }
+FamixCGenerator >> newBuilder [
+
+	^ super newBuilder
+		  withFileImport;
+		  yourself
+]

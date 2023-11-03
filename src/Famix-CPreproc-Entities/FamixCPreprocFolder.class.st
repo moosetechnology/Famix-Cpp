@@ -13,7 +13,7 @@ FamixCPreprocFolder class >> annotation [
 	<FMClass: #Folder super: #FamixCPreprocDiskEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #adding }

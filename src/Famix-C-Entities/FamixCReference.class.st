@@ -12,5 +12,5 @@ FamixCReference class >> annotation [
 	<FMClass: #Reference super: #FamixCAssociation>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

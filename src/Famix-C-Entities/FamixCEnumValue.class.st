@@ -12,5 +12,5 @@ FamixCEnumValue class >> annotation [
 	<FMClass: #EnumValue super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

@@ -17,7 +17,7 @@ FamixCPreprocInclude class >> annotation [
 	<FMClass: #Include super: #FamixCPreprocEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #accessing }

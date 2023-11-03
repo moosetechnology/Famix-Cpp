@@ -15,7 +15,7 @@ FamixCPreprocDiskEntity class >> annotation [
 	<FMClass: #DiskEntity super: #FamixCPreprocEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #accessing }

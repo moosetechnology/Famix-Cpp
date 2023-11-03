@@ -12,5 +12,5 @@ FamixCppClass class >> annotation [
 	<FMClass: #Class super: #FamixCStructuredType>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]

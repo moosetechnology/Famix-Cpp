@@ -12,5 +12,5 @@ FamixCSourceTextAnchor class >> annotation [
 	<FMClass: #SourceTextAnchor super: #FamixCSourceAnchor>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

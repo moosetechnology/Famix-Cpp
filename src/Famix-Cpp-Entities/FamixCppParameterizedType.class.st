@@ -12,5 +12,5 @@ FamixCppParameterizedType class >> annotation [
 	<FMClass: #ParameterizedType super: #FamixCType>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]

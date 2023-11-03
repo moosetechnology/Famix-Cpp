@@ -15,7 +15,7 @@ FamixCppParameterizableClass class >> annotation [
 	<FMClass: #ParameterizableClass super: #FamixCppClass>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #adding }

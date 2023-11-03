@@ -12,5 +12,5 @@ FamixCppSourceLanguage class >> annotation [
 	<FMClass: #SourceLanguage super: #FamixCEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]

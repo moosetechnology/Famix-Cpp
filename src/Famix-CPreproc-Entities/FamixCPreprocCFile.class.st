@@ -18,7 +18,7 @@ FamixCPreprocCFile class >> annotation [
 	<FMClass: #CFile super: #FamixCPreprocDiskEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #adding }

@@ -12,5 +12,5 @@ FamixCUnknownSourceLanguage class >> annotation [
 	<FMClass: #UnknownSourceLanguage super: #FamixCSourceLanguage>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

@@ -13,7 +13,7 @@ FamixCPreprocPreprocessorIfdef class >> annotation [
 	<FMClass: #PreprocessorIfdef super: #FamixCPreprocPreprocessorStatement>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #accessing }

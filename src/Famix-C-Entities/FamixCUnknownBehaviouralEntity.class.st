@@ -10,5 +10,5 @@ FamixCUnknownBehaviouralEntity class >> annotation [
 	<FMClass: #UnknownBehaviouralEntity super: #FamixCBehaviouralEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

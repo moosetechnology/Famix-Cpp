@@ -12,5 +12,5 @@ FamixCDereferencedInvocation class >> annotation [
 	<FMClass: #DereferencedInvocation super: #FamixCInvocation>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

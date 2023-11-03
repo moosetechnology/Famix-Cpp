@@ -18,7 +18,7 @@ FamixCBehaviouralEntity class >> annotation [
 	<FMClass: #BehaviouralEntity super: #FamixCContainerEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #adding }

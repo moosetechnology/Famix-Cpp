@@ -12,7 +12,7 @@ FamixCppMethod class >> annotation [
 	<FMClass: #Method super: #FamixCBehaviouralEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #testing }

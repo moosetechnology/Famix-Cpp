@@ -12,5 +12,5 @@ FamixCSourceLanguage class >> annotation [
 	<FMClass: #SourceLanguage super: #FamixCEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

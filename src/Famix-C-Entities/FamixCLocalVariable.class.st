@@ -12,5 +12,5 @@ FamixCLocalVariable class >> annotation [
 	<FMClass: #LocalVariable super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]

@@ -14,7 +14,7 @@ FamixCppNamespace class >> annotation [
 	<FMClass: #Namespace super: #FamixCContainerEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #adding }

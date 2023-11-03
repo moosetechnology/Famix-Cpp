@@ -12,5 +12,13 @@ FamixCSourceAnchor class >> annotation [
 	<FMClass: #SourceAnchor super: #FamixCEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	<abstract>
+	^ self
+]
+
+{ #category : #testing }
+FamixCSourceAnchor class >> isAbstract [
+
+	<generated>
+	^ self == FamixCSourceAnchor
 ]

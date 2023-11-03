@@ -12,5 +12,5 @@ FamixCppOOInvocation class >> annotation [
 	<FMClass: #OOInvocation super: #FamixCInvocation>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
-	^self
+	^ self
 ]

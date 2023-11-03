@@ -10,7 +10,15 @@ FamixCPreprocEntity class >> annotation [
 	<FMClass: #Entity super: #MooseEntity>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	<abstract>
+	^ self
+]
+
+{ #category : #testing }
+FamixCPreprocEntity class >> isAbstract [
+
+	<generated>
+	^ self == FamixCPreprocEntity
 ]
 
 { #category : #meta }

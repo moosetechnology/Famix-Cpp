@@ -10,5 +10,5 @@ FamixCPreprocCompilationUnit class >> annotation [
 	<FMClass: #CompilationUnit super: #FamixCPreprocCFile>
 	<package: #'Famix-CPreproc-Entities'>
 	<generated>
-	^self
+	^ self
 ]

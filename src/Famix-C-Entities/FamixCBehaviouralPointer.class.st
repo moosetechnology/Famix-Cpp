@@ -14,7 +14,7 @@ FamixCBehaviouralPointer class >> annotation [
 	<FMClass: #BehaviouralPointer super: #FamixCAssociation>
 	<package: #'Famix-C-Entities'>
 	<generated>
-	^self
+	^ self
 ]
 
 { #category : #accessing }

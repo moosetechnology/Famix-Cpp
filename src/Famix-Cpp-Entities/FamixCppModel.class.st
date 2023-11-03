@@ -1,6 +1,8 @@
 Class {
 	#name : #FamixCppModel,
 	#superclass : #MooseModel,
+	#traits : 'FamixCPreprocTEntityCreator + FamixCTEntityCreator + FamixCppTEntityCreator',
+	#classTraits : 'FamixCPreprocTEntityCreator classTrait + FamixCTEntityCreator classTrait + FamixCppTEntityCreator classTrait',
 	#category : #'Famix-Cpp-Entities-Model'
 }
 
@@ -21,4 +23,11 @@ FamixCppModel class >> annotation [
 FamixCppModel class >> canBeImportedFromFile [
 	<generated>
 	^true
+]
+
+{ #category : #accessing }
+FamixCppModel class >> importingContextClass [
+
+	<generated>
+	^ FamixCppImportingContext
 ]
