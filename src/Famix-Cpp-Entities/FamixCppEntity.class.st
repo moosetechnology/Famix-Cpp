@@ -1,119 +1,105 @@
 Class {
-	#name : #FamixCEntity,
+	#name : #FamixCppEntity,
 	#superclass : #MooseEntity,
-	#category : #'Famix-C-Entities-Entities'
+	#category : #'Famix-Cpp-Entities-Entities'
 }
 
 { #category : #meta }
-FamixCEntity class >> annotation [
+FamixCppEntity class >> annotation [
 
 	<FMClass: #Entity super: #MooseEntity>
-	<package: #'Famix-C-Entities'>
+	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	<abstract>
 	^ self
 ]
 
 { #category : #testing }
-FamixCEntity class >> isAbstract [
+FamixCppEntity class >> isAbstract [
 
 	<generated>
-	^ self == FamixCEntity
+	^ self == FamixCppEntity
 ]
 
 { #category : #meta }
-FamixCEntity class >> metamodel [
+FamixCppEntity class >> metamodel [
 
 	<generated>
-	^ FamixCModel metamodel
+	^ FamixCppModel metamodel
 ]
 
 { #category : #testing }
-FamixCEntity >> isAccess [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCEntity >> isAssociation [
+FamixCppEntity >> isAssociation [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isAttribute [
+FamixCppEntity >> isBehavioural [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isBehavioural [
+FamixCppEntity >> isClass [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isEnumValue [
+FamixCppEntity >> isImplicitVariable [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isFunction [
+FamixCppEntity >> isInheritance [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isInvocation [
+FamixCppEntity >> isInvocation [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isLocalVariable [
+FamixCppEntity >> isMethod [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isPrimitiveType [
+FamixCppEntity >> isParametricEntity [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isQueryable [
+FamixCppEntity >> isQueryable [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isReference [
+FamixCppEntity >> isStructuralEntity [
 
 	<generated>
 	^ false
 ]
 
 { #category : #testing }
-FamixCEntity >> isStructuralEntity [
-
-	<generated>
-	^ false
-]
-
-{ #category : #testing }
-FamixCEntity >> isType [
+FamixCppEntity >> isType [
 
 	<generated>
 	^ false

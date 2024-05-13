@@ -1,6 +1,8 @@
 "
 This trait is used by Famix models.
 It provides an API for creating entities and adding them to the model.
+
+
 "
 Trait {
 	#name : #FamixCppTEntityCreator,
@@ -28,6 +30,13 @@ FamixCppTEntityCreator >> newClassNamed: aName [
 
 	<generated>
 	^ self add: (FamixCppClass named: aName)
+]
+
+{ #category : #'entity creation' }
+FamixCppTEntityCreator >> newConcretization [
+
+	<generated>
+	^ self add: FamixCppConcretization new
 ]
 
 { #category : #'entity creation' }
@@ -80,10 +89,24 @@ FamixCppTEntityCreator >> newOOInvocation [
 ]
 
 { #category : #'entity creation' }
+FamixCppTEntityCreator >> newParameterConcretization [
+
+	<generated>
+	^ self add: FamixCppParameterConcretization new
+]
+
+{ #category : #'entity creation' }
 FamixCppTEntityCreator >> newParameterType [
 
 	<generated>
 	^ self add: FamixCppParameterType new
+]
+
+{ #category : #'entity creation' }
+FamixCppTEntityCreator >> newParameterTypeNamed: aName [
+
+	<generated>
+	^ self add: (FamixCppParameterType named: aName)
 ]
 
 { #category : #'entity creation' }

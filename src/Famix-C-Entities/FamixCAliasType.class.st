@@ -1,3 +1,15 @@
+"
+## Relations
+======================
+
+### Other
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `aliasedType` | `FamixTTypeAlias` | `typeAliases` | `FamixTWithTypeAliases` | Points to the actual type.|
+
+
+
+"
 Class {
 	#name : #FamixCAliasType,
 	#superclass : #FamixCType,

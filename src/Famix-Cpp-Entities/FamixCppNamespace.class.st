@@ -1,3 +1,20 @@
+"
+## Relations
+======================
+
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `parentNamespace` | `FamixCppNamespace` | `childrenNamespaces` | `FamixCppNamespace` | |
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `childrenNamespaces` | `FamixCppNamespace` | `parentNamespace` | `FamixCppNamespace` | |
+
+
+
+"
 Class {
 	#name : #FamixCppNamespace,
 	#superclass : #FamixCContainerEntity,
