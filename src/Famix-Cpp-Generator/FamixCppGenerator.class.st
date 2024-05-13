@@ -24,7 +24,9 @@ Class {
 		'entity',
 		'sourceAnchor',
 		'sourceLanguage',
-		'sourceTextAnchor'
+		'sourceTextAnchor',
+		'concretization',
+		'parameterConcretization'
 	],
 	#category : #'Famix-Cpp-Generator'
 }
@@ -73,7 +75,9 @@ FamixCppGenerator >> defineClasses [
 	sourceLanguage := builder newClassNamed: #SourceLanguage.
 	structuredType := self remoteEntity: #StructuredType withPrefix: #FamixC. 
 	type := self remoteEntity: #Type withPrefix: #FamixC. 
-
+	
+	parameterConcretization := builder newClassNamed: #ParameterConcretization.
+	concretization := builder newClassNamed: #Concretization.
 ]
 
 { #category : #definition }
@@ -100,11 +104,16 @@ FamixCppGenerator >> defineHierarchy [
 	ooInvocation --|> #TInvocation.
 
 	parameterizableClass --|> class.
-	parameterizableClass --|> #TWithParameterizedTypes.
+	parameterizableClass --|> #TParametricEntity.
 	parameterizedType --|> type.
-	parameterizedType --|> #TParameterizedType.
+	parameterizedType --|> #TParametricEntity.
 	parameterType --|> type.
-	parameterType --|> #TParameterType.
+	parameterType --|> #TGenericParameterType.
+	
+	type --|> #TConcreteParameterType.
+
+	concretization --|> #TConcretization.
+	parameterConcretization --|> #TParameterConcretization.
 
 	sourceLanguage --|> entity.
 	sourceLanguage --|> #TSourceLanguage.
