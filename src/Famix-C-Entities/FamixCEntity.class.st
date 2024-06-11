@@ -64,6 +64,13 @@ FamixCEntity >> isEnumValue [
 ]
 
 { #category : #testing }
+FamixCEntity >> isFileAnchor [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
 FamixCEntity >> isFunction [
 
 	<generated>
@@ -85,7 +92,21 @@ FamixCEntity >> isLocalVariable [
 ]
 
 { #category : #testing }
+FamixCEntity >> isNamedEntity [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
 FamixCEntity >> isPrimitiveType [
+
+	<generated>
+	^ false
+]
+
+{ #category : #testing }
+FamixCEntity >> isQueryable [
 
 	<generated>
 	^ false

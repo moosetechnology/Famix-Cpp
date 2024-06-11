@@ -1,3 +1,12 @@
+"
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `signature` | `String` | nil | Signature of the message being sent|
+
+"
 Class {
 	#name : #FamixCInvocation,
 	#superclass : #FamixCAssociation,

@@ -1,6 +1,8 @@
 "
 This trait is used by Famix models.
 It provides an API for creating entities and adding them to the model.
+
+
 "
 Trait {
 	#name : #FamixCTEntityCreator,
@@ -266,13 +268,6 @@ FamixCTEntityCreator >> newUnknownContainerEntity [
 
 	<generated>
 	^ self add: FamixCUnknownContainerEntity new
-]
-
-{ #category : #'entity creation' }
-FamixCTEntityCreator >> newUnknownSourceLanguage [
-
-	<generated>
-	^ self add: FamixCUnknownSourceLanguage new
 ]
 
 { #category : #'entity creation' }

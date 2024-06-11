@@ -212,13 +212,6 @@ FamixCImportingContext >> importUnknownContainerEntity [
 ]
 
 { #category : #importing }
-FamixCImportingContext >> importUnknownSourceLanguage [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownSourceLanguage)
-]
-
-{ #category : #importing }
 FamixCImportingContext >> importUnknownVariable [
 
 	<generated>
@@ -419,13 +412,6 @@ FamixCImportingContext >> shouldImportUnknownContainerEntity [
 
 	<generated>
 	^ self shouldImport: #UnknownContainerEntity
-]
-
-{ #category : #testing }
-FamixCImportingContext >> shouldImportUnknownSourceLanguage [
-
-	<generated>
-	^ self shouldImport: #UnknownSourceLanguage
 ]
 
 { #category : #testing }
