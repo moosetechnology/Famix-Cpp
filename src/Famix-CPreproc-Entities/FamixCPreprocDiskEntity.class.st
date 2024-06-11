@@ -1,3 +1,21 @@
+"
+## Relations
+======================
+
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `parentFolder` | `FamixCPreprocDiskEntity` | `children` | `FamixCPreprocFolder` | |
+
+
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `name` | `String` | nil | Basic name of the entity, not full reference.|
+
+"
 Class {
 	#name : #FamixCPreprocDiskEntity,
 	#superclass : #FamixCPreprocEntity,

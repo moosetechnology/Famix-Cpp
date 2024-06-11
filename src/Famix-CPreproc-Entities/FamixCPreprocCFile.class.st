@@ -1,5 +1,19 @@
 "
-Generator for C language meta model (does not include C++ entities which are in an other meta model)
+## Relations
+======================
+
+### Outgoing dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `includes` | `FamixCPreprocCFile` | `includedBy` | `FamixCPreprocInclude` | All inclusions made by this C-File|
+
+### Incoming dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `inclusion` | `FamixCPreprocCFile` | `included` | `FamixCPreprocInclude` | All inclusions of this C-file|
+
+
+
 "
 Class {
 	#name : #FamixCPreprocCFile,

@@ -1,3 +1,15 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `children` | `FamixCPreprocFolder` | `parentFolder` | `FamixCPreprocDiskEntity` | |
+
+
+
+"
 Class {
 	#name : #FamixCPreprocFolder,
 	#superclass : #FamixCPreprocDiskEntity,
