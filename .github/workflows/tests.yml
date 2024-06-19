@@ -1,0 +1,14 @@
+# This workflows runs your tests as specified in your .smalltalk.ston configuration file.
+
+name: Run tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+ 
+jobs:
+  run:
+    uses: moosetechnology/.github/.github/workflows/run-tests.yml@main
+    secrets: inherit
