@@ -23,6 +23,13 @@ FamixCppImportingContext >> importClass [
 ]
 
 { #category : #importing }
+FamixCppImportingContext >> importConcretization [
+
+	<generated>
+	^ self importAssociation: (self class fm3ClassNamed: #Concretization)
+]
+
+{ #category : #importing }
 FamixCppImportingContext >> importImplicitVariable [
 
 	<generated>
@@ -55,6 +62,13 @@ FamixCppImportingContext >> importOOInvocation [
 
 	<generated>
 	^ self importAssociation: (self class fm3ClassNamed: #OOInvocation)
+]
+
+{ #category : #importing }
+FamixCppImportingContext >> importParameterConcretization [
+
+	<generated>
+	^ self importAssociation: (self class fm3ClassNamed: #ParameterConcretization)
 ]
 
 { #category : #importing }
@@ -93,6 +107,13 @@ FamixCppImportingContext >> shouldImportClass [
 ]
 
 { #category : #testing }
+FamixCppImportingContext >> shouldImportConcretization [
+
+	<generated>
+	^ self shouldImport: #Concretization
+]
+
+{ #category : #testing }
 FamixCppImportingContext >> shouldImportImplicitVariable [
 
 	<generated>
@@ -125,6 +146,13 @@ FamixCppImportingContext >> shouldImportOOInvocation [
 
 	<generated>
 	^ self shouldImport: #OOInvocation
+]
+
+{ #category : #testing }
+FamixCppImportingContext >> shouldImportParameterConcretization [
+
+	<generated>
+	^ self shouldImport: #ParameterConcretization
 ]
 
 { #category : #testing }

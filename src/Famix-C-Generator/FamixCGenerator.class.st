@@ -110,8 +110,6 @@ FamixCGenerator >> defineHierarchy [
 	multipleFileAnchor --|> #TMultipleFileAnchor.
 	relativeSourceAnchor --|> #TRelativeSourceAnchor.
 	sourceLanguage --|> #TSourceLanguage.
-	unknownSourceLanguage --|> sourceLanguage.
-	unknownSourceLanguage --|> #TUnknownSourceLanguage.
 
 	"entities"
 

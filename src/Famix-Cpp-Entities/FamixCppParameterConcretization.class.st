@@ -5,16 +5,17 @@
 ### Association source
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `accessor` | `FamixTAccess` | `accesses` | `FamixTWithAccesses` | Behavioural entity making the access to the variable. from-side of the association|
+| `genericParameter` | `FamixTParameterConcretization` | `concretizations` | `FamixTGenericParameterType` | Generic parameter linked to in this relationship. from-side of the association|
 
 ### Association target
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `variable` | `FamixTAccess` | `incomingAccesses` | `FamixTAccessible` | Variable accessed. to-side of the association|
+| `concreteParameter` | `FamixTParameterConcretization` | `generics` | `FamixTConcreteParameterType` | Concrete parameter linked to in this relationship. to-side of the association|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `concretizations` | `FamixTParameterConcretization` | `parameterConcretizations` | `FamixTConcretization` | |
 | `next` | `FamixTAssociation` | `previous` | `FamixTAssociation` | Next association in an ordered collection of associations. Currently not supported by the Moose importer|
 | `previous` | `FamixTAssociation` | `next` | `FamixTAssociation` | Previous association in an ordered collection of associations. Currently not supported by the Moose importer|
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
@@ -26,22 +27,21 @@
 | Name | Type | Default value | Comment |
 |---|
 | `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
-| `isWrite` | `Boolean` | false | Write access|
 
 "
 Class {
-	#name : #FamixCAccess,
-	#superclass : #FamixCAssociation,
-	#traits : 'FamixTAccess',
-	#classTraits : 'FamixTAccess classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#name : #FamixCppParameterConcretization,
+	#superclass : #FamixCppEntity,
+	#traits : 'FamixTParameterConcretization',
+	#classTraits : 'FamixTParameterConcretization classTrait',
+	#category : #'Famix-Cpp-Entities-Entities'
 }
 
 { #category : #meta }
-FamixCAccess class >> annotation [
+FamixCppParameterConcretization class >> annotation [
 
-	<FMClass: #Access super: #FamixCAssociation>
-	<package: #'Famix-C-Entities'>
+	<FMClass: #ParameterConcretization super: #FamixCppEntity>
+	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^ self
 ]

@@ -1,3 +1,20 @@
+"
+## Relations
+======================
+
+### Association source
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `referer` | `FamixCBehaviouralPointer` | `behaviouralPointers` | `FamixCBehaviouralEntity` | Function that required this behavioural address|
+
+### Association target
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `behaviouralPointed` | `FamixCBehaviouralPointer` | `behaviouralAddressers` | `FamixCBehaviouralEntity` | Function which is pointed to|
+
+
+
+"
 Class {
 	#name : #FamixCBehaviouralPointer,
 	#superclass : #FamixCAssociation,

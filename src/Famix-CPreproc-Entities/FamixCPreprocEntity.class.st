@@ -38,3 +38,10 @@ FamixCPreprocEntity >> isAssociation [
 	<generated>
 	^ false
 ]
+
+{ #category : #testing }
+FamixCPreprocEntity >> isQueryable [
+
+	<generated>
+	^ false
+]

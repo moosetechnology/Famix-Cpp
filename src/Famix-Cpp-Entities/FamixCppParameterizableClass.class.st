@@ -1,8 +1,36 @@
+"
+## Relations
+======================
+
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `parameterTypes` | `FamixCppParameterizableClass` | `parentParameterizableClass` | `FamixCppParameterType` | |
+
+### Outgoing dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `concretizations` | `FamixTParametricEntity` | `genericEntity` | `FamixTConcretization` | Concretization relationships, i.e. the associations of known concrete entities of this type.|
+
+### Incoming dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `genericization` | `FamixTParametricEntity` | `concreteEntity` | `FamixTConcretization` | Generic entity relationship, i.e. the association to the generic entity of this type.|
+
+### Other
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `concreteParameters` | `FamixTParametricEntity` | `concreteEntities` | `FamixTConcreteParameterType` | List of concrete parameters.|
+| `genericParameters` | `FamixTParametricEntity` | `genericEntities` | `FamixTGenericParameterType` | List of generic parameters.|
+
+
+
+"
 Class {
 	#name : #FamixCppParameterizableClass,
 	#superclass : #FamixCppClass,
-	#traits : 'FamixTWithParameterizedTypes',
-	#classTraits : 'FamixTWithParameterizedTypes classTrait',
+	#traits : 'FamixTParametricEntity',
+	#classTraits : 'FamixTParametricEntity classTrait',
 	#instVars : [
 		'#parameterTypes => FMMany type: #FamixCppParameterType opposite: #parentParameterizableClass'
 	],

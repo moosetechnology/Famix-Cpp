@@ -1,3 +1,12 @@
+"
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `negated` | `Boolean` | nil | Whether this is a #ifdef (not negated) or #ifndef (negated)|
+
+"
 Class {
 	#name : #FamixCPreprocPreprocessorIfdef,
 	#superclass : #FamixCPreprocPreprocessorStatement,
