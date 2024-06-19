@@ -12,3 +12,5 @@ jobs:
   run:
     uses: moosetechnology/.github/.github/workflows/run-tests.yml@main
     secrets: inherit
+    with: 
+      pharo-versions: "[ Moose64-11 ]"
