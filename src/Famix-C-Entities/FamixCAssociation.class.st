@@ -19,14 +19,16 @@
 
 "
 Class {
-	#name : #FamixCAssociation,
-	#superclass : #FamixCSourcedEntity,
+	#name : 'FamixCAssociation',
+	#superclass : 'FamixCSourcedEntity',
 	#traits : 'FamixTAssociation',
 	#classTraits : 'FamixTAssociation classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCAssociation class >> annotation [
 
 	<FMClass: #Association super: #FamixCSourcedEntity>

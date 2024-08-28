@@ -17,14 +17,16 @@
 
 "
 Class {
-	#name : #FamixCSourcedEntity,
-	#superclass : #FamixCEntity,
+	#name : 'FamixCSourcedEntity',
+	#superclass : 'FamixCEntity',
 	#traits : 'FamixTSourceEntity',
 	#classTraits : 'FamixTSourceEntity classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCSourcedEntity class >> annotation [
 
 	<FMClass: #SourcedEntity super: #FamixCEntity>
@@ -34,7 +36,7 @@ FamixCSourcedEntity class >> annotation [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCSourcedEntity class >> isAbstract [
 
 	<generated>

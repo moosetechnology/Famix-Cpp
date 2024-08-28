@@ -30,14 +30,16 @@
 
 "
 Class {
-	#name : #FamixCType,
-	#superclass : #FamixCContainerEntity,
+	#name : 'FamixCType',
+	#superclass : 'FamixCContainerEntity',
 	#traits : 'FamixTType + FamixTWithTypeAliases',
 	#classTraits : 'FamixTType classTrait + FamixTWithTypeAliases classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCType class >> annotation [
 
 	<FMClass: #Type super: #FamixCContainerEntity>

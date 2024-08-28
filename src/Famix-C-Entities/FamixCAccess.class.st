@@ -30,14 +30,16 @@
 
 "
 Class {
-	#name : #FamixCAccess,
-	#superclass : #FamixCAssociation,
+	#name : 'FamixCAccess',
+	#superclass : 'FamixCAssociation',
 	#traits : 'FamixTAccess',
 	#classTraits : 'FamixTAccess classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCAccess class >> annotation [
 
 	<FMClass: #Access super: #FamixCAssociation>

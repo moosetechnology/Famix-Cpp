@@ -30,14 +30,16 @@
 
 "
 Class {
-	#name : #FamixCAttribute,
-	#superclass : #FamixCNamedEntity,
+	#name : 'FamixCAttribute',
+	#superclass : 'FamixCNamedEntity',
 	#traits : 'FamixTAttribute + FamixTInvocationsReceiver',
 	#classTraits : 'FamixTAttribute classTrait + FamixTInvocationsReceiver classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCAttribute class >> annotation [
 
 	<FMClass: #Attribute super: #FamixCNamedEntity>

@@ -19,14 +19,16 @@
 
 "
 Class {
-	#name : #FamixCRelativeSourceAnchor,
-	#superclass : #FamixCEntity,
+	#name : 'FamixCRelativeSourceAnchor',
+	#superclass : 'FamixCEntity',
 	#traits : 'FamixTRelativeSourceAnchor',
 	#classTraits : 'FamixTRelativeSourceAnchor classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCRelativeSourceAnchor class >> annotation [
 
 	<FMClass: #RelativeSourceAnchor super: #FamixCEntity>

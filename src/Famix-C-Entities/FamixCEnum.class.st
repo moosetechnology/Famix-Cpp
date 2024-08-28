@@ -34,14 +34,16 @@
 
 "
 Class {
-	#name : #FamixCEnum,
-	#superclass : #FamixCType,
+	#name : 'FamixCEnum',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTEnum',
 	#classTraits : 'FamixTEnum classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCEnum class >> annotation [
 
 	<FMClass: #Enum super: #FamixCType>

@@ -13,14 +13,16 @@
 
 "
 Class {
-	#name : #FamixCContainerEntity,
-	#superclass : #FamixCNamedEntity,
+	#name : 'FamixCContainerEntity',
+	#superclass : 'FamixCNamedEntity',
 	#traits : 'FamixTWithFunctions + FamixTWithLocalVariables + FamixTWithTypes',
 	#classTraits : 'FamixTWithFunctions classTrait + FamixTWithLocalVariables classTrait + FamixTWithTypes classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCContainerEntity class >> annotation [
 
 	<FMClass: #ContainerEntity super: #FamixCNamedEntity>

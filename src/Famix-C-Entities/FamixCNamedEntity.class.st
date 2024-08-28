@@ -9,14 +9,16 @@
 
 "
 Class {
-	#name : #FamixCNamedEntity,
-	#superclass : #FamixCSourcedEntity,
+	#name : 'FamixCNamedEntity',
+	#superclass : 'FamixCSourcedEntity',
 	#traits : 'FamixTHasModifiers + FamixTNamedEntity + TEntityMetaLevelDependency',
 	#classTraits : 'FamixTHasModifiers classTrait + FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCNamedEntity class >> annotation [
 
 	<FMClass: #NamedEntity super: #FamixCSourcedEntity>
@@ -26,9 +28,16 @@ FamixCNamedEntity class >> annotation [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCNamedEntity class >> isAbstract [
 
 	<generated>
 	^ self == FamixCNamedEntity
+]
+
+{ #category : 'testing' }
+FamixCNamedEntity >> isNamedEntity [
+
+	<generated>
+	^ true
 ]

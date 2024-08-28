@@ -29,14 +29,16 @@
 
 "
 Class {
-	#name : #FamixCPrimitiveType,
-	#superclass : #FamixCType,
+	#name : 'FamixCPrimitiveType',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTPrimitiveType',
 	#classTraits : 'FamixTPrimitiveType classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPrimitiveType class >> annotation [
 
 	<FMClass: #PrimitiveType super: #FamixCType>

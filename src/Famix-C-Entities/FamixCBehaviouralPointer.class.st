@@ -16,16 +16,18 @@
 
 "
 Class {
-	#name : #FamixCBehaviouralPointer,
-	#superclass : #FamixCAssociation,
+	#name : 'FamixCBehaviouralPointer',
+	#superclass : 'FamixCAssociation',
 	#instVars : [
 		'#behaviouralPointed => FMOne type: #FamixCBehaviouralEntity opposite: #behaviouralAddressers',
 		'#referer => FMOne type: #FamixCBehaviouralEntity opposite: #behaviouralPointers'
 	],
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCBehaviouralPointer class >> annotation [
 
 	<FMClass: #BehaviouralPointer super: #FamixCAssociation>
@@ -34,7 +36,7 @@ FamixCBehaviouralPointer class >> annotation [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralPointer >> behaviouralPointed [
 	"Relation named: #behaviouralPointed type: #FamixCBehaviouralEntity opposite: #behaviouralAddressers"
 
@@ -44,14 +46,14 @@ FamixCBehaviouralPointer >> behaviouralPointed [
 	^ behaviouralPointed
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralPointer >> behaviouralPointed: anObject [
 
 	<generated>
 	behaviouralPointed := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralPointer >> referer [
 	"Relation named: #referer type: #FamixCBehaviouralEntity opposite: #behaviouralPointers"
 
@@ -61,7 +63,7 @@ FamixCBehaviouralPointer >> referer [
 	^ referer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralPointer >> referer: anObject [
 
 	<generated>

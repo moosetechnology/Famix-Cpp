@@ -29,14 +29,16 @@
 
 "
 Class {
-	#name : #FamixCReference,
-	#superclass : #FamixCAssociation,
+	#name : 'FamixCReference',
+	#superclass : 'FamixCAssociation',
 	#traits : 'FamixTReference',
 	#classTraits : 'FamixTReference classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCReference class >> annotation [
 
 	<FMClass: #Reference super: #FamixCAssociation>

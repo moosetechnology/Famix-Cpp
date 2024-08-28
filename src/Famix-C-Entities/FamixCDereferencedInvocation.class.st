@@ -32,14 +32,16 @@
 
 "
 Class {
-	#name : #FamixCDereferencedInvocation,
-	#superclass : #FamixCInvocation,
+	#name : 'FamixCDereferencedInvocation',
+	#superclass : 'FamixCInvocation',
 	#traits : 'FamixTDereferencedInvocation',
 	#classTraits : 'FamixTDereferencedInvocation classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCDereferencedInvocation class >> annotation [
 
 	<FMClass: #DereferencedInvocation super: #FamixCInvocation>
