@@ -37,12 +37,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCEnumValue class >> annotation [
-
-	<FMClass: #EnumValue super: #FamixCNamedEntity>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]

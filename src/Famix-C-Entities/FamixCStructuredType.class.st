@@ -20,12 +20,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCStructuredType class >> annotation [
-
-	<FMClass: #StructuredType super: #FamixCType>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]

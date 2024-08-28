@@ -21,12 +21,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCContainerEntity class >> annotation [
-
-	<FMClass: #ContainerEntity super: #FamixCNamedEntity>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]

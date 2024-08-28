@@ -51,12 +51,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCFunction class >> annotation [
-
-	<FMClass: #Function super: #FamixCBehaviouralEntity>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]

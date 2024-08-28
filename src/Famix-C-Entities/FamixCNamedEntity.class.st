@@ -18,16 +18,6 @@ Class {
 	#tag : 'Entities'
 }
 
-{ #category : 'meta' }
-FamixCNamedEntity class >> annotation [
-
-	<FMClass: #NamedEntity super: #FamixCSourcedEntity>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	<abstract>
-	^ self
-]
-
 { #category : 'testing' }
 FamixCNamedEntity class >> isAbstract [
 

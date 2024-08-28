@@ -5,12 +5,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCStruct class >> annotation [
-
-	<FMClass: #Struct super: #FamixCStructuredType>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]

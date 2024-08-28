@@ -37,12 +37,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCParameter class >> annotation [
-
-	<FMClass: #Parameter super: #FamixCNamedEntity>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]

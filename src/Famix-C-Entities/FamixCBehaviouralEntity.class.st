@@ -55,15 +55,6 @@ Class {
 	#tag : 'Entities'
 }
 
-{ #category : 'meta' }
-FamixCBehaviouralEntity class >> annotation [
-
-	<FMClass: #BehaviouralEntity super: #FamixCContainerEntity>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]
-
 { #category : 'adding' }
 FamixCBehaviouralEntity >> addBehaviouralAddresser: anObject [
 	<generated>

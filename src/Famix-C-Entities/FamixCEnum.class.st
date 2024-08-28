@@ -42,12 +42,3 @@ Class {
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
-
-{ #category : 'meta' }
-FamixCEnum class >> annotation [
-
-	<FMClass: #Enum super: #FamixCType>
-	<package: #'Famix-C-Entities'>
-	<generated>
-	^ self
-]
