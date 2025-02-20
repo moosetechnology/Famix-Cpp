@@ -11,14 +11,16 @@
 
 "
 Class {
-	#name : #FamixCSourceAnchor,
-	#superclass : #FamixCEntity,
+	#name : 'FamixCSourceAnchor',
+	#superclass : 'FamixCEntity',
 	#traits : 'FamixTSourceAnchor',
 	#classTraits : 'FamixTSourceAnchor classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCSourceAnchor class >> annotation [
 
 	<FMClass: #SourceAnchor super: #FamixCEntity>
@@ -28,7 +30,7 @@ FamixCSourceAnchor class >> annotation [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCSourceAnchor class >> isAbstract [
 
 	<generated>

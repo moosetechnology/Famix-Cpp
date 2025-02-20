@@ -11,14 +11,16 @@
 
 "
 Class {
-	#name : #FamixCSourceLanguage,
-	#superclass : #FamixCEntity,
+	#name : 'FamixCSourceLanguage',
+	#superclass : 'FamixCEntity',
 	#traits : 'FamixTSourceLanguage',
 	#classTraits : 'FamixTSourceLanguage classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCSourceLanguage class >> annotation [
 
 	<FMClass: #SourceLanguage super: #FamixCEntity>

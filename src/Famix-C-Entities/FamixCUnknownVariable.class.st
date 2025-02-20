@@ -24,14 +24,16 @@
 
 "
 Class {
-	#name : #FamixCUnknownVariable,
-	#superclass : #FamixCNamedEntity,
+	#name : 'FamixCUnknownVariable',
+	#superclass : 'FamixCNamedEntity',
 	#traits : 'FamixTUnknownVariable',
 	#classTraits : 'FamixTUnknownVariable classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCUnknownVariable class >> annotation [
 
 	<FMClass: #UnknownVariable super: #FamixCNamedEntity>

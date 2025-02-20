@@ -15,7 +15,7 @@
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `incomingReferences` | `FamixTReferenceable` | `referredType` | `FamixTReference` | References to this entity by other entities.|
+| `incomingReferences` | `FamixTReferenceable` | `referredEntity` | `FamixTReference` | References to this entity by other entities.|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -34,14 +34,16 @@
 
 "
 Class {
-	#name : #FamixCEnum,
-	#superclass : #FamixCType,
+	#name : 'FamixCEnum',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTEnum',
 	#classTraits : 'FamixTEnum classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCEnum class >> annotation [
 
 	<FMClass: #Enum super: #FamixCType>

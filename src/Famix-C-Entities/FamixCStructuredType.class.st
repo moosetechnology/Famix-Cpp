@@ -12,14 +12,16 @@
 
 "
 Class {
-	#name : #FamixCStructuredType,
-	#superclass : #FamixCType,
+	#name : 'FamixCStructuredType',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTWithAttributes + FamixTWithComments',
 	#classTraits : 'FamixTWithAttributes classTrait + FamixTWithComments classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCStructuredType class >> annotation [
 
 	<FMClass: #StructuredType super: #FamixCType>

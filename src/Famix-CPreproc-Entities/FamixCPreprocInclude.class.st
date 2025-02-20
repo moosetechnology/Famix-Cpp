@@ -26,12 +26,11 @@
 | Name | Type | Default value | Comment |
 |---|
 | `isLocal` | `Boolean` | nil | Whether this is a local include (with ""included.h"") or a system one (with <included.h>)|
-| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
 
 "
 Class {
-	#name : #FamixCPreprocInclude,
-	#superclass : #FamixCPreprocEntity,
+	#name : 'FamixCPreprocInclude',
+	#superclass : 'FamixCPreprocEntity',
 	#traits : 'FamixTAssociation',
 	#classTraits : 'FamixTAssociation classTrait',
 	#instVars : [
@@ -39,10 +38,12 @@ Class {
 		'#included => FMOne type: #FamixCPreprocCFile opposite: #inclusion',
 		'#includedBy => FMOne type: #FamixCPreprocCFile opposite: #includes'
 	],
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocInclude class >> annotation [
 
 	<FMClass: #Include super: #FamixCPreprocEntity>
@@ -51,7 +52,7 @@ FamixCPreprocInclude class >> annotation [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocInclude >> included [
 	"Relation named: #included type: #FamixCPreprocCFile opposite: #inclusion"
 
@@ -61,14 +62,14 @@ FamixCPreprocInclude >> included [
 	^ included
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocInclude >> included: anObject [
 
 	<generated>
 	included := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocInclude >> includedBy [
 	"Relation named: #includedBy type: #FamixCPreprocCFile opposite: #includes"
 
@@ -78,14 +79,14 @@ FamixCPreprocInclude >> includedBy [
 	^ includedBy
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocInclude >> includedBy: anObject [
 
 	<generated>
 	includedBy := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocInclude >> isLocal [
 
 	<FMProperty: #isLocal type: #Boolean>
@@ -94,7 +95,7 @@ FamixCPreprocInclude >> isLocal [
 	^ isLocal
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocInclude >> isLocal: anObject [
 	<generated>
 	isLocal := anObject

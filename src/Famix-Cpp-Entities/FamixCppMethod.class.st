@@ -45,14 +45,16 @@
 
 "
 Class {
-	#name : #FamixCppMethod,
-	#superclass : #FamixCBehaviouralEntity,
+	#name : 'FamixCppMethod',
+	#superclass : 'FamixCBehaviouralEntity',
 	#traits : 'FamixTHasKind + FamixTMethod',
 	#classTraits : 'FamixTHasKind classTrait + FamixTMethod classTrait',
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppMethod class >> annotation [
 
 	<FMClass: #Method super: #FamixCBehaviouralEntity>
@@ -61,7 +63,7 @@ FamixCppMethod class >> annotation [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppMethod >> isConstructor [
 
 	<FMProperty: #isConstructor type: #Boolean>
@@ -74,7 +76,7 @@ FamixCppMethod >> isConstructor [
 			  self cacheAt: #isConstructor ifAbsent: [ false ] ] ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppMethod >> isDestructor [
 
 	<FMProperty: #isDestructor type: #Boolean>

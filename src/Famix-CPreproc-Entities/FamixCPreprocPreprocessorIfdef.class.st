@@ -8,15 +8,17 @@
 
 "
 Class {
-	#name : #FamixCPreprocPreprocessorIfdef,
-	#superclass : #FamixCPreprocPreprocessorStatement,
+	#name : 'FamixCPreprocPreprocessorIfdef',
+	#superclass : 'FamixCPreprocPreprocessorStatement',
 	#instVars : [
 		'#negated => FMProperty'
 	],
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocPreprocessorIfdef class >> annotation [
 
 	<FMClass: #PreprocessorIfdef super: #FamixCPreprocPreprocessorStatement>
@@ -25,7 +27,7 @@ FamixCPreprocPreprocessorIfdef class >> annotation [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocPreprocessorIfdef >> negated [
 
 	<FMProperty: #negated type: #Boolean>
@@ -34,7 +36,7 @@ FamixCPreprocPreprocessorIfdef >> negated [
 	^ negated
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocPreprocessorIfdef >> negated: anObject [
 	<generated>
 	negated := anObject

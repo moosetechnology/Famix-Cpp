@@ -27,19 +27,20 @@
 
 | Name | Type | Default value | Comment |
 |---|
-| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
 | `signature` | `String` | nil | Signature of the message being sent|
 
 "
 Class {
-	#name : #FamixCDereferencedInvocation,
-	#superclass : #FamixCInvocation,
+	#name : 'FamixCDereferencedInvocation',
+	#superclass : 'FamixCInvocation',
 	#traits : 'FamixTDereferencedInvocation',
 	#classTraits : 'FamixTDereferencedInvocation classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCDereferencedInvocation class >> annotation [
 
 	<FMClass: #DereferencedInvocation super: #FamixCInvocation>

@@ -16,16 +16,18 @@
 
 "
 Class {
-	#name : #FamixCppNamespace,
-	#superclass : #FamixCContainerEntity,
+	#name : 'FamixCppNamespace',
+	#superclass : 'FamixCContainerEntity',
 	#instVars : [
 		'#childrenNamespaces => FMMany type: #FamixCppNamespace opposite: #parentNamespace',
 		'#parentNamespace => FMOne type: #FamixCppNamespace opposite: #childrenNamespaces'
 	],
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppNamespace class >> annotation [
 
 	<FMClass: #Namespace super: #FamixCContainerEntity>
@@ -34,13 +36,13 @@ FamixCppNamespace class >> annotation [
 	^ self
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCppNamespace >> addChildrenNamespace: anObject [
 	<generated>
 	^ self childrenNamespaces add: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppNamespace >> childrenNamespaces [
 	"Relation named: #childrenNamespaces type: #FamixCppNamespace opposite: #parentNamespace"
 
@@ -49,21 +51,21 @@ FamixCppNamespace >> childrenNamespaces [
 	^ childrenNamespaces
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppNamespace >> childrenNamespaces: anObject [
 
 	<generated>
 	childrenNamespaces value: anObject
 ]
 
-{ #category : #navigation }
+{ #category : 'navigation' }
 FamixCppNamespace >> childrenNamespacesGroup [
 	<generated>
 	<navigation: 'ChildrenNamespaces'>
 	^ MooseSpecializedGroup withAll: self childrenNamespaces asSet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppNamespace >> parentNamespace [
 	"Relation named: #parentNamespace type: #FamixCppNamespace opposite: #childrenNamespaces"
 
@@ -72,14 +74,14 @@ FamixCppNamespace >> parentNamespace [
 	^ parentNamespace
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppNamespace >> parentNamespace: anObject [
 
 	<generated>
 	parentNamespace := anObject
 ]
 
-{ #category : #navigation }
+{ #category : 'navigation' }
 FamixCppNamespace >> parentNamespaceGroup [
 	<generated>
 	<navigation: 'ParentNamespace'>

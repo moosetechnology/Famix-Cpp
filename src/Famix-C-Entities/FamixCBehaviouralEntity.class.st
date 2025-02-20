@@ -40,8 +40,8 @@
 
 "
 Class {
-	#name : #FamixCBehaviouralEntity,
-	#superclass : #FamixCContainerEntity,
+	#name : 'FamixCBehaviouralEntity',
+	#superclass : 'FamixCContainerEntity',
 	#traits : 'FamixTHasSignature + FamixTInvocable + FamixTTypedEntity + FamixTWithAccesses + FamixTWithComments + FamixTWithInvocations + FamixTWithStatements',
 	#classTraits : 'FamixTHasSignature classTrait + FamixTInvocable classTrait + FamixTTypedEntity classTrait + FamixTWithAccesses classTrait + FamixTWithComments classTrait + FamixTWithInvocations classTrait + FamixTWithStatements classTrait',
 	#instVars : [
@@ -50,10 +50,12 @@ Class {
 		'#behaviouralAddressers => FMMany type: #FamixCBehaviouralPointer opposite: #behaviouralPointed',
 		'#behaviouralPointers => FMMany type: #FamixCBehaviouralPointer opposite: #referer'
 	],
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCBehaviouralEntity class >> annotation [
 
 	<FMClass: #BehaviouralEntity super: #FamixCContainerEntity>
@@ -62,19 +64,19 @@ FamixCBehaviouralEntity class >> annotation [
 	^ self
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCBehaviouralEntity >> addBehaviouralAddresser: anObject [
 	<generated>
 	^ self behaviouralAddressers add: anObject
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCBehaviouralEntity >> addBehaviouralPointer: anObject [
 	<generated>
 	^ self behaviouralPointers add: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> behaviouralAddressers [
 	"Relation named: #behaviouralAddressers type: #FamixCBehaviouralPointer opposite: #behaviouralPointed"
 
@@ -84,14 +86,14 @@ FamixCBehaviouralEntity >> behaviouralAddressers [
 	^ behaviouralAddressers
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> behaviouralAddressers: anObject [
 
 	<generated>
 	behaviouralAddressers value: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> behaviouralPointers [
 	"Relation named: #behaviouralPointers type: #FamixCBehaviouralPointer opposite: #referer"
 
@@ -101,14 +103,14 @@ FamixCBehaviouralEntity >> behaviouralPointers [
 	^ behaviouralPointers
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> behaviouralPointers: anObject [
 
 	<generated>
 	behaviouralPointers value: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> cyclomaticComplexity [
 
 	<FMProperty: #cyclomaticComplexity type: #Number>
@@ -116,13 +118,13 @@ FamixCBehaviouralEntity >> cyclomaticComplexity [
 	^ cyclomaticComplexity
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> cyclomaticComplexity: anObject [
 	<generated>
 	cyclomaticComplexity := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> numberOfStatements [
 
 	<FMProperty: #numberOfStatements type: #Number>
@@ -130,7 +132,7 @@ FamixCBehaviouralEntity >> numberOfStatements [
 	^ numberOfStatements
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCBehaviouralEntity >> numberOfStatements: anObject [
 	<generated>
 	numberOfStatements := anObject

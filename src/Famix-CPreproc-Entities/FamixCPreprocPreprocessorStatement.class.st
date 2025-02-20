@@ -13,22 +13,23 @@
 
 | Name | Type | Default value | Comment |
 |---|
-| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
 | `preprocessorMacro` | `String` | nil | The macro used in the preprocessor statement: ""#define <macro>"" or ""#ifdef <macro>""|
 
 "
 Class {
-	#name : #FamixCPreprocPreprocessorStatement,
-	#superclass : #FamixCPreprocEntity,
+	#name : 'FamixCPreprocPreprocessorStatement',
+	#superclass : 'FamixCPreprocEntity',
 	#traits : 'FamixTSourceEntity',
 	#classTraits : 'FamixTSourceEntity classTrait',
 	#instVars : [
 		'#preprocessorMacro => FMProperty'
 	],
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocPreprocessorStatement class >> annotation [
 
 	<FMClass: #PreprocessorStatement super: #FamixCPreprocEntity>
@@ -37,7 +38,7 @@ FamixCPreprocPreprocessorStatement class >> annotation [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocPreprocessorStatement >> preprocessorMacro [
 
 	<FMProperty: #preprocessorMacro type: #String>
@@ -46,7 +47,7 @@ FamixCPreprocPreprocessorStatement >> preprocessorMacro [
 	^ preprocessorMacro
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocPreprocessorStatement >> preprocessorMacro: anObject [
 	<generated>
 	preprocessorMacro := anObject

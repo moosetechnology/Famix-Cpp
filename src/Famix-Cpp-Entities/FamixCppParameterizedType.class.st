@@ -22,14 +22,16 @@
 
 "
 Class {
-	#name : #FamixCppParameterizedType,
-	#superclass : #FamixCType,
+	#name : 'FamixCppParameterizedType',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTParametricEntity',
 	#classTraits : 'FamixTParametricEntity classTrait',
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppParameterizedType class >> annotation [
 
 	<FMClass: #ParameterizedType super: #FamixCType>

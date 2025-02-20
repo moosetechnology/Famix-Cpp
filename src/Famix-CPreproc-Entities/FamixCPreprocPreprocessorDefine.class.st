@@ -8,14 +8,16 @@
 
 "
 Class {
-	#name : #FamixCPreprocPreprocessorDefine,
-	#superclass : #FamixCPreprocPreprocessorStatement,
+	#name : 'FamixCPreprocPreprocessorDefine',
+	#superclass : 'FamixCPreprocPreprocessorStatement',
 	#traits : 'FamixTNamedEntity',
 	#classTraits : 'FamixTNamedEntity classTrait',
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocPreprocessorDefine class >> annotation [
 
 	<FMClass: #PreprocessorDefine super: #FamixCPreprocPreprocessorStatement>

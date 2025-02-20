@@ -16,16 +16,18 @@
 
 "
 Class {
-	#name : #FamixCPreprocCFile,
-	#superclass : #FamixCPreprocDiskEntity,
+	#name : 'FamixCPreprocCFile',
+	#superclass : 'FamixCPreprocDiskEntity',
 	#instVars : [
 		'#inclusion => FMMany type: #FamixCPreprocInclude opposite: #included',
 		'#includes => FMMany type: #FamixCPreprocInclude opposite: #includedBy'
 	],
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocCFile class >> annotation [
 
 	<FMClass: #CFile super: #FamixCPreprocDiskEntity>
@@ -34,19 +36,19 @@ FamixCPreprocCFile class >> annotation [
 	^ self
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCPreprocCFile >> addInclude: anObject [
 	<generated>
 	^ self includes add: anObject
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCPreprocCFile >> addInclusion: anObject [
 	<generated>
 	^ self inclusion add: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocCFile >> includes [
 	"Relation named: #includes type: #FamixCPreprocInclude opposite: #includedBy"
 
@@ -56,14 +58,14 @@ FamixCPreprocCFile >> includes [
 	^ includes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocCFile >> includes: anObject [
 
 	<generated>
 	includes value: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocCFile >> inclusion [
 	"Relation named: #inclusion type: #FamixCPreprocInclude opposite: #included"
 
@@ -73,7 +75,7 @@ FamixCPreprocCFile >> inclusion [
 	^ inclusion
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocCFile >> inclusion: anObject [
 
 	<generated>

@@ -1,10 +1,12 @@
 Class {
-	#name : #FamixCppEntity,
-	#superclass : #MooseEntity,
-	#category : #'Famix-Cpp-Entities-Entities'
+	#name : 'FamixCppEntity',
+	#superclass : 'MooseEntity',
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppEntity class >> annotation [
 
 	<FMClass: #Entity super: #MooseEntity>
@@ -14,91 +16,91 @@ FamixCppEntity class >> annotation [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity class >> isAbstract [
 
 	<generated>
 	^ self == FamixCppEntity
 ]
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppEntity class >> metamodel [
 
 	<generated>
 	^ FamixCppModel metamodel
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isAssociation [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isBehavioural [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isClass [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isImplicitVariable [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isInheritance [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isInvocation [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isMethod [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isParametricEntity [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isQueryable [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isStructuralEntity [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCppEntity >> isType [
 
 	<generated>

@@ -29,14 +29,16 @@
 
 "
 Class {
-	#name : #FamixCParameter,
-	#superclass : #FamixCNamedEntity,
+	#name : 'FamixCParameter',
+	#superclass : 'FamixCNamedEntity',
 	#traits : 'FamixTParameter',
 	#classTraits : 'FamixTParameter classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCParameter class >> annotation [
 
 	<FMClass: #Parameter super: #FamixCNamedEntity>

@@ -29,14 +29,16 @@
 
 "
 Class {
-	#name : #FamixCLocalVariable,
-	#superclass : #FamixCNamedEntity,
+	#name : 'FamixCLocalVariable',
+	#superclass : 'FamixCNamedEntity',
 	#traits : 'FamixTLocalVariable',
 	#classTraits : 'FamixTLocalVariable classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCLocalVariable class >> annotation [
 
 	<FMClass: #LocalVariable super: #FamixCNamedEntity>

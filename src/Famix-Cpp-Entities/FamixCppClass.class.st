@@ -23,7 +23,7 @@
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `incomingReferences` | `FamixTReferenceable` | `referredType` | `FamixTReference` | References to this entity by other entities.|
+| `incomingReferences` | `FamixTReferenceable` | `referredEntity` | `FamixTReference` | References to this entity by other entities.|
 | `subInheritances` | `FamixTWithInheritances` | `superclass` | `FamixTInheritance` | Subinheritance relationships, i.e. known subclasses of this type.|
 
 ### Other
@@ -44,14 +44,16 @@
 
 "
 Class {
-	#name : #FamixCppClass,
-	#superclass : #FamixCStructuredType,
+	#name : 'FamixCppClass',
+	#superclass : 'FamixCStructuredType',
 	#traits : 'FamixTClass + FamixTWithTypes',
 	#classTraits : 'FamixTClass classTrait + FamixTWithTypes classTrait',
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppClass class >> annotation [
 
 	<FMClass: #Class super: #FamixCStructuredType>
