@@ -3,418 +3,420 @@ This class is used to choose the entities to be imported when loading a model fr
 It is used by `MiImportingContextPresenter` in a `MiImportModelFromFileDialog` to import a FamixCModel.
 "
 Class {
-	#name : #FamixCImportingContext,
-	#superclass : #FamixImportingContext,
-	#category : #'Famix-C-Entities-Import'
+	#name : 'FamixCImportingContext',
+	#superclass : 'FamixImportingContext',
+	#category : 'Famix-C-Entities-Import',
+	#package : 'Famix-C-Entities',
+	#tag : 'Import'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCImportingContext class >> importedMetamodel [
 
 	<generated>
 	^ FamixCModel metamodel
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importAccess [
 
 	<generated>
 	^ self importAssociation: (self class fm3ClassNamed: #Access)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importAliasType [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #AliasType)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importAssociation [
 
 	<generated>
 	^ self importAssociation: (self class fm3ClassNamed: #Association)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importAttribute [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Attribute)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importBehaviouralEntity [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #BehaviouralEntity)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importBehaviouralPointer [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #BehaviouralPointer)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importComment [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Comment)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importContainerEntity [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #ContainerEntity)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importDereferencedInvocation [
 
 	<generated>
 	^ self importAssociation: (self class fm3ClassNamed: #DereferencedInvocation)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importEnum [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Enum)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importEnumValue [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #EnumValue)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importFunction [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Function)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importIndexedFileAnchor [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #IndexedFileAnchor)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importInvocation [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Invocation)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importLocalVariable [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #LocalVariable)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importMultipleFileAnchor [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #MultipleFileAnchor)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importParameter [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Parameter)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importPrimitiveType [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #PrimitiveType)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importReference [
 
 	<generated>
 	^ self importAssociation: (self class fm3ClassNamed: #Reference)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importRelativeSourceAnchor [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #RelativeSourceAnchor)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importSourceLanguage [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #SourceLanguage)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importSourceTextAnchor [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #SourceTextAnchor)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importStruct [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Struct)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importStructuredType [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #StructuredType)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importType [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Type)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importUnion [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Union)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importUnknownBehaviouralEntity [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownBehaviouralEntity)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importUnknownContainerEntity [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownContainerEntity)
 ]
 
-{ #category : #importing }
+{ #category : 'importing' }
 FamixCImportingContext >> importUnknownVariable [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownVariable)
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportAccess [
 
 	<generated>
 	^ self shouldImport: #Access
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportAliasType [
 
 	<generated>
 	^ self shouldImport: #AliasType
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportAssociation [
 
 	<generated>
 	^ self shouldImport: #Association
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportAttribute [
 
 	<generated>
 	^ self shouldImport: #Attribute
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportBehaviouralEntity [
 
 	<generated>
 	^ self shouldImport: #BehaviouralEntity
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportBehaviouralPointer [
 
 	<generated>
 	^ self shouldImport: #BehaviouralPointer
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportComment [
 
 	<generated>
 	^ self shouldImport: #Comment
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportContainerEntity [
 
 	<generated>
 	^ self shouldImport: #ContainerEntity
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportDereferencedInvocation [
 
 	<generated>
 	^ self shouldImport: #DereferencedInvocation
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportEnum [
 
 	<generated>
 	^ self shouldImport: #Enum
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportEnumValue [
 
 	<generated>
 	^ self shouldImport: #EnumValue
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportFunction [
 
 	<generated>
 	^ self shouldImport: #Function
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportIndexedFileAnchor [
 
 	<generated>
 	^ self shouldImport: #IndexedFileAnchor
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportInvocation [
 
 	<generated>
 	^ self shouldImport: #Invocation
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportLocalVariable [
 
 	<generated>
 	^ self shouldImport: #LocalVariable
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportMultipleFileAnchor [
 
 	<generated>
 	^ self shouldImport: #MultipleFileAnchor
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportParameter [
 
 	<generated>
 	^ self shouldImport: #Parameter
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportPrimitiveType [
 
 	<generated>
 	^ self shouldImport: #PrimitiveType
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportReference [
 
 	<generated>
 	^ self shouldImport: #Reference
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportRelativeSourceAnchor [
 
 	<generated>
 	^ self shouldImport: #RelativeSourceAnchor
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportSourceLanguage [
 
 	<generated>
 	^ self shouldImport: #SourceLanguage
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportSourceTextAnchor [
 
 	<generated>
 	^ self shouldImport: #SourceTextAnchor
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportStruct [
 
 	<generated>
 	^ self shouldImport: #Struct
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportStructuredType [
 
 	<generated>
 	^ self shouldImport: #StructuredType
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportType [
 
 	<generated>
 	^ self shouldImport: #Type
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportUnion [
 
 	<generated>
 	^ self shouldImport: #Union
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportUnknownBehaviouralEntity [
 
 	<generated>
 	^ self shouldImport: #UnknownBehaviouralEntity
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportUnknownContainerEntity [
 
 	<generated>
 	^ self shouldImport: #UnknownContainerEntity
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportUnknownVariable [
 
 	<generated>

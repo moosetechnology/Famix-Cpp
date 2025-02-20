@@ -11,15 +11,17 @@
 
 "
 Class {
-	#name : #FamixCPreprocFolder,
-	#superclass : #FamixCPreprocDiskEntity,
+	#name : 'FamixCPreprocFolder',
+	#superclass : 'FamixCPreprocDiskEntity',
 	#instVars : [
 		'#children => FMMany type: #FamixCPreprocDiskEntity opposite: #parentFolder'
 	],
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocFolder class >> annotation [
 
 	<FMClass: #Folder super: #FamixCPreprocDiskEntity>
@@ -28,13 +30,13 @@ FamixCPreprocFolder class >> annotation [
 	^ self
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCPreprocFolder >> addChildren: anObject [
 	<generated>
 	^ self children add: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocFolder >> children [
 	"Relation named: #children type: #FamixCPreprocDiskEntity opposite: #parentFolder"
 
@@ -43,7 +45,7 @@ FamixCPreprocFolder >> children [
 	^ children
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocFolder >> children: anObject [
 
 	<generated>

@@ -10,23 +10,19 @@
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
 
 
-## Properties
-======================
-
-| Name | Type | Default value | Comment |
-|---|
-| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
 
 "
 Class {
-	#name : #FamixCAssociation,
-	#superclass : #FamixCSourcedEntity,
+	#name : 'FamixCAssociation',
+	#superclass : 'FamixCSourcedEntity',
 	#traits : 'FamixTAssociation',
 	#classTraits : 'FamixTAssociation classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCAssociation class >> annotation [
 
 	<FMClass: #Association super: #FamixCSourcedEntity>

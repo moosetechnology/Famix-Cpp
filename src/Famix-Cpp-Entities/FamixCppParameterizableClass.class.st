@@ -27,17 +27,19 @@
 
 "
 Class {
-	#name : #FamixCppParameterizableClass,
-	#superclass : #FamixCppClass,
+	#name : 'FamixCppParameterizableClass',
+	#superclass : 'FamixCppClass',
 	#traits : 'FamixTParametricEntity',
 	#classTraits : 'FamixTParametricEntity classTrait',
 	#instVars : [
 		'#parameterTypes => FMMany type: #FamixCppParameterType opposite: #parentParameterizableClass'
 	],
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppParameterizableClass class >> annotation [
 
 	<FMClass: #ParameterizableClass super: #FamixCppClass>
@@ -46,13 +48,13 @@ FamixCppParameterizableClass class >> annotation [
 	^ self
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 FamixCppParameterizableClass >> addParameterType: anObject [
 	<generated>
 	^ self parameterTypes add: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppParameterizableClass >> parameterTypes [
 	"Relation named: #parameterTypes type: #FamixCppParameterType opposite: #parentParameterizableClass"
 
@@ -61,14 +63,14 @@ FamixCppParameterizableClass >> parameterTypes [
 	^ parameterTypes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppParameterizableClass >> parameterTypes: anObject [
 
 	<generated>
 	parameterTypes value: anObject
 ]
 
-{ #category : #navigation }
+{ #category : 'navigation' }
 FamixCppParameterizableClass >> parameterTypesGroup [
 	<generated>
 	<navigation: 'ParameterTypes'>

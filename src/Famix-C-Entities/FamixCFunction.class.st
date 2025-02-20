@@ -43,14 +43,16 @@
 
 "
 Class {
-	#name : #FamixCFunction,
-	#superclass : #FamixCBehaviouralEntity,
+	#name : 'FamixCFunction',
+	#superclass : 'FamixCBehaviouralEntity',
 	#traits : 'FamixTFunction',
 	#classTraits : 'FamixTFunction classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCFunction class >> annotation [
 
 	<FMClass: #Function super: #FamixCBehaviouralEntity>

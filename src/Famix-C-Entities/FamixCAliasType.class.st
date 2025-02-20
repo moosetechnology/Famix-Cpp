@@ -11,14 +11,16 @@
 
 "
 Class {
-	#name : #FamixCAliasType,
-	#superclass : #FamixCType,
+	#name : 'FamixCAliasType',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTTypeAlias',
 	#classTraits : 'FamixTTypeAlias classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCAliasType class >> annotation [
 
 	<FMClass: #AliasType super: #FamixCType>

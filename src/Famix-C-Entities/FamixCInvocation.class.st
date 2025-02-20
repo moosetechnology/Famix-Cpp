@@ -8,14 +8,16 @@
 
 "
 Class {
-	#name : #FamixCInvocation,
-	#superclass : #FamixCAssociation,
+	#name : 'FamixCInvocation',
+	#superclass : 'FamixCAssociation',
 	#traits : 'FamixTHasSignature',
 	#classTraits : 'FamixTHasSignature classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCInvocation class >> annotation [
 
 	<FMClass: #Invocation super: #FamixCAssociation>

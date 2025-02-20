@@ -25,19 +25,20 @@
 
 | Name | Type | Default value | Comment |
 |---|
-| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
 | `isWrite` | `Boolean` | false | Write access|
 
 "
 Class {
-	#name : #FamixCAccess,
-	#superclass : #FamixCAssociation,
+	#name : 'FamixCAccess',
+	#superclass : 'FamixCAssociation',
 	#traits : 'FamixTAccess',
 	#classTraits : 'FamixTAccess classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCAccess class >> annotation [
 
 	<FMClass: #Access super: #FamixCAssociation>

@@ -17,14 +17,16 @@
 
 "
 Class {
-	#name : #FamixCComment,
-	#superclass : #FamixCSourcedEntity,
+	#name : 'FamixCComment',
+	#superclass : 'FamixCSourcedEntity',
 	#traits : 'FamixTComment',
 	#classTraits : 'FamixTComment classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCComment class >> annotation [
 
 	<FMClass: #Comment super: #FamixCSourcedEntity>

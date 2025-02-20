@@ -1,10 +1,12 @@
 Class {
-	#name : #FamixCPreprocCompilationUnit,
-	#superclass : #FamixCPreprocCFile,
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#name : 'FamixCPreprocCompilationUnit',
+	#superclass : 'FamixCPreprocCFile',
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocCompilationUnit class >> annotation [
 
 	<FMClass: #CompilationUnit super: #FamixCPreprocCFile>

@@ -16,7 +16,7 @@
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `incomingReferences` | `FamixTReferenceable` | `referredType` | `FamixTReference` | References to this entity by other entities.|
+| `incomingReferences` | `FamixTReferenceable` | `referredEntity` | `FamixTReference` | References to this entity by other entities.|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -36,17 +36,19 @@
 
 "
 Class {
-	#name : #FamixCppParameterType,
-	#superclass : #FamixCType,
+	#name : 'FamixCppParameterType',
+	#superclass : 'FamixCType',
 	#traits : 'FamixTGenericParameterType',
 	#classTraits : 'FamixTGenericParameterType classTrait',
 	#instVars : [
 		'#parentParameterizableClass => FMOne type: #FamixCppParameterizableClass opposite: #parameterTypes'
 	],
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppParameterType class >> annotation [
 
 	<FMClass: #ParameterType super: #FamixCType>
@@ -55,7 +57,7 @@ FamixCppParameterType class >> annotation [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppParameterType >> parentParameterizableClass [
 	"Relation named: #parentParameterizableClass type: #FamixCppParameterizableClass opposite: #parameterTypes"
 
@@ -64,14 +66,14 @@ FamixCppParameterType >> parentParameterizableClass [
 	^ parentParameterizableClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppParameterType >> parentParameterizableClass: anObject [
 
 	<generated>
 	parentParameterizableClass := anObject
 ]
 
-{ #category : #navigation }
+{ #category : 'navigation' }
 FamixCppParameterType >> parentParameterizableClassGroup [
 	<generated>
 	<navigation: 'ParentParameterizableClass'>

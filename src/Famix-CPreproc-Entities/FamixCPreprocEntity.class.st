@@ -1,10 +1,12 @@
 Class {
-	#name : #FamixCPreprocEntity,
-	#superclass : #MooseEntity,
-	#category : #'Famix-CPreproc-Entities-Entities'
+	#name : 'FamixCPreprocEntity',
+	#superclass : 'MooseEntity',
+	#category : 'Famix-CPreproc-Entities-Entities',
+	#package : 'Famix-CPreproc-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocEntity class >> annotation [
 
 	<FMClass: #Entity super: #MooseEntity>
@@ -14,32 +16,32 @@ FamixCPreprocEntity class >> annotation [
 	^ self
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCPreprocEntity class >> isAbstract [
 
 	<generated>
 	^ self == FamixCPreprocEntity
 ]
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCPreprocEntity class >> metamodel [
 
 	<generated>
 	^ FamixCPreprocModel metamodel
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 FamixCPreprocEntity >> clearReplicationCache [
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCPreprocEntity >> isAssociation [
 
 	<generated>
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 FamixCPreprocEntity >> isQueryable [
 
 	<generated>

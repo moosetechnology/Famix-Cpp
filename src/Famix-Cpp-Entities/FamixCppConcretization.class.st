@@ -21,23 +21,19 @@
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
 
 
-## Properties
-======================
-
-| Name | Type | Default value | Comment |
-|---|
-| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
 
 "
 Class {
-	#name : #FamixCppConcretization,
-	#superclass : #FamixCppEntity,
+	#name : 'FamixCppConcretization',
+	#superclass : 'FamixCppEntity',
 	#traits : 'FamixTConcretization',
 	#classTraits : 'FamixTConcretization classTrait',
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppConcretization class >> annotation [
 
 	<FMClass: #Concretization super: #FamixCppEntity>

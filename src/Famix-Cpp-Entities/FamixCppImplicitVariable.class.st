@@ -29,14 +29,16 @@
 
 "
 Class {
-	#name : #FamixCppImplicitVariable,
-	#superclass : #FamixCNamedEntity,
+	#name : 'FamixCppImplicitVariable',
+	#superclass : 'FamixCNamedEntity',
 	#traits : 'FamixTImplicitVariable',
 	#classTraits : 'FamixTImplicitVariable classTrait',
-	#category : #'Famix-Cpp-Entities-Entities'
+	#category : 'Famix-Cpp-Entities-Entities',
+	#package : 'Famix-Cpp-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCppImplicitVariable class >> annotation [
 
 	<FMClass: #ImplicitVariable super: #FamixCNamedEntity>

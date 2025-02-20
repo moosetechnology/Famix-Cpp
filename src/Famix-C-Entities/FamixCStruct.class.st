@@ -1,10 +1,12 @@
 Class {
-	#name : #FamixCStruct,
-	#superclass : #FamixCStructuredType,
-	#category : #'Famix-C-Entities-Entities'
+	#name : 'FamixCStruct',
+	#superclass : 'FamixCStructuredType',
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCStruct class >> annotation [
 
 	<FMClass: #Struct super: #FamixCStructuredType>

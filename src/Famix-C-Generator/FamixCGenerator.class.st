@@ -1,6 +1,6 @@
 Class {
-	#name : #FamixCGenerator,
-	#superclass : #FamixBasicInfrastructureGenerator,
+	#name : 'FamixCGenerator',
+	#superclass : 'FamixBasicInfrastructureGenerator',
 	#instVars : [
 		'access',
 		'aliasType',
@@ -32,25 +32,26 @@ Class {
 		'namespace',
 		'structuredType'
 	],
-	#category : #'Famix-C-Generator'
+	#category : 'Famix-C-Generator',
+	#package : 'Famix-C-Generator'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCGenerator class >> packageName [
     ^ #'Famix-C-Entities'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCGenerator class >> prefix [
     ^ #'FamixC'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCGenerator class >> submetamodels [
     ^ { FamixCPreprocGenerator  }
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCGenerator >> defineClasses [
 	super defineClasses.
 	
@@ -96,7 +97,7 @@ FamixCGenerator >> defineClasses [
 	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity.
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCGenerator >> defineHierarchy [
    super defineHierarchy.
 
@@ -167,7 +168,6 @@ FamixCGenerator >> defineHierarchy [
 	
 	namedEntity --|> sourcedEntity.
 	namedEntity --|> #TEntityMetaLevelDependency.
-	namedEntity --|> #THasModifiers.
 
 	parameter --|> namedEntity.
 	parameter --|> #TParameter.
@@ -200,7 +200,7 @@ FamixCGenerator >> defineHierarchy [
  
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCGenerator >> defineProperties [
 
 	behaviouralEntity property: #numberOfStatements type: #Number.
@@ -222,7 +222,7 @@ FamixCGenerator >> defineProperties [
 
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCGenerator >> newBuilder [
 
 	^ super newBuilder

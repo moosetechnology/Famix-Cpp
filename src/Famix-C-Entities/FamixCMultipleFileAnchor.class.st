@@ -17,14 +17,16 @@
 
 "
 Class {
-	#name : #FamixCMultipleFileAnchor,
-	#superclass : #FamixCSourceAnchor,
+	#name : 'FamixCMultipleFileAnchor',
+	#superclass : 'FamixCSourceAnchor',
 	#traits : 'FamixTMultipleFileAnchor',
 	#classTraits : 'FamixTMultipleFileAnchor classTrait',
-	#category : #'Famix-C-Entities-Entities'
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
 }
 
-{ #category : #meta }
+{ #category : 'meta' }
 FamixCMultipleFileAnchor class >> annotation [
 
 	<FMClass: #MultipleFileAnchor super: #FamixCSourceAnchor>
