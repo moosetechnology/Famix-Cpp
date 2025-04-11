@@ -1,1 +1,1 @@
-Package { #name : #'Famix-Cpp-Generator' }
+Package { #name : 'Famix-Cpp-Generator' }

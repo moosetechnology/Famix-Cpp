@@ -81,6 +81,13 @@ FamixCImportingContext >> importDereferencedInvocation [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importEntityTyping [
+
+	<generated>
+	^ self importAssociation: (self class fm3ClassNamed: #EntityTyping)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importEnum [
 
 	<generated>
@@ -281,6 +288,13 @@ FamixCImportingContext >> shouldImportDereferencedInvocation [
 
 	<generated>
 	^ self shouldImport: #DereferencedInvocation
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportEntityTyping [
+
+	<generated>
+	^ self shouldImport: #EntityTyping
 ]
 
 { #category : 'testing' }

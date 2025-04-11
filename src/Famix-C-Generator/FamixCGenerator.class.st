@@ -30,7 +30,8 @@ Class {
 		'unknownVar',
 		'behaviouralPointer',
 		'namespace',
-		'structuredType'
+		'structuredType',
+		'entityTyping'
 	],
 	#category : 'Famix-C-Generator',
 	#package : 'Famix-C-Generator'
@@ -90,6 +91,7 @@ FamixCGenerator >> defineClasses [
 	enum := builder newClassNamed: #Enum.
 	union := builder newClassNamed: #Union.
 	aliasType := builder newClassNamed: #AliasType.
+	entityTyping := builder newClassNamed: #EntityTyping. 
 
    "ContainerEntity: BehaviouralEntity"
 	behaviouralEntity := builder newClassNamed: #BehaviouralEntity.
@@ -187,7 +189,8 @@ FamixCGenerator >> defineHierarchy [
 	type --|> containerEntity.
 	type --|> #TType.
 	type --|> #TWithTypeAliases.
-
+	
+	entityTyping --|> #TEntityTyping .
 	
    union --|> structuredType.
 

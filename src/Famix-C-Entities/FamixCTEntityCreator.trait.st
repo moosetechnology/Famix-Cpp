@@ -91,6 +91,13 @@ FamixCTEntityCreator >> newDereferencedInvocation [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newEntityTyping [
+
+	<generated>
+	^ self add: FamixCEntityTyping new
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newEnum [
 
 	<generated>
