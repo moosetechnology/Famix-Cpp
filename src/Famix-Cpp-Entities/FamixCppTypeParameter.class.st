@@ -5,12 +5,12 @@
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `concretizations` | `FamixTTypeParameter` | `genericParameter` | `FamixTConcretization` | Known concretizations of this type parameter.|
+| `concretizations` | `FamixTTypeParameter` | `typeParameter` | `FamixTConcretization` | Known concretizations of this type parameter.|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `genericEntity` | `FamixTTypeParameter` | `typeParameters` | `FamixTParametricEntity` | Generic entity that declare this type parameter.|
+| `genericEntity` | `FamixTTypeParameter` | `typeParameters` | `FamixTParametricEntity` | Generic entity that declares this type parameter.|
 
 
 

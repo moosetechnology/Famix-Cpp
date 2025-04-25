@@ -5,12 +5,12 @@
 ### Association source
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `concreteParameter` | `FamixTConcretization` | `outgoingConcretizations` | `FamixTConcreteType` | Concrete parameter linked to in this relationship. This can be a class or another type parameter.|
+| `typeArgument` | `FamixTConcretization` | `outgoingConcretizations` | `FamixTTypeArgument` | The type argument that concretizes the type parameter|
 
 ### Association target
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `genericParameter` | `FamixTConcretization` | `concretizations` | `FamixTTypeParameter` | Generic parameter linked to in this relationship.|
+| `typeParameter` | `FamixTConcretization` | `concretizations` | `FamixTTypeParameter` | Type parameter linked to in this relationship.|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |

@@ -110,7 +110,7 @@ FamixCppGenerator >> defineHierarchy [
 	typeParameter --|> type.
 	typeParameter --|> #TTypeParameter. 
 	
-	type --|> #TConcreteType.
+	type --|> #TTypeArgument.
 
 	concretization --|> #TConcretization.
 	
