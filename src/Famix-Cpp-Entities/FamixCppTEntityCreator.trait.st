@@ -91,38 +91,17 @@ FamixCppTEntityCreator >> newOOInvocation [
 ]
 
 { #category : 'entity creation' }
-FamixCppTEntityCreator >> newParameterConcretization [
+FamixCppTEntityCreator >> newParametricClass [
 
 	<generated>
-	^ self add: FamixCppParameterConcretization new
+	^ self add: FamixCppParametricClass new
 ]
 
 { #category : 'entity creation' }
-FamixCppTEntityCreator >> newParameterType [
+FamixCppTEntityCreator >> newParametricInheritance [
 
 	<generated>
-	^ self add: FamixCppParameterType new
-]
-
-{ #category : 'entity creation' }
-FamixCppTEntityCreator >> newParameterTypeNamed: aName [
-
-	<generated>
-	^ self add: (FamixCppParameterType named: aName)
-]
-
-{ #category : 'entity creation' }
-FamixCppTEntityCreator >> newParameterizableClass [
-
-	<generated>
-	^ self add: FamixCppParameterizableClass new
-]
-
-{ #category : 'entity creation' }
-FamixCppTEntityCreator >> newParameterizedType [
-
-	<generated>
-	^ self add: FamixCppParameterizedType new
+	^ self add: FamixCppParametricInheritance new
 ]
 
 { #category : 'entity creation' }
@@ -130,4 +109,11 @@ FamixCppTEntityCreator >> newSourceLanguage [
 
 	<generated>
 	^ self add: FamixCppSourceLanguage new
+]
+
+{ #category : 'entity creation' }
+FamixCppTEntityCreator >> newTypeParameter [
+
+	<generated>
+	^ self add: FamixCppTypeParameter new
 ]

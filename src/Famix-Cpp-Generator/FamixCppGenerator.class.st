@@ -2,8 +2,8 @@
 TODO
 "
 Class {
-	#name : #FamixCppGenerator,
-	#superclass : #FamixMetamodelGenerator,
+	#name : 'FamixCppGenerator',
+	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'inheritance',
 		'method',
@@ -15,9 +15,6 @@ Class {
 		'containerEntity',
 		'association',
 		'invocation',
-		'parameterizableClass',
-		'parameterizedType',
-		'parameterType',
 		'namespace',
 		'structuredType',
 		'namedEntity',
@@ -26,29 +23,34 @@ Class {
 		'sourceLanguage',
 		'sourceTextAnchor',
 		'concretization',
-		'parameterConcretization'
+		'parameterConcretization',
+		'typeParameter',
+		'parametricClass',
+		'parametricType',
+		'parametricInheritance'
 	],
-	#category : #'Famix-Cpp-Generator'
+	#category : 'Famix-Cpp-Generator',
+	#package : 'Famix-Cpp-Generator'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppGenerator class >> packageName [
 
 	<ignoreForCoverage>
 	^ 'Famix-Cpp-Entities'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppGenerator class >> prefix [
 	^ #'FamixCpp'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCppGenerator class >> submetamodels [
 	^ { FamixCGenerator }
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> defineClasses [
 	super defineClasses.
 	
@@ -69,18 +71,17 @@ FamixCppGenerator >> defineClasses [
 	namespace := builder newClassNamed: #Namespace.
 	namedEntity := self remoteEntity: #NamedEntity withPrefix: #FamixC. 
 	ooInvocation := builder newClassNamed: #OOInvocation.
-	parameterizableClass := builder newClassNamed: #ParameterizableClass.
-	parameterizedType := builder newClassNamed: #ParameterizedType.
-	parameterType := builder newClassNamed: #ParameterType.
+	parametricClass := builder newClassNamed: #ParametricClass.
+	typeParameter := builder newClassNamed: #TypeParameter.
 	sourceLanguage := builder newClassNamed: #SourceLanguage.
 	structuredType := self remoteEntity: #StructuredType withPrefix: #FamixC. 
-	type := self remoteEntity: #Type withPrefix: #FamixC. 
+	type := self remoteEntity: #Type withPrefix: #FamixC.
 	
-	parameterConcretization := builder newClassNamed: #ParameterConcretization.
+	parametricInheritance := builder newClassNamed: #ParametricInheritance.
 	concretization := builder newClassNamed: #Concretization.
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> defineHierarchy [
 	super defineHierarchy.
 
@@ -103,37 +104,34 @@ FamixCppGenerator >> defineHierarchy [
 	ooInvocation --|> invocation.
 	ooInvocation --|> #TInvocation.
 
-	parameterizableClass --|> class.
-	parameterizableClass --|> #TParametricEntity.
-	parameterizedType --|> type.
-	parameterizedType --|> #TParametricEntity.
-	parameterType --|> type.
-	parameterType --|> #TGenericParameterType.
+	parametricClass --|> class.
+	parametricClass --|> #TParametricEntity.
 	
-	type --|> #TConcreteParameterType.
+	typeParameter --|> type.
+	typeParameter --|> #TTypeParameter. 
+	
+	type --|> #TTypeArgument.
 
 	concretization --|> #TConcretization.
-	parameterConcretization --|> #TParameterConcretization.
+	
+	parametricInheritance --|> inheritance.
+	parametricInheritance --|> #TParametricAssociation.
 
 	sourceLanguage --|> entity.
 	sourceLanguage --|> #TSourceLanguage.
 
 ]
 
-{ #category : #definition }
-FamixCppGenerator >> defineRelations [ 
+{ #category : 'definition' }
+FamixCppGenerator >> defineRelations [
+
 	super defineRelations.
 
-	(parameterizableClass property: #parameterTypes)
-	<>-*
-	(parameterType property: #parentParameterizableClass).
-	
 	(namespace property: #childrenNamespaces)
-	<>-*
-	(namespace property: #parentNamespace).
+	<>-* (namespace property: #parentNamespace)
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCppGenerator >> newBuilder [
 
 	^ super newBuilder

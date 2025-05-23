@@ -67,31 +67,17 @@ FamixCppImportingContext >> importOOInvocation [
 ]
 
 { #category : 'importing' }
-FamixCppImportingContext >> importParameterConcretization [
+FamixCppImportingContext >> importParametricClass [
 
 	<generated>
-	^ self importAssociation: (self class fm3ClassNamed: #ParameterConcretization)
+	^ self importConcreteEntity: (self class fm3ClassNamed: #ParametricClass)
 ]
 
 { #category : 'importing' }
-FamixCppImportingContext >> importParameterType [
+FamixCppImportingContext >> importParametricInheritance [
 
 	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #ParameterType)
-]
-
-{ #category : 'importing' }
-FamixCppImportingContext >> importParameterizableClass [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #ParameterizableClass)
-]
-
-{ #category : 'importing' }
-FamixCppImportingContext >> importParameterizedType [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #ParameterizedType)
+	^ self importConcreteEntity: (self class fm3ClassNamed: #ParametricInheritance)
 ]
 
 { #category : 'importing' }
@@ -99,6 +85,13 @@ FamixCppImportingContext >> importSourceLanguage [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #SourceLanguage)
+]
+
+{ #category : 'importing' }
+FamixCppImportingContext >> importTypeParameter [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #TypeParameter)
 ]
 
 { #category : 'testing' }
@@ -151,31 +144,17 @@ FamixCppImportingContext >> shouldImportOOInvocation [
 ]
 
 { #category : 'testing' }
-FamixCppImportingContext >> shouldImportParameterConcretization [
+FamixCppImportingContext >> shouldImportParametricClass [
 
 	<generated>
-	^ self shouldImport: #ParameterConcretization
+	^ self shouldImport: #ParametricClass
 ]
 
 { #category : 'testing' }
-FamixCppImportingContext >> shouldImportParameterType [
+FamixCppImportingContext >> shouldImportParametricInheritance [
 
 	<generated>
-	^ self shouldImport: #ParameterType
-]
-
-{ #category : 'testing' }
-FamixCppImportingContext >> shouldImportParameterizableClass [
-
-	<generated>
-	^ self shouldImport: #ParameterizableClass
-]
-
-{ #category : 'testing' }
-FamixCppImportingContext >> shouldImportParameterizedType [
-
-	<generated>
-	^ self shouldImport: #ParameterizedType
+	^ self shouldImport: #ParametricInheritance
 ]
 
 { #category : 'testing' }
@@ -183,4 +162,11 @@ FamixCppImportingContext >> shouldImportSourceLanguage [
 
 	<generated>
 	^ self shouldImport: #SourceLanguage
+]
+
+{ #category : 'testing' }
+FamixCppImportingContext >> shouldImportTypeParameter [
+
+	<generated>
+	^ self shouldImport: #TypeParameter
 ]
