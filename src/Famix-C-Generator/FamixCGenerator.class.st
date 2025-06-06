@@ -13,6 +13,7 @@ Class {
 		'enum',
 		'enumValue',
 		'function',
+		'globalVar',
 		'headerFile',
 		'indexedFileAnchor',
 		'invocation',
@@ -76,6 +77,7 @@ FamixCGenerator >> defineClasses [
 	"STRCTURAL ENTITIES"
 	attribute := builder newClassNamed: #Attribute.
 	localVar := builder newClassNamed: #LocalVariable.
+	globalVar := builder newClassNamed: #GlobalVariable.
 	unknownVar := builder newClassNamed: #UnknownVariable.
 	parameter := builder newClassNamed: #Parameter.
 	enumValue := builder newClassNamed: #EnumValue.
@@ -161,12 +163,16 @@ FamixCGenerator >> defineHierarchy [
 
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
+	
+	globalVar --|> namedEntity.
+	globalVar --|> #TGlobalVariable.
 
    invocation --|> association.
 	invocation --|> #THasSignature.
 	
 	localVar --|> namedEntity.
 	localVar --|> #TLocalVariable.
+
 	
 	namedEntity --|> sourcedEntity.
 	namedEntity --|> #TEntityMetaLevelDependency.

@@ -109,6 +109,13 @@ FamixCImportingContext >> importFunction [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importGlobalVariable [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #GlobalVariable)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importIndexedFileAnchor [
 
 	<generated>
@@ -316,6 +323,13 @@ FamixCImportingContext >> shouldImportFunction [
 
 	<generated>
 	^ self shouldImport: #Function
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportGlobalVariable [
+
+	<generated>
+	^ self shouldImport: #GlobalVariable
 ]
 
 { #category : 'testing' }
