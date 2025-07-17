@@ -31,7 +31,8 @@ Class {
 		'behaviouralPointer',
 		'namespace',
 		'structuredType',
-		'entityTyping'
+		'entityTyping',
+		'cEntity'
 	],
 	#category : 'Famix-C-Generator',
 	#package : 'Famix-C-Generator'
@@ -97,6 +98,8 @@ FamixCGenerator >> defineClasses [
 	behaviouralEntity := builder newClassNamed: #BehaviouralEntity.
 	function := builder newClassNamed: #Function.
 	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity.
+	
+	cEntity := self remoteEntity: #Entity withPrefix: #FamixCPreproc.
 ]
 
 { #category : 'definition' }
@@ -104,6 +107,7 @@ FamixCGenerator >> defineHierarchy [
    super defineHierarchy.
 
    "Anchors"
+	sourceAnchor --|> cEntity.
 	sourceAnchor --|> #TSourceAnchor.
 	indexedFileAnchor --|> sourceAnchor.
 	indexedFileAnchor --|> #TIndexedFileNavigation.
@@ -111,7 +115,9 @@ FamixCGenerator >> defineHierarchy [
 	sourceTextAnchor --|> #THasImmediateSource.
 	multipleFileAnchor --|> sourceAnchor.
 	multipleFileAnchor --|> #TMultipleFileAnchor.
+	relativeSourceAnchor --|> cEntity.
 	relativeSourceAnchor --|> #TRelativeSourceAnchor.
+	sourceLanguage --|> cEntity.
 	sourceLanguage --|> #TSourceLanguage.
 
 	"entities"
@@ -158,6 +164,9 @@ FamixCGenerator >> defineHierarchy [
 	enumValue --|> #TEnumValue.
 	enumValue --|> #TAccessible.
 	enumValue --|> #TSourceEntity.
+	
+	entityTyping --|> cEntity.
+	entityTyping --|> #TEntityTyping.
 
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
@@ -180,6 +189,8 @@ FamixCGenerator >> defineHierarchy [
    reference --|> association.
    reference --|> #TReference.
 
+	sourcedEntity --|> cEntity.
+
 	structuredType --|> type.
 	structuredType --|> #TWithAttributes.
 	structuredType --|> #TWithComments.
@@ -189,8 +200,6 @@ FamixCGenerator >> defineHierarchy [
 	type --|> containerEntity.
 	type --|> #TType.
 	type --|> #TWithTypeAliases.
-	
-	entityTyping --|> #TEntityTyping .
 	
    union --|> structuredType.
 

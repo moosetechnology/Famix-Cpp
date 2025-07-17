@@ -12,7 +12,7 @@
 "
 Class {
 	#name : 'FamixCSourceLanguage',
-	#superclass : 'FamixCEntity',
+	#superclass : 'FamixCPreprocEntity',
 	#traits : 'FamixTSourceLanguage',
 	#classTraits : 'FamixTSourceLanguage classTrait',
 	#category : 'Famix-C-Entities-Entities',
@@ -23,7 +23,7 @@ Class {
 { #category : 'meta' }
 FamixCSourceLanguage class >> annotation [
 
-	<FMClass: #SourceLanguage super: #FamixCEntity>
+	<FMClass: #SourceLanguage super: #FamixCPreprocEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self

@@ -24,7 +24,7 @@
 "
 Class {
 	#name : 'FamixCEntityTyping',
-	#superclass : 'FamixCEntity',
+	#superclass : 'FamixCPreprocEntity',
 	#traits : 'FamixTEntityTyping',
 	#classTraits : 'FamixTEntityTyping classTrait',
 	#category : 'Famix-C-Entities-Entities',
@@ -35,7 +35,7 @@ Class {
 { #category : 'meta' }
 FamixCEntityTyping class >> annotation [
 
-	<FMClass: #EntityTyping super: #FamixCEntity>
+	<FMClass: #EntityTyping super: #FamixCPreprocEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self
