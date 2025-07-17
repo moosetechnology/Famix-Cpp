@@ -23,7 +23,7 @@ Class {
 { #category : 'meta' }
 FamixCppSourceLanguage class >> annotation [
 
-	<FMClass: #SourceLanguage super: #FamixCEntity>
+	<FMClass: #SourceLanguage super: #FamixCPreprocEntity>
 	<package: #'Famix-Cpp-Entities'>
 	<generated>
 	^ self
