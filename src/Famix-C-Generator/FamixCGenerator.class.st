@@ -32,7 +32,8 @@ Class {
 		'namespace',
 		'structuredType',
 		'entityTyping',
-		'cEntity'
+		'cEntity',
+		'cPreprocCompilationUnit'
 	],
 	#category : 'Famix-C-Generator',
 	#package : 'Famix-C-Generator'
@@ -55,13 +56,14 @@ FamixCGenerator class >> submetamodels [
 
 { #category : 'definition' }
 FamixCGenerator >> defineClasses [
+
 	super defineClasses.
-	
+
 	"Anchors"
 	indexedFileAnchor := builder newClassNamed: #IndexedFileAnchor.
 	multipleFileAnchor := builder newClassNamed: #MultipleFileAnchor.
 	relativeSourceAnchor := builder newClassNamed: #RelativeSourceAnchor.
-	
+
 	"SourcedEntity: Association"
 	association := builder newClassNamed: #Association.
 	access := builder newClassNamed: #Access.
@@ -71,8 +73,8 @@ FamixCGenerator >> defineClasses [
 	derefInvocation := builder newClassNamed: #DereferencedInvocation.
 
 	"CFiles"
-	compilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc. 
-	headerFile := self remoteEntity: #HeaderFile withPrefix: #FamixCPreproc. 
+	compilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc.
+	headerFile := self remoteEntity: #HeaderFile withPrefix: #FamixCPreproc.
 
 	"STRCTURAL ENTITIES"
 	attribute := builder newClassNamed: #Attribute.
@@ -84,7 +86,7 @@ FamixCGenerator >> defineClasses [
 	containerEntity := builder newClassNamed: #ContainerEntity.
 	unknownContainerEntity := builder newClassNamed: #UnknownContainerEntity.
 
-	"TYPES"	
+	"TYPES"
 	type := builder newClassNamed: #Type.
 	primitiveType := builder newClassNamed: #PrimitiveType.
 	structuredType := builder newClassNamed: #StructuredType.
@@ -92,14 +94,15 @@ FamixCGenerator >> defineClasses [
 	enum := builder newClassNamed: #Enum.
 	union := builder newClassNamed: #Union.
 	aliasType := builder newClassNamed: #AliasType.
-	entityTyping := builder newClassNamed: #EntityTyping. 
+	entityTyping := builder newClassNamed: #EntityTyping.
 
-   "ContainerEntity: BehaviouralEntity"
+	"ContainerEntity: BehaviouralEntity"
 	behaviouralEntity := builder newClassNamed: #BehaviouralEntity.
 	function := builder newClassNamed: #Function.
 	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity.
-	
+
 	cEntity := self remoteEntity: #Entity withPrefix: #FamixCPreproc.
+	cPreprocCompilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc
 ]
 
 { #category : 'definition' }
@@ -209,6 +212,8 @@ FamixCGenerator >> defineHierarchy [
 	
 	unknownVar --|> namedEntity.
 	unknownVar --|> #TUnknownVariable.
+	
+	
  
 ]
 
@@ -232,6 +237,17 @@ FamixCGenerator >> defineProperties [
 	((behaviouralEntity property: #behaviouralPointers)
 			comment: 'All functions which addresses are used in this entity').
 
+]
+
+{ #category : 'definition' }
+FamixCGenerator >> defineRelations [
+
+	super defineRelations.
+
+	((type property: #typeContainer)
+		 comment: 'Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).';
+		 container) *- ((cPreprocCompilationUnit property: #types) comment: 'Types contained (declared) in this entity, if any.
+#types is declared in ContainerEntity because different kinds of container can embed types. Types are usually contained in a Famix.Namespace. But types can also be contained in a Famix.Class or Famix.Method (in Java with inner classes for example). Famix.Function can also contain some types such as structs.')
 ]
 
 { #category : 'definition' }

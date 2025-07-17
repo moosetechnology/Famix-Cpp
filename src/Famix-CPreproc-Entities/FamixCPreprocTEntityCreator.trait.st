@@ -28,10 +28,24 @@ FamixCPreprocTEntityCreator >> newCFile [
 ]
 
 { #category : 'entity creation' }
+FamixCPreprocTEntityCreator >> newCFileNamed: aName [
+
+	<generated>
+	^ self add: (FamixCPreprocCFile named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCPreprocTEntityCreator >> newCompilationUnit [
 
 	<generated>
 	^ self add: FamixCPreprocCompilationUnit new
+]
+
+{ #category : 'entity creation' }
+FamixCPreprocTEntityCreator >> newCompilationUnitNamed: aName [
+
+	<generated>
+	^ self add: (FamixCPreprocCompilationUnit named: aName)
 ]
 
 { #category : 'entity creation' }
@@ -56,10 +70,24 @@ FamixCPreprocTEntityCreator >> newFolder [
 ]
 
 { #category : 'entity creation' }
+FamixCPreprocTEntityCreator >> newFolderNamed: aName [
+
+	<generated>
+	^ self add: (FamixCPreprocFolder named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCPreprocTEntityCreator >> newHeaderFile [
 
 	<generated>
 	^ self add: FamixCPreprocHeaderFile new
+]
+
+{ #category : 'entity creation' }
+FamixCPreprocTEntityCreator >> newHeaderFileNamed: aName [
+
+	<generated>
+	^ self add: (FamixCPreprocHeaderFile named: aName)
 ]
 
 { #category : 'entity creation' }

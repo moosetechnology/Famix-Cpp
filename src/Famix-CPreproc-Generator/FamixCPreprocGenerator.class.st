@@ -2,8 +2,8 @@
 Generator for CPreprocessor meta model (note: used in the C meta model)
 "
 Class {
-	#name : #FamixCPreprocGenerator,
-	#superclass : #FamixMetamodelGenerator,
+	#name : 'FamixCPreprocGenerator',
+	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
 		'preprocIfdef',
 		'preprocDefine',
@@ -21,25 +21,26 @@ Class {
 		'preprocIfdef',
 		'preprocDefine'
 	],
-	#category : #'Famix-CPreproc-Generator'
+	#category : 'Famix-CPreproc-Generator',
+	#package : 'Famix-CPreproc-Generator'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocGenerator class >> packageName [
     ^ #'Famix-CPreproc-Entities'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocGenerator class >> prefix [
     ^ #'FamixCPreproc'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 FamixCPreprocGenerator class >> submetamodels [
     ^ { FamixGenerator }
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCPreprocGenerator >> defineClasses [
 	super defineClasses.
 
@@ -57,7 +58,7 @@ FamixCPreprocGenerator >> defineClasses [
 
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCPreprocGenerator >> defineHierarchy [
 	super defineHierarchy.
     
@@ -67,6 +68,8 @@ FamixCPreprocGenerator >> defineHierarchy [
 	folder --|> diskEntity .
 
 	header --|> cFile.
+	header --|> #TCanBeStub.
+	
    compilUnit --|> cFile.
 
    preprocIfdef --|> preprocStatement.
@@ -79,7 +82,7 @@ FamixCPreprocGenerator >> defineHierarchy [
    include --|> #TAssociation.
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCPreprocGenerator >> defineProperties [
 
 	(include property: #isLocal type: #Boolean)
@@ -92,7 +95,7 @@ FamixCPreprocGenerator >> defineProperties [
 		comment: 'Whether this is a #ifdef (not negated) or #ifndef (negated)'.
 ]
 
-{ #category : #definition }
+{ #category : 'definition' }
 FamixCPreprocGenerator >> defineRelations [
 
 	((include property: #included)
