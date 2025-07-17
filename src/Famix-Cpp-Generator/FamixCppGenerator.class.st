@@ -47,7 +47,7 @@ FamixCppGenerator class >> prefix [
 
 { #category : 'accessing' }
 FamixCppGenerator class >> submetamodels [
-	^ { FamixCGenerator }
+	^ { FamixCGenerator. FamixCPreprocGenerator }
 ]
 
 { #category : 'definition' }
@@ -55,7 +55,7 @@ FamixCppGenerator >> defineClasses [
 	super defineClasses.
 	
 	"classes from FamixBasicInfrastructureGenerator that we want to reuse from C-Meta-Model"
-	entity := self remoteEntity: #Entity withPrefix: #FamixC.
+	entity := self remoteEntity: #Entity withPrefix: #FamixCPreproc.
 	sourceAnchor := self remoteEntity: #SourceAnchor withPrefix: #FamixC.
 	namedEntity  := self remoteEntity: #SourceLanguage withPrefix: #FamixC.
 	sourceTextAnchor := self remoteEntity: #SourceTextAnchor withPrefix: #FamixC.

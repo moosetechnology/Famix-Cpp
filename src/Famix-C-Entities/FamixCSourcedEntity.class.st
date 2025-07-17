@@ -12,7 +12,7 @@
 "
 Class {
 	#name : 'FamixCSourcedEntity',
-	#superclass : 'FamixCEntity',
+	#superclass : 'FamixCPreprocEntity',
 	#traits : 'FamixTSourceEntity',
 	#classTraits : 'FamixTSourceEntity classTrait',
 	#category : 'Famix-C-Entities-Entities',
@@ -23,7 +23,7 @@ Class {
 { #category : 'meta' }
 FamixCSourcedEntity class >> annotation [
 
-	<FMClass: #SourcedEntity super: #FamixCEntity>
+	<FMClass: #SourcedEntity super: #FamixCPreprocEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	<abstract>

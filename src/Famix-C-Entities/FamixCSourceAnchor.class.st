@@ -12,7 +12,7 @@
 "
 Class {
 	#name : 'FamixCSourceAnchor',
-	#superclass : 'FamixCEntity',
+	#superclass : 'FamixCPreprocEntity',
 	#traits : 'FamixTSourceAnchor',
 	#classTraits : 'FamixTSourceAnchor classTrait',
 	#category : 'Famix-C-Entities-Entities',
@@ -23,7 +23,7 @@ Class {
 { #category : 'meta' }
 FamixCSourceAnchor class >> annotation [
 
-	<FMClass: #SourceAnchor super: #FamixCEntity>
+	<FMClass: #SourceAnchor super: #FamixCPreprocEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	<abstract>

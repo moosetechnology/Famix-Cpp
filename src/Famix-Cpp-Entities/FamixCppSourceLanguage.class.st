@@ -12,7 +12,7 @@
 "
 Class {
 	#name : 'FamixCppSourceLanguage',
-	#superclass : 'FamixCEntity',
+	#superclass : 'AnObsoleteFamixCEntity',
 	#traits : 'FamixTSourceLanguage',
 	#classTraits : 'FamixTSourceLanguage classTrait',
 	#category : 'Famix-Cpp-Entities-Entities',

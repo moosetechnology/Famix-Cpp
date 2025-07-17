@@ -35,6 +35,13 @@ FamixCTEntityCreator >> newAliasType [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newAliasTypeNamed: aName [
+
+	<generated>
+	^ self add: (FamixCAliasType named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newAssociation [
 
 	<generated>
@@ -63,6 +70,13 @@ FamixCTEntityCreator >> newBehaviouralEntity [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newBehaviouralEntityNamed: aName [
+
+	<generated>
+	^ self add: (FamixCBehaviouralEntity named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newBehaviouralPointer [
 
 	<generated>
@@ -81,6 +95,13 @@ FamixCTEntityCreator >> newContainerEntity [
 
 	<generated>
 	^ self add: FamixCContainerEntity new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newContainerEntityNamed: aName [
+
+	<generated>
+	^ self add: (FamixCContainerEntity named: aName)
 ]
 
 { #category : 'entity creation' }
@@ -238,10 +259,24 @@ FamixCTEntityCreator >> newStruct [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newStructNamed: aName [
+
+	<generated>
+	^ self add: (FamixCStruct named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newStructuredType [
 
 	<generated>
 	^ self add: FamixCStructuredType new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newStructuredTypeNamed: aName [
+
+	<generated>
+	^ self add: (FamixCStructuredType named: aName)
 ]
 
 { #category : 'entity creation' }
@@ -266,6 +301,13 @@ FamixCTEntityCreator >> newUnion [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newUnionNamed: aName [
+
+	<generated>
+	^ self add: (FamixCUnion named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newUnknownBehaviouralEntity [
 
 	<generated>
@@ -273,10 +315,24 @@ FamixCTEntityCreator >> newUnknownBehaviouralEntity [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newUnknownBehaviouralEntityNamed: aName [
+
+	<generated>
+	^ self add: (FamixCUnknownBehaviouralEntity named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newUnknownContainerEntity [
 
 	<generated>
 	^ self add: FamixCUnknownContainerEntity new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newUnknownContainerEntityNamed: aName [
+
+	<generated>
+	^ self add: (FamixCUnknownContainerEntity named: aName)
 ]
 
 { #category : 'entity creation' }
