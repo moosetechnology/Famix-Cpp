@@ -29,3 +29,12 @@ FamixCStructuredType class >> annotation [
 	<generated>
 	^ self
 ]
+
+{ #category : 'testing' }
+FamixCStructuredType >> isAnonymous [
+
+	<FMProperty: #isAnonymous type: #Boolean>
+	<FMComment: 'Return true when the structure is anonymous (does not have a name)'>
+	<derived>
+	^ self name isEmptyOrNil
+]
