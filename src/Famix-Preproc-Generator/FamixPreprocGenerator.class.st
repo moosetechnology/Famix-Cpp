@@ -5,7 +5,7 @@ Class {
 	#name : 'FamixPreprocGenerator',
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
-		'rFile',
+		'tFile',
 		'tCompilationUnit',
 		'tHeader',
 		'tInclude',
@@ -37,12 +37,12 @@ FamixPreprocGenerator >> defineHierarchy [
 
 	super defineHierarchy.
 
-	tHeader --|> #TWithFiles.
+	tHeader --|> tFile.
 	tHeader --|> #TNamedEntity.
 	tHeader --|> #TEntityMetaLevelDependency.
 	tHeader --|> #TCanBeStub.
 
-	tCompilationUnit --|> #TWithFiles.
+	tCompilationUnit --|> tFile.
 	tCompilationUnit --|> #TNamedEntity.
 	tCompilationUnit --|> #TEntityMetaLevelDependency.
 	tCompilationUnit --|> #TCanBeStub.
@@ -77,14 +77,14 @@ FamixPreprocGenerator >> defineRelations [
 			comment: 'C-File included';
 			target)
 		*-
-	((rFile property: #inclusion)
+	((tFile property: #inclusion)
 			comment: 'All inclusions of this C-file').
 
 	((tInclude property: #includedBy)
 			comment: 'C-File including the receiver';
 			source)
 		*-
-	((rFile property: #includes)
+	((tFile property: #includes)
 			comment: 'All inclusions made by this C-File')
 
 ]
@@ -94,18 +94,24 @@ FamixPreprocGenerator >> defineTraits [
 
 	super defineTraits.
 
+	tFile := builder newTraitNamed: 'TFile'.
+
 	tHeader := builder newTraitNamed: #THeaderFile.
 	tCompilationUnit := builder newTraitNamed: #TCompilationUnit.
 
 	tPreprocStatement := builder newTraitNamed: #TPreprocessorStatement.
-	tPreprocIfdef := builder newTraitNamed: #TPreprocessorIfdef comment: 'Represent a preprocessor #ifdef/#ifndef statement
+	tPreprocIfdef := builder
+		                 newTraitNamed: #TPreprocessorIfdef
+		                 comment:
+			                 'Represent a preprocessor #ifdef/#ifndef statement
 
 Knows the name of the macro tested and whether it is "negated" (#ifndef) or not (#ifdef)'.
-	tPreprocDefine := builder newTraitNamed: #TPreprocessorDefine comment: 'Represent a preprocessor #define statement
+	tPreprocDefine := builder
+		                  newTraitNamed: #TPreprocessorDefine
+		                  comment:
+			                  'Represent a preprocessor #define statement
 
 Knows the name of the macro defined'.
 
-	tInclude := builder newTraitNamed: #TInclude.
-
-	rFile := self remoteTrait: #TFile withPrefix: 'Famix'
+	tInclude := builder newTraitNamed: #TInclude
 ]

@@ -2,10 +2,19 @@
 ## Relations
 ======================
 
+### Outgoing dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `includes` | `FamixPreprocTFile` | `includedBy` | `FamixPreprocTInclude` | All inclusions made by this C-File|
+
+### Incoming dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `inclusion` | `FamixPreprocTFile` | `included` | `FamixPreprocTInclude` | All inclusions of this C-file|
+
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `containerFiles` | `FamixTWithFiles` | `entities` | `FamixTFile` | List of files containing the entity|
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
 
 
@@ -20,8 +29,8 @@
 "
 Trait {
 	#name : 'FamixPreprocTCompilationUnit',
-	#traits : 'FamixTCanBeStub + FamixTNamedEntity + FamixTWithFiles + TEntityMetaLevelDependency',
-	#classTraits : 'FamixTCanBeStub classTrait + FamixTNamedEntity classTrait + FamixTWithFiles classTrait + TEntityMetaLevelDependency classTrait',
+	#traits : 'FamixPreprocTFile + FamixTCanBeStub + FamixTNamedEntity + TEntityMetaLevelDependency',
+	#classTraits : 'FamixPreprocTFile classTrait + FamixTCanBeStub classTrait + FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
 	#category : 'Famix-Preproc-Traits-Traits',
 	#package : 'Famix-Preproc-Traits',
 	#tag : 'Traits'

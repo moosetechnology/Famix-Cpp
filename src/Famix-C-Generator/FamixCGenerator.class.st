@@ -12,8 +12,6 @@ Class {
 		'derefInvocation',
 		'enum',
 		'enumValue',
-		'file',
-		'folder',
 		'function',
 		'headerFile',
 		'include',
@@ -74,10 +72,6 @@ FamixCGenerator >> defineClasses [
 	reference := builder newClassNamed: #Reference.
 	behaviouralPointer := builder newClassNamed: #BehaviouralPointer.
 	derefInvocation := builder newClassNamed: #DereferencedInvocation.
-	
-	"Files"
-	file := builder newClassNamed: #File.
-	folder := builder newClassNamed: #Folder.
 
 	"Preproc"
 	compilationUnit := builder newClassNamed: #CompilationUnit.
@@ -127,10 +121,6 @@ FamixCGenerator >> defineHierarchy [
 	multipleFileAnchor --|> #TMultipleFileAnchor.
 	relativeSourceAnchor --|> #TRelativeSourceAnchor.
 	sourceLanguage --|> #TSourceLanguage.
-	
-	"Files"
-	file --|> #TFile.
-	folder --|> #TFolder.
 
 	"Preproc"
 	compilationUnit --|> #TCompilationUnit.

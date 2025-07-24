@@ -109,20 +109,6 @@ FamixCImportingContext >> importEnumValue [
 ]
 
 { #category : 'importing' }
-FamixCImportingContext >> importFile [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #File)
-]
-
-{ #category : 'importing' }
-FamixCImportingContext >> importFolder [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #Folder)
-]
-
-{ #category : 'importing' }
 FamixCImportingContext >> importFunction [
 
 	<generated>
@@ -365,20 +351,6 @@ FamixCImportingContext >> shouldImportEnumValue [
 
 	<generated>
 	^ self shouldImport: #EnumValue
-]
-
-{ #category : 'testing' }
-FamixCImportingContext >> shouldImportFile [
-
-	<generated>
-	^ self shouldImport: #File
-]
-
-{ #category : 'testing' }
-FamixCImportingContext >> shouldImportFolder [
-
-	<generated>
-	^ self shouldImport: #Folder
 ]
 
 { #category : 'testing' }

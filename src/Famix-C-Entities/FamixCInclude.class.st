@@ -5,12 +5,12 @@
 ### Association source
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixTFile` | C-File including the receiver|
+| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixPreprocTFile` | C-File including the receiver|
 
 ### Association target
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixTFile` | C-File included|
+| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixPreprocTFile` | C-File included|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |

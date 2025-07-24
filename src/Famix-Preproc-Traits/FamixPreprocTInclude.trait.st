@@ -5,12 +5,12 @@
 ### Association source
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixTFile` | C-File including the receiver|
+| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixPreprocTFile` | C-File including the receiver|
 
 ### Association target
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixTFile` | C-File included|
+| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixPreprocTFile` | C-File included|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -31,6 +31,8 @@
 Trait {
 	#name : 'FamixPreprocTInclude',
 	#instVars : [
+		'#included => FMOne type: #FamixPreprocTFile opposite: #inclusion',
+		'#includedBy => FMOne type: #FamixPreprocTFile opposite: #includes',
 		'#isLocal => FMProperty'
 	],
 	#traits : 'FamixTAssociation',
@@ -51,38 +53,36 @@ FamixPreprocTInclude classSide >> annotation [
 
 { #category : 'accessing' }
 FamixPreprocTInclude >> included [
-	"Relation named: #included type: #FamixTFile opposite: #inclusion"
+	"Relation named: #included type: #FamixPreprocTFile opposite: #inclusion"
 
 	<generated>
 	<FMComment: 'C-File included'>
 	<target>
-	<FMProperty: #included type: #FamixTFile opposite: #inclusion>
-	^ self attributeAt: #included ifAbsent: [ nil ]
+	^ included
 ]
 
 { #category : 'accessing' }
 FamixPreprocTInclude >> included: anObject [
 
 	<generated>
-	self attributeAt: #included put: (FMMultivalueLink on: self update: #inclusion from: self included to: anObject).
+	included := anObject
 ]
 
 { #category : 'accessing' }
 FamixPreprocTInclude >> includedBy [
-	"Relation named: #includedBy type: #FamixTFile opposite: #includes"
+	"Relation named: #includedBy type: #FamixPreprocTFile opposite: #includes"
 
 	<generated>
 	<FMComment: 'C-File including the receiver'>
 	<source>
-	<FMProperty: #includedBy type: #FamixTFile opposite: #includes>
-	^ self attributeAt: #includedBy ifAbsent: [ nil ]
+	^ includedBy
 ]
 
 { #category : 'accessing' }
 FamixPreprocTInclude >> includedBy: anObject [
 
 	<generated>
-	self attributeAt: #includedBy put: (FMMultivalueLink on: self update: #includes from: self includedBy to: anObject).
+	includedBy := anObject
 ]
 
 { #category : 'accessing' }

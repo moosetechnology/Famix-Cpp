@@ -161,34 +161,6 @@ FamixCTEntityCreator >> newEnumValueNamed: aName [
 ]
 
 { #category : 'entity creation' }
-FamixCTEntityCreator >> newFile [
-
-	<generated>
-	^ self add: FamixCFile new
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newFileNamed: aName [
-
-	<generated>
-	^ self add: (FamixCFile named: aName)
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newFolder [
-
-	<generated>
-	^ self add: FamixCFolder new
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newFolderNamed: aName [
-
-	<generated>
-	^ self add: (FamixCFolder named: aName)
-]
-
-{ #category : 'entity creation' }
 FamixCTEntityCreator >> newFunction [
 
 	<generated>
