@@ -29,7 +29,7 @@
 "
 Class {
 	#name : 'FamixCHeaderFile',
-	#superclass : 'FamixCEntity',
+	#superclass : 'FamixCPreprocessingFile',
 	#traits : 'FamixPreprocTHeaderFile',
 	#classTraits : 'FamixPreprocTHeaderFile classTrait',
 	#category : 'Famix-C-Entities-Entities',
@@ -40,7 +40,7 @@ Class {
 { #category : 'meta' }
 FamixCHeaderFile class >> annotation [
 
-	<FMClass: #HeaderFile super: #FamixCEntity>
+	<FMClass: #HeaderFile super: #FamixCPreprocessingFile>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self

@@ -5,7 +5,6 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typeContainer` | `FamixCType` | `types` | `FamixCCompilationUnit` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 | `typeContainer` | `FamixTType` | `types` | `FamixTWithTypes` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 
 ### Incoming dependencies
@@ -35,9 +34,6 @@ Class {
 	#superclass : 'FamixCContainerEntity',
 	#traits : 'FamixTType + FamixTWithTypeAliases',
 	#classTraits : 'FamixTType classTrait + FamixTWithTypeAliases classTrait',
-	#instVars : [
-		'#typeContainer => FMOne type: #FamixCCompilationUnit opposite: #types'
-	],
 	#category : 'Famix-C-Entities',
 	#package : 'Famix-C-Entities'
 }
@@ -49,28 +45,4 @@ FamixCType class >> annotation [
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self
-]
-
-{ #category : 'accessing' }
-FamixCType >> typeContainer [
-	"Relation named: #typeContainer type: #FamixCCompilationUnit opposite: #types"
-
-	<generated>
-	<FMComment: 'Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).'>
-	<container>
-	^ typeContainer
-]
-
-{ #category : 'accessing' }
-FamixCType >> typeContainer: anObject [
-
-	<generated>
-	typeContainer := anObject
-]
-
-{ #category : 'navigation' }
-FamixCType >> typeContainerGroup [
-	<generated>
-	<navigation: 'TypeContainer'>
-	^ MooseSpecializedGroup with: self typeContainer
 ]

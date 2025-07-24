@@ -28,13 +28,12 @@ Class {
 		'struct',
 		'type',
 		'union',
-		'unknownBehaviour',
-		'unknownContainerEntity',
-		'unknownVar',
 		'behaviouralPointer',
 		'namespace',
 		'structuredType',
-		'entityTyping'
+		'entityTyping',
+		'globalVar',
+		'preprocFile'
 	],
 	#category : 'Famix-C-Generator',
 	#package : 'Famix-C-Generator'
@@ -74,6 +73,7 @@ FamixCGenerator >> defineClasses [
 	derefInvocation := builder newClassNamed: #DereferencedInvocation.
 
 	"Preproc"
+	preprocFile := builder newClassNamed: #PreprocessingFile.
 	compilationUnit := builder newClassNamed: #CompilationUnit.
 	headerFile := builder newClassNamed: #HeaderFile.
 	include := builder newClassNamed: #Include.
@@ -83,12 +83,11 @@ FamixCGenerator >> defineClasses [
 	"STRCTURAL ENTITIES"
 	attribute := builder newClassNamed: #Attribute.
 	localVar := builder newClassNamed: #LocalVariable.
-	unknownVar := builder newClassNamed: #UnknownVariable.
+	globalVar := builder newClassNamed: #GlobalVariable.
 	parameter := builder newClassNamed: #Parameter.
 	enumValue := builder newClassNamed: #EnumValue.
 
 	containerEntity := builder newClassNamed: #ContainerEntity.
-	unknownContainerEntity := builder newClassNamed: #UnknownContainerEntity.
 
 	"TYPES"
 	type := builder newClassNamed: #Type.
@@ -102,8 +101,7 @@ FamixCGenerator >> defineClasses [
 
 	"ContainerEntity: BehaviouralEntity"
 	behaviouralEntity := builder newClassNamed: #BehaviouralEntity.
-	function := builder newClassNamed: #Function.
-	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity
+	function := builder newClassNamed: #Function
 ]
 
 { #category : 'definition' }
@@ -123,10 +121,21 @@ FamixCGenerator >> defineHierarchy [
 	sourceLanguage --|> #TSourceLanguage.
 
 	"Preproc"
+	preprocFile --|> #TWithTypes.
+	preprocFile --|> #TWithFunctions.
+	preprocFile --|> #TWithGlobalVariables.
+
+
+	compilationUnit --|> preprocFile.
 	compilationUnit --|> #TCompilationUnit.
+
+	headerFile --|> preprocFile.
 	headerFile --|> #THeaderFile.
+
 	include --|> #TInclude.
+
 	preprocDefine --|> #TPreprocessorDefine.
+
 	preprocIfDef --|> #TPreprocessorIfdef.
 
 	"entities"
@@ -179,6 +188,9 @@ FamixCGenerator >> defineHierarchy [
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
 
+	globalVar --|> namedEntity.
+	globalVar --|> #TGlobalVariable.
+
 	invocation --|> association.
 	invocation --|> #THasSignature.
 
@@ -208,14 +220,7 @@ FamixCGenerator >> defineHierarchy [
 	type --|> #TType.
 	type --|> #TWithTypeAliases.
 
-	union --|> structuredType.
-
-	unknownBehaviour --|> behaviouralEntity.
-
-	unknownContainerEntity --|> containerEntity.
-
-	unknownVar --|> namedEntity.
-	unknownVar --|> #TUnknownVariable
+	union --|> structuredType
 ]
 
 { #category : 'definition' }
@@ -238,17 +243,6 @@ FamixCGenerator >> defineProperties [
 	((behaviouralEntity property: #behaviouralPointers)
 			comment: 'All functions which addresses are used in this entity').
 
-]
-
-{ #category : 'definition' }
-FamixCGenerator >> defineRelations [
-
-	super defineRelations.
-
-	((type property: #typeContainer)
-		 comment: 'Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).';
-		 container) *- ((compilationUnit property: #types) comment: 'Types contained (declared) in this entity, if any.
-#types is declared in ContainerEntity because different kinds of container can embed types. Types are usually contained in a Famix.Namespace. But types can also be contained in a Famix.Class or Famix.Method (in Java with inner classes for example). Famix.Function can also contain some types such as structs.')
 ]
 
 { #category : 'definition' }

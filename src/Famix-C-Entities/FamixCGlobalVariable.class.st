@@ -2,6 +2,11 @@
 ## Relations
 ======================
 
+### Parents
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `parentScope` | `FamixTGlobalVariable` | `globalVariables` | `FamixTWithGlobalVariables` | Scope declaring the global variable. belongsTo implementation|
+
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -28,19 +33,19 @@
 
 "
 Class {
-	#name : 'FamixCUnknownVariable',
+	#name : 'FamixCGlobalVariable',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTUnknownVariable',
-	#classTraits : 'FamixTUnknownVariable classTrait',
+	#traits : 'FamixTGlobalVariable',
+	#classTraits : 'FamixTGlobalVariable classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
 
 { #category : 'meta' }
-FamixCUnknownVariable class >> annotation [
+FamixCGlobalVariable class >> annotation [
 
-	<FMClass: #UnknownVariable super: #FamixCNamedEntity>
+	<FMClass: #GlobalVariable super: #FamixCNamedEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self
