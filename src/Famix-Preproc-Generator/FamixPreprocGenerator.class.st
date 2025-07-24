@@ -34,24 +34,27 @@ FamixPreprocGenerator class >> submetamodels [
 
 { #category : 'definition' }
 FamixPreprocGenerator >> defineHierarchy [
+
 	super defineHierarchy.
 
 	tHeader --|> #TWithFiles.
 	tHeader --|> #TNamedEntity.
+	tHeader --|> #TEntityMetaLevelDependency.
 	tHeader --|> #TCanBeStub.
-	
-   tCompilationUnit --|> #TWithFiles.
+
+	tCompilationUnit --|> #TWithFiles.
 	tCompilationUnit --|> #TNamedEntity.
+	tCompilationUnit --|> #TEntityMetaLevelDependency.
 	tCompilationUnit --|> #TCanBeStub.
 
-   tPreprocIfdef --|> tPreprocStatement.
+	tPreprocIfdef --|> tPreprocStatement.
 
-   tPreprocDefine --|> tPreprocStatement.
+	tPreprocDefine --|> tPreprocStatement.
 	tPreprocDefine --|> #TNamedEntity.
 
 	tPreprocStatement --|> #TSourceEntity.
 
-   tInclude --|> #TAssociation.
+	tInclude --|> #TAssociation
 ]
 
 { #category : 'definition' }

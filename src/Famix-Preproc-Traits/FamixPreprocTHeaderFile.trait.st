@@ -20,8 +20,8 @@
 "
 Trait {
 	#name : 'FamixPreprocTHeaderFile',
-	#traits : 'FamixTCanBeStub + FamixTNamedEntity + FamixTWithFiles',
-	#classTraits : 'FamixTCanBeStub classTrait + FamixTNamedEntity classTrait + FamixTWithFiles classTrait',
+	#traits : 'FamixTCanBeStub + FamixTNamedEntity + FamixTWithFiles + TEntityMetaLevelDependency',
+	#classTraits : 'FamixTCanBeStub classTrait + FamixTNamedEntity classTrait + FamixTWithFiles classTrait + TEntityMetaLevelDependency classTrait',
 	#category : 'Famix-Preproc-Traits-Traits',
 	#package : 'Famix-Preproc-Traits',
 	#tag : 'Traits'
