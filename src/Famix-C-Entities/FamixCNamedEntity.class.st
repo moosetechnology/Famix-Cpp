@@ -12,8 +12,8 @@ Class {
 	#superclass : 'FamixCSourcedEntity',
 	#traits : 'FamixTNamedEntity + TEntityMetaLevelDependency',
 	#classTraits : 'FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
-	#category : '_UnpackagedPackage',
-	#package : '_UnpackagedPackage'
+	#category : 'Famix-C-Entities',
+	#package : 'Famix-C-Entities'
 }
 
 { #category : 'meta' }

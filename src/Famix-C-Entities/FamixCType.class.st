@@ -38,8 +38,8 @@ Class {
 	#instVars : [
 		'#typeContainer => FMOne type: #FamixCCompilationUnit opposite: #types'
 	],
-	#category : '_UnpackagedPackage',
-	#package : '_UnpackagedPackage'
+	#category : 'Famix-C-Entities',
+	#package : 'Famix-C-Entities'
 }
 
 { #category : 'meta' }
