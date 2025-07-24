@@ -124,6 +124,7 @@ FamixCGenerator >> defineHierarchy [
 	preprocFile --|> #TWithTypes.
 	preprocFile --|> #TWithFunctions.
 	preprocFile --|> #TWithGlobalVariables.
+	preprocFile --|> #TWithComments.
 
 
 	compilationUnit --|> preprocFile.
