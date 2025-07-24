@@ -5,8 +5,8 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typeContainer` | `FamixCType` | `types` | `FamixCCompilationUnit` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 | `typeContainer` | `FamixTType` | `types` | `FamixTWithTypes` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
+| `typeContainer` | `FamixCType` | `types` | `FamixCCompilationUnit` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
