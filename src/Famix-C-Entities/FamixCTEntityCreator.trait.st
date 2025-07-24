@@ -91,6 +91,20 @@ FamixCTEntityCreator >> newComment [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newCompilationUnit [
+
+	<generated>
+	^ self add: FamixCCompilationUnit new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newCompilationUnitNamed: aName [
+
+	<generated>
+	^ self add: (FamixCCompilationUnit named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newContainerEntity [
 
 	<generated>
@@ -147,6 +161,34 @@ FamixCTEntityCreator >> newEnumValueNamed: aName [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newFile [
+
+	<generated>
+	^ self add: FamixCFile new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newFileNamed: aName [
+
+	<generated>
+	^ self add: (FamixCFile named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newFolder [
+
+	<generated>
+	^ self add: FamixCFolder new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newFolderNamed: aName [
+
+	<generated>
+	^ self add: (FamixCFolder named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newFunction [
 
 	<generated>
@@ -158,6 +200,27 @@ FamixCTEntityCreator >> newFunctionNamed: aName [
 
 	<generated>
 	^ self add: (FamixCFunction named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newHeaderFile [
+
+	<generated>
+	^ self add: FamixCHeaderFile new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newHeaderFileNamed: aName [
+
+	<generated>
+	^ self add: (FamixCHeaderFile named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newInclude [
+
+	<generated>
+	^ self add: FamixCInclude new
 ]
 
 { #category : 'entity creation' }
@@ -207,6 +270,27 @@ FamixCTEntityCreator >> newParameterNamed: aName [
 
 	<generated>
 	^ self add: (FamixCParameter named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessorDefine [
+
+	<generated>
+	^ self add: FamixCPreprocessorDefine new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessorDefineNamed: aName [
+
+	<generated>
+	^ self add: (FamixCPreprocessorDefine named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessorIfdef [
+
+	<generated>
+	^ self add: FamixCPreprocessorIfdef new
 ]
 
 { #category : 'entity creation' }

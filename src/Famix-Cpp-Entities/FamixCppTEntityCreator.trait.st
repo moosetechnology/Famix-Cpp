@@ -84,6 +84,13 @@ FamixCppTEntityCreator >> newNamespace [
 ]
 
 { #category : 'entity creation' }
+FamixCppTEntityCreator >> newNamespaceNamed: aName [
+
+	<generated>
+	^ self add: (FamixCppNamespace named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCppTEntityCreator >> newOOInvocation [
 
 	<generated>
@@ -95,6 +102,13 @@ FamixCppTEntityCreator >> newParametricClass [
 
 	<generated>
 	^ self add: FamixCppParametricClass new
+]
+
+{ #category : 'entity creation' }
+FamixCppTEntityCreator >> newParametricClassNamed: aName [
+
+	<generated>
+	^ self add: (FamixCppParametricClass named: aName)
 ]
 
 { #category : 'entity creation' }
@@ -116,4 +130,11 @@ FamixCppTEntityCreator >> newTypeParameter [
 
 	<generated>
 	^ self add: FamixCppTypeParameter new
+]
+
+{ #category : 'entity creation' }
+FamixCppTEntityCreator >> newTypeParameterNamed: aName [
+
+	<generated>
+	^ self add: (FamixCppTypeParameter named: aName)
 ]

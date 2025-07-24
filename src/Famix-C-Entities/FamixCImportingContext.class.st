@@ -67,6 +67,13 @@ FamixCImportingContext >> importComment [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importCompilationUnit [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #CompilationUnit)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importContainerEntity [
 
 	<generated>
@@ -102,10 +109,38 @@ FamixCImportingContext >> importEnumValue [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importFile [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #File)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importFolder [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #Folder)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importFunction [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Function)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importHeaderFile [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #HeaderFile)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importInclude [
+
+	<generated>
+	^ self importAssociation: (self class fm3ClassNamed: #Include)
 ]
 
 { #category : 'importing' }
@@ -141,6 +176,20 @@ FamixCImportingContext >> importParameter [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Parameter)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importPreprocessorDefine [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #PreprocessorDefine)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importPreprocessorIfdef [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #PreprocessorIfdef)
 ]
 
 { #category : 'importing' }
@@ -277,6 +326,13 @@ FamixCImportingContext >> shouldImportComment [
 ]
 
 { #category : 'testing' }
+FamixCImportingContext >> shouldImportCompilationUnit [
+
+	<generated>
+	^ self shouldImport: #CompilationUnit
+]
+
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportContainerEntity [
 
 	<generated>
@@ -312,10 +368,38 @@ FamixCImportingContext >> shouldImportEnumValue [
 ]
 
 { #category : 'testing' }
+FamixCImportingContext >> shouldImportFile [
+
+	<generated>
+	^ self shouldImport: #File
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportFolder [
+
+	<generated>
+	^ self shouldImport: #Folder
+]
+
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportFunction [
 
 	<generated>
 	^ self shouldImport: #Function
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportHeaderFile [
+
+	<generated>
+	^ self shouldImport: #HeaderFile
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportInclude [
+
+	<generated>
+	^ self shouldImport: #Include
 ]
 
 { #category : 'testing' }
@@ -351,6 +435,20 @@ FamixCImportingContext >> shouldImportParameter [
 
 	<generated>
 	^ self shouldImport: #Parameter
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportPreprocessorDefine [
+
+	<generated>
+	^ self shouldImport: #PreprocessorDefine
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportPreprocessorIfdef [
+
+	<generated>
+	^ self shouldImport: #PreprocessorIfdef
 ]
 
 { #category : 'testing' }

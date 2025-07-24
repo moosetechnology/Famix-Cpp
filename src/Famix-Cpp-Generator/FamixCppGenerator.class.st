@@ -47,7 +47,7 @@ FamixCppGenerator class >> prefix [
 
 { #category : 'accessing' }
 FamixCppGenerator class >> submetamodels [
-	^ { FamixCGenerator. FamixCPreprocGenerator }
+	^ { FamixCGenerator }
 ]
 
 { #category : 'definition' }
@@ -55,7 +55,7 @@ FamixCppGenerator >> defineClasses [
 	super defineClasses.
 	
 	"classes from FamixBasicInfrastructureGenerator that we want to reuse from C-Meta-Model"
-	entity := self remoteEntity: #Entity withPrefix: #FamixCPreproc.
+	entity := self remoteEntity: #Entity withPrefix: #FamixC.
 	sourceAnchor := self remoteEntity: #SourceAnchor withPrefix: #FamixC.
 	namedEntity  := self remoteEntity: #SourceLanguage withPrefix: #FamixC.
 	sourceTextAnchor := self remoteEntity: #SourceTextAnchor withPrefix: #FamixC.
@@ -110,7 +110,8 @@ FamixCppGenerator >> defineHierarchy [
 	typeParameter --|> type.
 	typeParameter --|> #TTypeParameter. 
 	
-	type --|> #TTypeArgument.
+	self flag: #todo. "The next line does nothing on a remote entity."
+	"type --|> #TTypeArgument."
 
 	concretization --|> #TConcretization.
 	

@@ -12,13 +12,18 @@ Class {
 		'derefInvocation',
 		'enum',
 		'enumValue',
+		'file',
+		'folder',
 		'function',
 		'headerFile',
+		'include',
 		'indexedFileAnchor',
 		'invocation',
 		'localVar',
 		'multipleFileAnchor',
 		'parameter',
+		'preprocDefine',
+		'preprocIfDef',
 		'primitiveType',
 		'reference',
 		'relativeSourceAnchor',
@@ -31,9 +36,7 @@ Class {
 		'behaviouralPointer',
 		'namespace',
 		'structuredType',
-		'entityTyping',
-		'cEntity',
-		'cPreprocCompilationUnit'
+		'entityTyping'
 	],
 	#category : 'Famix-C-Generator',
 	#package : 'Famix-C-Generator'
@@ -51,7 +54,7 @@ FamixCGenerator class >> prefix [
 
 { #category : 'accessing' }
 FamixCGenerator class >> submetamodels [
-    ^ { FamixCPreprocGenerator  }
+    ^ { FamixPreprocGenerator  }
 ]
 
 { #category : 'definition' }
@@ -71,10 +74,17 @@ FamixCGenerator >> defineClasses [
 	reference := builder newClassNamed: #Reference.
 	behaviouralPointer := builder newClassNamed: #BehaviouralPointer.
 	derefInvocation := builder newClassNamed: #DereferencedInvocation.
+	
+	"Files"
+	file := builder newClassNamed: #File.
+	folder := builder newClassNamed: #Folder.
 
-	"CFiles"
-	compilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc.
-	headerFile := self remoteEntity: #HeaderFile withPrefix: #FamixCPreproc.
+	"Preproc"
+	compilationUnit := builder newClassNamed: #CompilationUnit.
+	headerFile := builder newClassNamed: #HeaderFile.
+	include := builder newClassNamed: #Include.
+	preprocDefine := builder newClassNamed: #PreprocessorDefine.
+	preprocIfDef := builder newClassNamed: #PreprocessorIfdef.
 
 	"STRCTURAL ENTITIES"
 	attribute := builder newClassNamed: #Attribute.
@@ -99,18 +109,15 @@ FamixCGenerator >> defineClasses [
 	"ContainerEntity: BehaviouralEntity"
 	behaviouralEntity := builder newClassNamed: #BehaviouralEntity.
 	function := builder newClassNamed: #Function.
-	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity.
-
-	cEntity := self remoteEntity: #Entity withPrefix: #FamixCPreproc.
-	cPreprocCompilationUnit := self remoteEntity: #CompilationUnit withPrefix: #FamixCPreproc
+	unknownBehaviour := builder newClassNamed: #UnknownBehaviouralEntity
 ]
 
 { #category : 'definition' }
 FamixCGenerator >> defineHierarchy [
-   super defineHierarchy.
 
-   "Anchors"
-	sourceAnchor --|> cEntity.
+	super defineHierarchy.
+
+	"Anchors"
 	sourceAnchor --|> #TSourceAnchor.
 	indexedFileAnchor --|> sourceAnchor.
 	indexedFileAnchor --|> #TIndexedFileNavigation.
@@ -118,81 +125,88 @@ FamixCGenerator >> defineHierarchy [
 	sourceTextAnchor --|> #THasImmediateSource.
 	multipleFileAnchor --|> sourceAnchor.
 	multipleFileAnchor --|> #TMultipleFileAnchor.
-	relativeSourceAnchor --|> cEntity.
 	relativeSourceAnchor --|> #TRelativeSourceAnchor.
-	sourceLanguage --|> cEntity.
 	sourceLanguage --|> #TSourceLanguage.
+	
+	"Files"
+	file --|> #TFile.
+	folder --|> #TFolder.
+
+	"Preproc"
+	compilationUnit --|> #TCompilationUnit.
+	headerFile --|> #THeaderFile.
+	include --|> #TInclude.
+	preprocDefine --|> #TPreprocessorDefine.
+	preprocIfDef --|> #TPreprocessorIfdef.
 
 	"entities"
 
 	access --|> association.
-   access --|> #TAccess.
+	access --|> #TAccess.
 
 	aliasType --|> type.
-	aliasType --|> 	#TTypeAlias.
-	
+	aliasType --|> #TTypeAlias.
+
 	association --|> sourcedEntity.
 	association --|> #TAssociation.
 
 	attribute --|> namedEntity.
 	attribute --|> #TAttribute.
 	attribute --|> #TInvocationsReceiver.
-	
+
 	behaviouralEntity --|> containerEntity.
 	behaviouralEntity --|> #TInvocable.
 	behaviouralEntity --|> #TWithStatements.
 	behaviouralEntity --|> #TWithAccesses.
 	behaviouralEntity --|> #TWithInvocations.
 	behaviouralEntity --|> #TWithComments.
-   behaviouralEntity --|> #THasSignature.
-   behaviouralEntity --|> #TTypedEntity.
+	behaviouralEntity --|> #THasSignature.
+	behaviouralEntity --|> #TTypedEntity.
 
-   behaviouralPointer --|> association.
+	behaviouralPointer --|> association.
 
-   comment --|> sourcedEntity.
-   comment --|> #TComment.
+	comment --|> sourcedEntity.
+	comment --|> #TComment.
 
 	containerEntity --|> namedEntity.
 	containerEntity --|> #TWithTypes.
 	containerEntity --|> #TWithFunctions.
 	containerEntity --|> #TWithLocalVariables.
-	
-   derefInvocation --|> invocation.
-   derefInvocation --|> #TDereferencedInvocation.
+
+	derefInvocation --|> invocation.
+	derefInvocation --|> #TDereferencedInvocation.
 
 	enum --|> type.
 	enum --|> #TEnum.
-	
+
 	enumValue --|> namedEntity.
 	enumValue --|> #TEnumValue.
 	enumValue --|> #TAccessible.
 	enumValue --|> #TSourceEntity.
-	
-	entityTyping --|> cEntity.
+
 	entityTyping --|> #TEntityTyping.
 
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
 
-   invocation --|> association.
+	invocation --|> association.
 	invocation --|> #THasSignature.
-	
+
 	localVar --|> namedEntity.
 	localVar --|> #TLocalVariable.
-	
+
 	namedEntity --|> sourcedEntity.
 	namedEntity --|> #TEntityMetaLevelDependency.
 
 	parameter --|> namedEntity.
 	parameter --|> #TParameter.
-	
+
 	primitiveType --|> type.
 	primitiveType --|> #TPrimitiveType.
-	
-   reference --|> association.
-   reference --|> #TReference.
 
-	sourcedEntity --|> cEntity.
+	reference --|> association.
+	reference --|> #TReference.
+
 
 	structuredType --|> type.
 	structuredType --|> #TWithAttributes.
@@ -203,18 +217,15 @@ FamixCGenerator >> defineHierarchy [
 	type --|> containerEntity.
 	type --|> #TType.
 	type --|> #TWithTypeAliases.
-	
-   union --|> structuredType.
+
+	union --|> structuredType.
 
 	unknownBehaviour --|> behaviouralEntity.
 
 	unknownContainerEntity --|> containerEntity.
-	
+
 	unknownVar --|> namedEntity.
-	unknownVar --|> #TUnknownVariable.
-	
-	
- 
+	unknownVar --|> #TUnknownVariable
 ]
 
 { #category : 'definition' }
@@ -246,7 +257,7 @@ FamixCGenerator >> defineRelations [
 
 	((type property: #typeContainer)
 		 comment: 'Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).';
-		 container) *- ((cPreprocCompilationUnit property: #types) comment: 'Types contained (declared) in this entity, if any.
+		 container) *- ((compilationUnit property: #types) comment: 'Types contained (declared) in this entity, if any.
 #types is declared in ContainerEntity because different kinds of container can embed types. Types are usually contained in a Famix.Namespace. But types can also be contained in a Famix.Class or Famix.Method (in Java with inner classes for example). Famix.Function can also contain some types such as structs.')
 ]
 

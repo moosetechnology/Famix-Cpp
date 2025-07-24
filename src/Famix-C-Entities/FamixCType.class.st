@@ -5,7 +5,7 @@
 ### Parents
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typeContainer` | `FamixCType` | `types` | `FamixCPreprocCompilationUnit` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
+| `typeContainer` | `FamixCType` | `types` | `FamixCCompilationUnit` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 | `typeContainer` | `FamixTType` | `types` | `FamixTWithTypes` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 
 ### Incoming dependencies
@@ -35,9 +35,11 @@ Class {
 	#superclass : 'FamixCContainerEntity',
 	#traits : 'FamixTType + FamixTWithTypeAliases',
 	#classTraits : 'FamixTType classTrait + FamixTWithTypeAliases classTrait',
-	#category : 'Famix-C-Entities-Entities',
-	#package : 'Famix-C-Entities',
-	#tag : 'Entities'
+	#instVars : [
+		'#typeContainer => FMOne type: #FamixCCompilationUnit opposite: #types'
+	],
+	#category : '_UnpackagedPackage',
+	#package : '_UnpackagedPackage'
 }
 
 { #category : 'meta' }
@@ -51,20 +53,19 @@ FamixCType class >> annotation [
 
 { #category : 'accessing' }
 FamixCType >> typeContainer [
-	"Relation named: #typeContainer type: #FamixCPreprocCompilationUnit opposite: #types"
+	"Relation named: #typeContainer type: #FamixCCompilationUnit opposite: #types"
 
 	<generated>
 	<FMComment: 'Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).'>
 	<container>
-	<FMProperty: #typeContainer type: #FamixCPreprocCompilationUnit opposite: #types>
-	^ self attributeAt: #typeContainer ifAbsent: [ nil ]
+	^ typeContainer
 ]
 
 { #category : 'accessing' }
 FamixCType >> typeContainer: anObject [
 
 	<generated>
-	self attributeAt: #typeContainer put: (FMMultivalueLink on: self update: #types from: self typeContainer to: anObject).
+	typeContainer := anObject
 ]
 
 { #category : 'navigation' }
