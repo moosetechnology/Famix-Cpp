@@ -10,6 +10,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
 | `enumValues` | `FamixTWithEnumValues` | `parentEnum` | `FamixTEnumValue` | |
 
 ### Incoming dependencies
@@ -36,8 +37,8 @@
 Class {
 	#name : 'FamixCEnum',
 	#superclass : 'FamixCType',
-	#traits : 'FamixTEnum',
-	#classTraits : 'FamixTEnum classTrait',
+	#traits : 'FamixTEnum + FamixTWithComments',
+	#classTraits : 'FamixTEnum classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

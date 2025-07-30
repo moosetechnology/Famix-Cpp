@@ -7,6 +7,11 @@
 |---|
 | `parentType` | `FamixTAttribute` | `attributes` | `FamixTWithAttributes` | Type declaring the attribute. belongsTo implementation|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
+
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -36,8 +41,8 @@
 Class {
 	#name : 'FamixCAttribute',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTAttribute + FamixTInvocationsReceiver',
-	#classTraits : 'FamixTAttribute classTrait + FamixTInvocationsReceiver classTrait',
+	#traits : 'FamixTAttribute + FamixTInvocationsReceiver + FamixTWithComments',
+	#classTraits : 'FamixTAttribute classTrait + FamixTInvocationsReceiver classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

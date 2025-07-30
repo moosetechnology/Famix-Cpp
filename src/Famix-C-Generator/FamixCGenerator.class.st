@@ -125,6 +125,8 @@ FamixCGenerator >> defineHierarchy [
 	preprocFile --|> #TWithFunctions.
 	preprocFile --|> #TWithGlobalVariables.
 	preprocFile --|> #TWithComments.
+	preprocFile --|> #TWithAccesses.
+	preprocFile --|> #TWithInvocations.
 
 
 	compilationUnit --|> preprocFile.
@@ -153,6 +155,7 @@ FamixCGenerator >> defineHierarchy [
 	attribute --|> namedEntity.
 	attribute --|> #TAttribute.
 	attribute --|> #TInvocationsReceiver.
+	attribute --|> #TWithComments. 
 
 	behaviouralEntity --|> containerEntity.
 	behaviouralEntity --|> #TInvocable.
@@ -178,31 +181,37 @@ FamixCGenerator >> defineHierarchy [
 
 	enum --|> type.
 	enum --|> #TEnum.
+	enum --|> #TWithComments. 
 
 	enumValue --|> namedEntity.
 	enumValue --|> #TEnumValue.
 	enumValue --|> #TAccessible.
 	enumValue --|> #TSourceEntity.
+	enumValue --|> #TWithComments. 
 
 	entityTyping --|> #TEntityTyping.
 
 	function --|> behaviouralEntity.
 	function --|> #TFunction.
+	function --|> #TWithComments.
 
 	globalVar --|> namedEntity.
 	globalVar --|> #TGlobalVariable.
+	globalVar --|> #TWithComments. 
 
 	invocation --|> association.
 	invocation --|> #THasSignature.
 
 	localVar --|> namedEntity.
 	localVar --|> #TLocalVariable.
+	localVar --|> #TWithComments.
 
 	namedEntity --|> sourcedEntity.
 	namedEntity --|> #TEntityMetaLevelDependency.
 
 	parameter --|> namedEntity.
 	parameter --|> #TParameter.
+	parameter --|> #TWithComments. 
 
 	primitiveType --|> type.
 	primitiveType --|> #TPrimitiveType.

@@ -7,6 +7,11 @@
 |---|
 | `parentScope` | `FamixTGlobalVariable` | `globalVariables` | `FamixTWithGlobalVariables` | Scope declaring the global variable. belongsTo implementation|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
+
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -35,8 +40,8 @@
 Class {
 	#name : 'FamixCGlobalVariable',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTGlobalVariable',
-	#classTraits : 'FamixTGlobalVariable classTrait',
+	#traits : 'FamixTGlobalVariable + FamixTWithComments',
+	#classTraits : 'FamixTGlobalVariable classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
