@@ -5,8 +5,8 @@ Class {
 	#name : 'FamixPreprocGenerator',
 	#superclass : 'FamixMetamodelGenerator',
 	#instVars : [
-		'tFile',
-		'tCompilationUnit',
+		'tWithIncludes',
+		'tIncludable',
 		'tHeader',
 		'tInclude',
 		'tPreprocDefine',
@@ -37,15 +37,11 @@ FamixPreprocGenerator >> defineHierarchy [
 
 	super defineHierarchy.
 
-	tHeader --|> tFile.
 	tHeader --|> #TNamedEntity.
 	tHeader --|> #TEntityMetaLevelDependency.
 	tHeader --|> #TCanBeStub.
-
-	tCompilationUnit --|> tFile.
-	tCompilationUnit --|> #TNamedEntity.
-	tCompilationUnit --|> #TEntityMetaLevelDependency.
-	tCompilationUnit --|> #TCanBeStub.
+	tHeader --|> tWithIncludes.
+	tHeader --|> tIncludable.
 
 	tPreprocIfdef --|> tPreprocStatement.
 
@@ -74,19 +70,12 @@ FamixPreprocGenerator >> defineProperties [
 FamixPreprocGenerator >> defineRelations [
 
 	((tInclude property: #included)
-			comment: 'C-File included';
-			target)
-		*-
-	((tFile property: #inclusion)
-			comment: 'All inclusions of this C-file').
+		 comment: 'C-File included';
+		 target) *- ((tIncludable property: #inclusion) comment: 'All inclusions of this C-file').
 
 	((tInclude property: #includedBy)
-			comment: 'C-File including the receiver';
-			source)
-		*-
-	((tFile property: #includes)
-			comment: 'All inclusions made by this C-File')
-
+		 comment: 'C-File including the receiver';
+		 source) *- ((tWithIncludes property: #includes) comment: 'All inclusions made by this C-File')
 ]
 
 { #category : 'definition' }
@@ -94,10 +83,7 @@ FamixPreprocGenerator >> defineTraits [
 
 	super defineTraits.
 
-	tFile := builder newTraitNamed: 'TFile'.
-
 	tHeader := builder newTraitNamed: #THeaderFile.
-	tCompilationUnit := builder newTraitNamed: #TCompilationUnit.
 
 	tPreprocStatement := builder newTraitNamed: #TPreprocessorStatement.
 	tPreprocIfdef := builder
@@ -113,5 +99,7 @@ Knows the name of the macro tested and whether it is "negated" (#ifndef) or not 
 
 Knows the name of the macro defined'.
 
-	tInclude := builder newTraitNamed: #TInclude
+	tInclude := builder newTraitNamed: #TInclude.
+	tWithIncludes := builder newTraitNamed: #TWithIncludes.
+	tIncludable := builder newTraitNamed: #TIncludable.
 ]

@@ -130,7 +130,10 @@ FamixCGenerator >> defineHierarchy [
 
 
 	compilationUnit --|> preprocFile.
-	compilationUnit --|> #TCompilationUnit.
+	compilationUnit --|> #TNamedEntity.
+	compilationUnit --|> #TEntityMetaLevelDependency.
+	compilationUnit --|> #TCanBeStub.
+	compilationUnit --|> #TWithIncludes.
 
 	headerFile --|> preprocFile.
 	headerFile --|> #THeaderFile.

@@ -5,12 +5,12 @@
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `includes` | `FamixPreprocTFile` | `includedBy` | `FamixPreprocTInclude` | All inclusions made by this C-File|
+| `includes` | `FamixPreprocTWithIncludes` | `includedBy` | `FamixPreprocTInclude` | All inclusions made by this C-File|
 
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `inclusion` | `FamixPreprocTFile` | `included` | `FamixPreprocTInclude` | All inclusions of this C-file|
+| `inclusion` | `FamixPreprocTIncludable` | `included` | `FamixPreprocTInclude` | All inclusions of this C-file|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |

@@ -5,12 +5,7 @@
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `includes` | `FamixPreprocTFile` | `includedBy` | `FamixPreprocTInclude` | All inclusions made by this C-File|
-
-### Incoming dependencies
-| Relation | Origin | Opposite | Type | Comment |
-|---|
-| `inclusion` | `FamixPreprocTFile` | `included` | `FamixPreprocTInclude` | All inclusions of this C-file|
+| `includes` | `FamixPreprocTWithIncludes` | `includedBy` | `FamixPreprocTInclude` | All inclusions made by this C-File|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -30,8 +25,8 @@
 Class {
 	#name : 'FamixCCompilationUnit',
 	#superclass : 'FamixCPreprocessingFile',
-	#traits : 'FamixPreprocTCompilationUnit',
-	#classTraits : 'FamixPreprocTCompilationUnit classTrait',
+	#traits : 'FamixPreprocTWithIncludes + FamixTCanBeStub + FamixTNamedEntity + TEntityMetaLevelDependency',
+	#classTraits : 'FamixPreprocTWithIncludes classTrait + FamixTCanBeStub classTrait + FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

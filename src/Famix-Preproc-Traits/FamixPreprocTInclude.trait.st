@@ -5,12 +5,12 @@
 ### Association source
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixPreprocTFile` | C-File including the receiver|
+| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixPreprocTWithIncludes` | C-File including the receiver|
 
 ### Association target
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixPreprocTFile` | C-File included|
+| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixPreprocTIncludable` | C-File included|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -31,8 +31,8 @@
 Trait {
 	#name : 'FamixPreprocTInclude',
 	#instVars : [
-		'#included => FMOne type: #FamixPreprocTFile opposite: #inclusion',
-		'#includedBy => FMOne type: #FamixPreprocTFile opposite: #includes',
+		'#included => FMOne type: #FamixPreprocTIncludable opposite: #inclusion',
+		'#includedBy => FMOne type: #FamixPreprocTWithIncludes opposite: #includes',
 		'#isLocal => FMProperty'
 	],
 	#traits : 'FamixTAssociation',
@@ -53,7 +53,7 @@ FamixPreprocTInclude classSide >> annotation [
 
 { #category : 'accessing' }
 FamixPreprocTInclude >> included [
-	"Relation named: #included type: #FamixPreprocTFile opposite: #inclusion"
+	"Relation named: #included type: #FamixPreprocTIncludable opposite: #inclusion"
 
 	<generated>
 	<FMComment: 'C-File included'>
@@ -70,7 +70,7 @@ FamixPreprocTInclude >> included: anObject [
 
 { #category : 'accessing' }
 FamixPreprocTInclude >> includedBy [
-	"Relation named: #includedBy type: #FamixPreprocTFile opposite: #includes"
+	"Relation named: #includedBy type: #FamixPreprocTWithIncludes opposite: #includes"
 
 	<generated>
 	<FMComment: 'C-File including the receiver'>
