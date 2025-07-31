@@ -28,7 +28,7 @@ BaselineOfFamixCpp >> baseline: spec [
 				package: 'Famix-Cpp-Parser-Tests' with: [ spec requires: #( 'Famix-Cpp-Parser' ) ];
 				package: 'Famix-CPreproc-Generator';
 				package: 'Famix-CPreproc-Entities';
-				package: 'Famix-CPreproc-Importer' with: [ spec requires: #( 'Famix-Preproc-Entities' XMLParserHTML ) ];
+				package: 'Famix-CPreproc-Importer' with: [ spec requires: #( 'Famix-CPreproc-Entities' XMLParserHTML ) ];
 				package: 'Famix-CPreproc-Importer-Tests' with: [ spec requires: #( 'Famix-CPreproc-Importer' ) ].
 
 			spec
