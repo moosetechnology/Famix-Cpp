@@ -7,6 +7,11 @@
 |---|
 | `parentBehaviouralEntity` | `FamixTParameter` | `parameters` | `FamixTWithParameters` | Behavioural entity containing this parameter. belongsTo implementation|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
+
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -35,8 +40,8 @@
 Class {
 	#name : 'FamixCParameter',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTParameter',
-	#classTraits : 'FamixTParameter classTrait',
+	#traits : 'FamixTParameter + FamixTWithComments',
+	#classTraits : 'FamixTParameter classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

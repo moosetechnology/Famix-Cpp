@@ -10,6 +10,7 @@
 ### Children
 | Relation | Origin | Opposite | Type | Comment |
 |---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
 | `localVariables` | `FamixTWithLocalVariables` | `parentBehaviouralEntity` | `FamixTLocalVariable` | Variables locally defined by this behaviour.|
 | `parameters` | `FamixTWithParameters` | `parentBehaviouralEntity` | `FamixTParameter` | List of formal parameters declared by this behaviour.|
 
@@ -45,8 +46,8 @@
 Class {
 	#name : 'FamixCFunction',
 	#superclass : 'FamixCBehaviouralEntity',
-	#traits : 'FamixTFunction',
-	#classTraits : 'FamixTFunction classTrait',
+	#traits : 'FamixTFunction + FamixTWithComments',
+	#classTraits : 'FamixTFunction classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

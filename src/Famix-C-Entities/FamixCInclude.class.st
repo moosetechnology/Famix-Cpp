@@ -5,12 +5,12 @@
 ### Association source
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `typedEntity` | `FamixTEntityTyping` | `typing` | `FamixTTypedEntity` | Entity deckaring the type.|
+| `includedBy` | `FamixPreprocTInclude` | `includes` | `FamixPreprocTWithIncludes` | C-File including the receiver|
 
 ### Association target
 | Relation | Origin | Opposite | Type | Comment |
 |---|
-| `declaredType` | `FamixTEntityTyping` | `incomingTypings` | `FamixTType` | Type of the entity.|
+| `included` | `FamixPreprocTInclude` | `inclusion` | `FamixPreprocTIncludable` | C-File included|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -20,22 +20,28 @@
 | `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
 
 
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `isLocal` | `Boolean` | nil | Whether this is a local include (with ""included.h"") or a system one (with <included.h>)|
 
 "
 Class {
-	#name : 'FamixCEntityTyping',
+	#name : 'FamixCInclude',
 	#superclass : 'FamixCEntity',
-	#traits : 'FamixTEntityTyping',
-	#classTraits : 'FamixTEntityTyping classTrait',
+	#traits : 'FamixPreprocTInclude',
+	#classTraits : 'FamixPreprocTInclude classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
 }
 
 { #category : 'meta' }
-FamixCEntityTyping class >> annotation [
+FamixCInclude class >> annotation [
 
-	<FMClass: #EntityTyping super: #FamixCEntity>
+	<FMClass: #Include super: #FamixCEntity>
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self

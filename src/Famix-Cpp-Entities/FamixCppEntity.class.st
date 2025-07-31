@@ -80,6 +80,13 @@ FamixCppEntity >> isMethod [
 ]
 
 { #category : 'testing' }
+FamixCppEntity >> isParametricAssociation [
+
+	<generated>
+	^ false
+]
+
+{ #category : 'testing' }
 FamixCppEntity >> isParametricEntity [
 
 	<generated>

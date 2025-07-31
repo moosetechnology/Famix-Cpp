@@ -16,9 +16,8 @@ Class {
 	#superclass : 'FamixCType',
 	#traits : 'FamixTWithAttributes + FamixTWithComments',
 	#classTraits : 'FamixTWithAttributes classTrait + FamixTWithComments classTrait',
-	#category : 'Famix-C-Entities-Entities',
-	#package : 'Famix-C-Entities',
-	#tag : 'Entities'
+	#category : 'Famix-C-Entities',
+	#package : 'Famix-C-Entities'
 }
 
 { #category : 'meta' }
@@ -28,4 +27,13 @@ FamixCStructuredType class >> annotation [
 	<package: #'Famix-C-Entities'>
 	<generated>
 	^ self
+]
+
+{ #category : 'testing' }
+FamixCStructuredType >> isAnonymous [
+
+	<FMProperty: #isAnonymous type: #Boolean>
+	<FMComment: 'Return true when the structure is anonymous (does not have a name)'>
+	<derived>
+	^ self name isEmptyOrNil
 ]

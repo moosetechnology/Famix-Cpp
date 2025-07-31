@@ -1,8 +1,8 @@
 Class {
 	#name : 'FamixCModel',
 	#superclass : 'MooseModel',
-	#traits : 'FamixCPreprocTEntityCreator + FamixCTEntityCreator',
-	#classTraits : 'FamixCPreprocTEntityCreator classTrait + FamixCTEntityCreator classTrait',
+	#traits : 'FamixCTEntityCreator',
+	#classTraits : 'FamixCTEntityCreator classTrait',
 	#category : 'Famix-C-Entities-Model',
 	#package : 'Famix-C-Entities',
 	#tag : 'Model'
@@ -11,7 +11,7 @@ Class {
 { #category : 'accessing' }
 FamixCModel class >> allSubmetamodelsPackagesNames [
 	<generated>
-	^ #(#'Moose-Query' #'Famix-Traits' #'Famix-CPreproc-Entities')
+	^ #(#'Moose-Query' #'Famix-Traits' #'Famix-Preproc-Traits')
 ]
 
 { #category : 'meta' }

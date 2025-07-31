@@ -67,6 +67,13 @@ FamixCImportingContext >> importComment [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importCompilationUnit [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #CompilationUnit)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importContainerEntity [
 
 	<generated>
@@ -109,6 +116,27 @@ FamixCImportingContext >> importFunction [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importGlobalVariable [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #GlobalVariable)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importHeaderFile [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #HeaderFile)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importInclude [
+
+	<generated>
+	^ self importAssociation: (self class fm3ClassNamed: #Include)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importIndexedFileAnchor [
 
 	<generated>
@@ -141,6 +169,27 @@ FamixCImportingContext >> importParameter [
 
 	<generated>
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Parameter)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importPreprocessingFile [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #PreprocessingFile)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importPreprocessorDefine [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #PreprocessorDefine)
+]
+
+{ #category : 'importing' }
+FamixCImportingContext >> importPreprocessorIfdef [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #PreprocessorIfdef)
 ]
 
 { #category : 'importing' }
@@ -206,27 +255,6 @@ FamixCImportingContext >> importUnion [
 	^ self importConcreteEntity: (self class fm3ClassNamed: #Union)
 ]
 
-{ #category : 'importing' }
-FamixCImportingContext >> importUnknownBehaviouralEntity [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownBehaviouralEntity)
-]
-
-{ #category : 'importing' }
-FamixCImportingContext >> importUnknownContainerEntity [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownContainerEntity)
-]
-
-{ #category : 'importing' }
-FamixCImportingContext >> importUnknownVariable [
-
-	<generated>
-	^ self importConcreteEntity: (self class fm3ClassNamed: #UnknownVariable)
-]
-
 { #category : 'testing' }
 FamixCImportingContext >> shouldImportAccess [
 
@@ -277,6 +305,13 @@ FamixCImportingContext >> shouldImportComment [
 ]
 
 { #category : 'testing' }
+FamixCImportingContext >> shouldImportCompilationUnit [
+
+	<generated>
+	^ self shouldImport: #CompilationUnit
+]
+
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportContainerEntity [
 
 	<generated>
@@ -319,6 +354,27 @@ FamixCImportingContext >> shouldImportFunction [
 ]
 
 { #category : 'testing' }
+FamixCImportingContext >> shouldImportGlobalVariable [
+
+	<generated>
+	^ self shouldImport: #GlobalVariable
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportHeaderFile [
+
+	<generated>
+	^ self shouldImport: #HeaderFile
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportInclude [
+
+	<generated>
+	^ self shouldImport: #Include
+]
+
+{ #category : 'testing' }
 FamixCImportingContext >> shouldImportIndexedFileAnchor [
 
 	<generated>
@@ -351,6 +407,27 @@ FamixCImportingContext >> shouldImportParameter [
 
 	<generated>
 	^ self shouldImport: #Parameter
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportPreprocessingFile [
+
+	<generated>
+	^ self shouldImport: #PreprocessingFile
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportPreprocessorDefine [
+
+	<generated>
+	^ self shouldImport: #PreprocessorDefine
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportPreprocessorIfdef [
+
+	<generated>
+	^ self shouldImport: #PreprocessorIfdef
 ]
 
 { #category : 'testing' }
@@ -414,25 +491,4 @@ FamixCImportingContext >> shouldImportUnion [
 
 	<generated>
 	^ self shouldImport: #Union
-]
-
-{ #category : 'testing' }
-FamixCImportingContext >> shouldImportUnknownBehaviouralEntity [
-
-	<generated>
-	^ self shouldImport: #UnknownBehaviouralEntity
-]
-
-{ #category : 'testing' }
-FamixCImportingContext >> shouldImportUnknownContainerEntity [
-
-	<generated>
-	^ self shouldImport: #UnknownContainerEntity
-]
-
-{ #category : 'testing' }
-FamixCImportingContext >> shouldImportUnknownVariable [
-
-	<generated>
-	^ self shouldImport: #UnknownVariable
 ]

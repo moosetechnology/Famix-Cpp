@@ -1,0 +1,42 @@
+"
+## Relations
+======================
+
+### Outgoing dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `includes` | `FamixPreprocTWithIncludes` | `includedBy` | `FamixPreprocTInclude` | All inclusions made by this C-File|
+
+### Other
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `sourceAnchor` | `FamixTSourceEntity` | `element` | `FamixTSourceAnchor` | SourceAnchor entity linking to the original source code for this entity|
+
+
+## Properties
+======================
+
+| Name | Type | Default value | Comment |
+|---|
+| `isStub` | `Boolean` | false | Flag true if the entity attributes are incomplete, either because the entity is missing or not imported.|
+| `name` | `String` | nil | Basic name of the entity, not full reference.|
+
+"
+Class {
+	#name : 'FamixCCompilationUnit',
+	#superclass : 'FamixCPreprocessingFile',
+	#traits : 'FamixPreprocTWithIncludes + FamixTCanBeStub + FamixTNamedEntity + TEntityMetaLevelDependency',
+	#classTraits : 'FamixPreprocTWithIncludes classTrait + FamixTCanBeStub classTrait + FamixTNamedEntity classTrait + TEntityMetaLevelDependency classTrait',
+	#category : 'Famix-C-Entities-Entities',
+	#package : 'Famix-C-Entities',
+	#tag : 'Entities'
+}
+
+{ #category : 'meta' }
+FamixCCompilationUnit class >> annotation [
+
+	<FMClass: #CompilationUnit super: #FamixCPreprocessingFile>
+	<package: #'Famix-C-Entities'>
+	<generated>
+	^ self
+]

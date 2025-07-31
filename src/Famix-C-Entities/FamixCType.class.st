@@ -34,9 +34,8 @@ Class {
 	#superclass : 'FamixCContainerEntity',
 	#traits : 'FamixTType + FamixTWithTypeAliases',
 	#classTraits : 'FamixTType classTrait + FamixTWithTypeAliases classTrait',
-	#category : 'Famix-C-Entities-Entities',
-	#package : 'Famix-C-Entities',
-	#tag : 'Entities'
+	#category : 'Famix-C-Entities',
+	#package : 'Famix-C-Entities'
 }
 
 { #category : 'meta' }

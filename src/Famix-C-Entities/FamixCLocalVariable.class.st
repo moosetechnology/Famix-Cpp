@@ -7,6 +7,11 @@
 |---|
 | `parentBehaviouralEntity` | `FamixTLocalVariable` | `localVariables` | `FamixTWithLocalVariables` | Behavioural entity declaring this local variable. belongsTo implementation|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
+
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -35,8 +40,8 @@
 Class {
 	#name : 'FamixCLocalVariable',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTLocalVariable',
-	#classTraits : 'FamixTLocalVariable classTrait',
+	#traits : 'FamixTLocalVariable + FamixTWithComments',
+	#classTraits : 'FamixTLocalVariable classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

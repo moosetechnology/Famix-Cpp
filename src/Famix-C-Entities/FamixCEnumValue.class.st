@@ -7,6 +7,11 @@
 |---|
 | `parentEnum` | `FamixTEnumValue` | `enumValues` | `FamixTWithEnumValues` | The Enum declaring this value. It offers the implementation of belongsTo|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
+
 ### Outgoing dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -35,8 +40,8 @@
 Class {
 	#name : 'FamixCEnumValue',
 	#superclass : 'FamixCNamedEntity',
-	#traits : 'FamixTAccessible + FamixTEnumValue + FamixTSourceEntity',
-	#classTraits : 'FamixTAccessible classTrait + FamixTEnumValue classTrait + FamixTSourceEntity classTrait',
+	#traits : 'FamixTAccessible + FamixTEnumValue + FamixTSourceEntity + FamixTWithComments',
+	#classTraits : 'FamixTAccessible classTrait + FamixTEnumValue classTrait + FamixTSourceEntity classTrait + FamixTWithComments classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

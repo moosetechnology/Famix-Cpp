@@ -91,6 +91,20 @@ FamixCTEntityCreator >> newComment [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newCompilationUnit [
+
+	<generated>
+	^ self add: FamixCCompilationUnit new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newCompilationUnitNamed: aName [
+
+	<generated>
+	^ self add: (FamixCCompilationUnit named: aName)
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newContainerEntity [
 
 	<generated>
@@ -161,6 +175,41 @@ FamixCTEntityCreator >> newFunctionNamed: aName [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newGlobalVariable [
+
+	<generated>
+	^ self add: FamixCGlobalVariable new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newGlobalVariableNamed: aName [
+
+	<generated>
+	^ self add: (FamixCGlobalVariable named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newHeaderFile [
+
+	<generated>
+	^ self add: FamixCHeaderFile new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newHeaderFileNamed: aName [
+
+	<generated>
+	^ self add: (FamixCHeaderFile named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newInclude [
+
+	<generated>
+	^ self add: FamixCInclude new
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newIndexedFileAnchor [
 
 	<generated>
@@ -207,6 +256,34 @@ FamixCTEntityCreator >> newParameterNamed: aName [
 
 	<generated>
 	^ self add: (FamixCParameter named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessingFile [
+
+	<generated>
+	^ self add: FamixCPreprocessingFile new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessorDefine [
+
+	<generated>
+	^ self add: FamixCPreprocessorDefine new
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessorDefineNamed: aName [
+
+	<generated>
+	^ self add: (FamixCPreprocessorDefine named: aName)
+]
+
+{ #category : 'entity creation' }
+FamixCTEntityCreator >> newPreprocessorIfdef [
+
+	<generated>
+	^ self add: FamixCPreprocessorIfdef new
 ]
 
 { #category : 'entity creation' }
@@ -305,46 +382,4 @@ FamixCTEntityCreator >> newUnionNamed: aName [
 
 	<generated>
 	^ self add: (FamixCUnion named: aName)
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newUnknownBehaviouralEntity [
-
-	<generated>
-	^ self add: FamixCUnknownBehaviouralEntity new
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newUnknownBehaviouralEntityNamed: aName [
-
-	<generated>
-	^ self add: (FamixCUnknownBehaviouralEntity named: aName)
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newUnknownContainerEntity [
-
-	<generated>
-	^ self add: FamixCUnknownContainerEntity new
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newUnknownContainerEntityNamed: aName [
-
-	<generated>
-	^ self add: (FamixCUnknownContainerEntity named: aName)
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newUnknownVariable [
-
-	<generated>
-	^ self add: FamixCUnknownVariable new
-]
-
-{ #category : 'entity creation' }
-FamixCTEntityCreator >> newUnknownVariableNamed: aName [
-
-	<generated>
-	^ self add: (FamixCUnknownVariable named: aName)
 ]
