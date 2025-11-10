@@ -7,6 +7,11 @@
 |---|
 | `typeContainer` | `FamixTType` | `types` | `FamixTWithTypes` | Container entity to which this type belongs. Container is a namespace, not a package (Smalltalk).|
 
+### Children
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `comments` | `FamixTWithComments` | `commentedEntity` | `FamixTComment` | List of comments for the entity|
+
 ### Incoming dependencies
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -32,8 +37,8 @@
 Class {
 	#name : 'FamixCType',
 	#superclass : 'FamixCContainerEntity',
-	#traits : 'FamixTType + FamixTWithTypeAliases',
-	#classTraits : 'FamixTType classTrait + FamixTWithTypeAliases classTrait',
+	#traits : 'FamixTType + FamixTWithComments + FamixTWithTypeAliases',
+	#classTraits : 'FamixTType classTrait + FamixTWithComments classTrait + FamixTWithTypeAliases classTrait',
 	#category : 'Famix-C-Entities',
 	#package : 'Famix-C-Entities'
 }
