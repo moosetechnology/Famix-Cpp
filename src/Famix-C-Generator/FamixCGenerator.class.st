@@ -149,6 +149,7 @@ FamixCGenerator >> defineHierarchy [
 	access --|> association.
 	access --|> #TAccess.
 
+	type --|> #TWithComments.
 	aliasType --|> type.
 	aliasType --|> #TTypeAlias.
 
