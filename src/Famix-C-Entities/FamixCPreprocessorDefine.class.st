@@ -6,6 +6,7 @@
 | Relation | Origin | Opposite | Type | Comment |
 |---|
 | `incomingAccesses` | `FamixTAccessible` | `candidates` | `FamixTAccess` | All Famix accesses pointing to this structural entity|
+| `incomingInvocations` | `FamixTInvocable` | `candidates` | `FamixTInvocation` | Incoming invocations from other behaviours computed by the candidate operator.|
 
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
@@ -25,8 +26,8 @@
 Class {
 	#name : 'FamixCPreprocessorDefine',
 	#superclass : 'FamixCEntity',
-	#traits : 'FamixPreprocTPreprocessorDefine + FamixTAccessible',
-	#classTraits : 'FamixPreprocTPreprocessorDefine classTrait + FamixTAccessible classTrait',
+	#traits : 'FamixPreprocTPreprocessorDefine + FamixTAccessible + FamixTInvocable',
+	#classTraits : 'FamixPreprocTPreprocessorDefine classTrait + FamixTAccessible classTrait + FamixTInvocable classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'

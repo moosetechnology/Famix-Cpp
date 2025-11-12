@@ -142,6 +142,7 @@ FamixCGenerator >> defineHierarchy [
 
 	preprocDefine --|> #TPreprocessorDefine.
 	preprocDefine --|> #TAccessible.
+	preprocDefine --|> #TInvocable.
 
 	preprocIfDef --|> #TPreprocessorIfdef.
 
