@@ -2,6 +2,11 @@
 ## Relations
 ======================
 
+### Incoming dependencies
+| Relation | Origin | Opposite | Type | Comment |
+|---|
+| `incomingAccesses` | `FamixTAccessible` | `candidates` | `FamixTAccess` | All Famix accesses pointing to this structural entity|
+
 ### Other
 | Relation | Origin | Opposite | Type | Comment |
 |---|
@@ -20,8 +25,8 @@
 Class {
 	#name : 'FamixCPreprocessorDefine',
 	#superclass : 'FamixCEntity',
-	#traits : 'FamixPreprocTPreprocessorDefine',
-	#classTraits : 'FamixPreprocTPreprocessorDefine classTrait',
+	#traits : 'FamixPreprocTPreprocessorDefine + FamixTAccessible',
+	#classTraits : 'FamixPreprocTPreprocessorDefine classTrait + FamixTAccessible classTrait',
 	#category : 'Famix-C-Entities-Entities',
 	#package : 'Famix-C-Entities',
 	#tag : 'Entities'
