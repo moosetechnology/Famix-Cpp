@@ -60,6 +60,13 @@ FamixCImportingContext >> importBehaviouralPointer [
 ]
 
 { #category : 'importing' }
+FamixCImportingContext >> importBytesFileAnchor [
+
+	<generated>
+	^ self importConcreteEntity: (self class fm3ClassNamed: #BytesFileAnchor)
+]
+
+{ #category : 'importing' }
 FamixCImportingContext >> importComment [
 
 	<generated>
@@ -295,6 +302,13 @@ FamixCImportingContext >> shouldImportBehaviouralPointer [
 
 	<generated>
 	^ self shouldImport: #BehaviouralPointer
+]
+
+{ #category : 'testing' }
+FamixCImportingContext >> shouldImportBytesFileAnchor [
+
+	<generated>
+	^ self shouldImport: #BytesFileAnchor
 ]
 
 { #category : 'testing' }

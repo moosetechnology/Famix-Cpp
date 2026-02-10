@@ -84,6 +84,13 @@ FamixCTEntityCreator >> newBehaviouralPointer [
 ]
 
 { #category : 'entity creation' }
+FamixCTEntityCreator >> newBytesFileAnchor [
+
+	<generated>
+	^ self add: FamixCBytesFileAnchor new
+]
+
+{ #category : 'entity creation' }
 FamixCTEntityCreator >> newComment [
 
 	<generated>

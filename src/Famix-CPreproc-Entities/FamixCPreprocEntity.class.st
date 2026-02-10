@@ -35,6 +35,13 @@ FamixCPreprocEntity >> clearReplicationCache [
 ]
 
 { #category : 'testing' }
+FamixCPreprocEntity >> isAssociation [
+
+	<generated>
+	^ false
+]
+
+{ #category : 'testing' }
 FamixCPreprocEntity >> isQueryable [
 
 	<generated>

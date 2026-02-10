@@ -33,7 +33,8 @@ Class {
 		'structuredType',
 		'entityTyping',
 		'globalVar',
-		'preprocFile'
+		'preprocFile',
+		'bytesFileAnchor'
 	],
 	#category : 'Famix-C-Generator',
 	#package : 'Famix-C-Generator'
@@ -62,6 +63,7 @@ FamixCGenerator >> defineClasses [
 	"Anchors"
 	indexedFileAnchor := builder newClassNamed: #IndexedFileAnchor.
 	multipleFileAnchor := builder newClassNamed: #MultipleFileAnchor.
+	bytesFileAnchor := builder newClassNamed: #BytesFileAnchor.
 	relativeSourceAnchor := builder newClassNamed: #RelativeSourceAnchor.
 
 	"SourcedEntity: Association"
@@ -118,6 +120,8 @@ FamixCGenerator >> defineHierarchy [
 	multipleFileAnchor --|> sourceAnchor.
 	multipleFileAnchor --|> #TMultipleFileAnchor.
 	relativeSourceAnchor --|> #TRelativeSourceAnchor.
+	bytesFileAnchor --|> sourceAnchor.
+	bytesFileAnchor --|> #TBytesFileAnchor.
 	sourceLanguage --|> #TSourceLanguage.
 
 	"Preproc"
